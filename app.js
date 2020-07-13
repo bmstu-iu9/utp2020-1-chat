@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const users = require('models/user')
 
 const app = express();
 
@@ -9,7 +10,7 @@ const session = require('express-session');
 const router = require('router');
 
 app.get('/', function (req, res) {
-    res.sendFile(__dirname+"/pages/html/login.html"); //Здесь нужен файл для страницы входа
+    res.sendFile(__dirname + "/pages/html/login.html"); //Здесь нужен файл для страницы входа
 });
 
 

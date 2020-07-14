@@ -16,8 +16,8 @@
   max-height: 45px;
   width: auto;
   height: auto;
-  left:44%;
-  top:60%;
+  left: 44%;
+  top: 60%;
 }
 
 .input-password input{
@@ -66,8 +66,8 @@
   max-height: 45px;
   width: auto;
   height: auto;
-  left:44%;
-  top:55%;
+  left: 44%;
+  top: 55%;
 }
 
 .input-login input {
@@ -92,7 +92,7 @@
     box-shadow: rgba(113, 113, 113, 0.15) -5px -5px 11px;
                 rgba(0,0,0,0.15) 5px 5px 11px;
   border-radius: 20px;
-  width: 345 px;
+  width: 345px;
   height: 45px;
   display: flex;
   align-items: center;
@@ -104,8 +104,8 @@
   max-height: 45px;
   width: auto;
   height: auto;
-  left:44%;
-  top:65%;
+  left: 44%;
+  top: 65%;
 }
 
 .input-name input {

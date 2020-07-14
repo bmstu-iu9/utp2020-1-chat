@@ -1,26 +1,32 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <script src="eye-opener.js"></script>
+    <script src="eye-opener.js"></script> 
     <title> BULink </title>
     <meta charset="utf-8">
+    <style> 
+      html { height: 100%; }
+      body {
+      margin: 0; 
+      height: 100%; 
+      background: url("Media/Logo.png"); 
+      background-size: cover; 
+      } 
+  </style>
     <body>
-      <div class="input-logo">
-        <img class="logo" src="Media/logo.jpg"/>
-      </div>
-      <div class="input-login">
+      <div class="input-login" align="center" >
         <input type="login" id="login" placeholder="Enter your login" minlength="3" maxlength="16"/>
       </div>
-      <div class="input-password">
+      <div class="input-password" align="center" >
         <input type="password" id="password" placeholder="Enter your password" minlength="8" maxlength="16"/>
         <div class="input-icon" id="icon" onclick="togglePassword()">
             <img src= "Media/eye-open.png"/>
         </div>
       </div>
-      <div class="input-name">
+      <div class="input-name" align="center" >
         <input type="name" id="name" placeholder="Enter your name" minlength="3" maxlength="24"/>
       </div>
-      <div class="input-button">
+      <div class="input-button" align="center">
         <input type="button" value="Sign in"/>
       </div>
     </body>

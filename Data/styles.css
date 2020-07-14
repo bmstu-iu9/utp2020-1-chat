@@ -4,16 +4,20 @@
   box-shadow: rgba(113, 113, 113, 0.15) -5px -5px 11px;
               rgba(0, 0, 0, 0.15) 5px 5px 11px;
   border-radius: 20px;
-  width: 275px;
-  height: 35px;
+  width: 325px;
+  height: 45px;
   display: flex;
   align-items: center;
 }
 
 .input-password {
-  position: absolute;
-  left: 800px;
-  top: 530px;
+   position: absolute;
+  max-width: 325px;
+  max-height: 45px;
+  width: auto;
+  height: auto;
+  left:44%;
+  top:60%;
 }
 
 .input-password input{
@@ -30,11 +34,6 @@
 
 .input-icon {
   width: 20px;
-  margin-right: 20px;
-  border-radius: 50px;
-  padding: 3px 6px;
-  cursor: pointer;
-  transition: all .4s ease;
 }
 
 .input-icon.selected {
@@ -55,16 +54,20 @@
   box-shadow: rgba(113, 113, 113, 0.15) -5px -5px 11px;
               rgba(0,0,0,0.15) 5px 5px 11px;
   border-radius: 20px;
-  width: 275px;
-  height: 35px;
+  width: 345px;
+  height: 45px;
   display: flex;
   align-items: center;
 }
 
 .input-login {
-position: absolute;
-left: 800px;
-top: 470px;
+  position: absolute;
+  max-width: 345px;
+  max-height: 45px;
+  width: auto;
+  height: auto;
+  left:44%;
+  top:55%;
 }
 
 .input-login input {
@@ -89,16 +92,20 @@ top: 470px;
     box-shadow: rgba(113, 113, 113, 0.15) -5px -5px 11px;
                 rgba(0,0,0,0.15) 5px 5px 11px;
   border-radius: 20px;
-  width: 275px;
-  height: 35px;
+  width: 345 px;
+  height: 45px;
   display: flex;
   align-items: center;
 }
 
-.input-name {
-position: absolute;
-left: 800px;
-top: 590px;
+.input-name{
+  position: absolute;
+  max-width: 345px;
+  max-height: 45px;
+  width: auto;
+  height: auto;
+  left:44%;
+  top:65%;
 }
 
 .input-name input {
@@ -117,29 +124,9 @@ top: 590px;
   color: #B2BECD;
 }
 
-.input-logo {
-  position: absolute;
-  max-width: 450px;
-  max-height: 200px;
-  width: auto;
-  height: auto;
-  resize: both;
-  left: 50%;
-  top: 32%;
-  margin-left: -225px;
-  margin-top: -100px;
-}
-
-.logo {
-  max-width: 450px;
-  max-height: 250px;
-  width: auto;
-  height: auto;
-  resize: both;
-}
-
 .input-button {
   position: absolute;
-  left: 920px;
-  top: 670px;
+  width: 100%;
+  top: 70%;
 }
+

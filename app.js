@@ -1,14 +1,13 @@
-const express = require('express');
+const app = require('express')();
+const http = require("http").createServer(app);
+const io = require('socket.io')(http);
+
 const path = require('path');
-const http = require('http')
 const User = require('./models/user')
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const router = require('router');
-
-const app = express();
-
 const fs = require('fs');
 
 const checkLogin_pass = function(login, password){
@@ -19,10 +18,6 @@ const checkLogin_pass = function(login, password){
     }
     return false;
 };
-
-app.listen(3000, function () {
-    console.log('Server is listening on port 3000');
-});
 
 app.get('/', function (req, res) {
     res.sendFile(__dirname + "/pages/html/login.html");
@@ -50,9 +45,13 @@ app.post('/registration', function (req, res) {
     let user = new User(username, login, password);
     if (!user.check()){
         user.save();
-        res.redirect('/pages/html/main.html');
+        res.redirect('/pages/html/chat.html');
     } else {
         alert("Данный логин уже занят");
         res.redirect('back');
     }
+});
+
+http.listen(3000, function () {
+    console.log('Server is listening on port 3000');
 });

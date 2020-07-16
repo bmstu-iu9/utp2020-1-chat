@@ -3,12 +3,12 @@ const http = require("http").createServer(app);
 const io = require('socket.io')(http);
 
 const path = require('path');
-const User = require('./models/user')
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const router = require('router');
 const fs = require('fs');
+const User = require('./models/user');
 
 const checkLogin_pass = function(login, password){
     let data = fs.readFileSync("../data/users.json", 'utf-8');
@@ -50,6 +50,15 @@ app.post('/registration', function (req, res) {
         alert("Данный логин уже занят");
         res.redirect('back');
     }
+});
+
+
+
+io.on('connection', (socket) => {
+    console.log('a user connected');
+    socket.on('disconnect', () => {
+        console.log('user disconnected');
+    });
 });
 
 http.listen(3000, function () {

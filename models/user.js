@@ -19,21 +19,21 @@ function removeUser(id) {
     }
 }
 
-class User{
+class User {
     constructor(username, login, password) {
         this.username = username;
         this.login = login;
         this.password = password;
     }
-    check(){
+    check() {
         let data = fs.readFileSync("../data/users.json", 'utf-8');
         let users = JSON.parse(data);
-        for(let i=0;i<users.length;i++){
+        for (let i = 0; i < users.length; i++) {
             if (this.login === users[i].login) return true;
         }
         return false
     }
-    save(){
+    save() {
         let data = fs.readFileSync("../data/users.json", 'utf-8');
         let users = JSON.parse(data);
         users.push(this);

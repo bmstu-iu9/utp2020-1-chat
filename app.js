@@ -14,10 +14,10 @@ const {
     removeUser,
 } = require('./models/user');
 
-const checkLogin_pass = function(login, password){
+const checkLogin_pass = function(login, password) {
     let data = fs.readFileSync("../data/users.json", 'utf-8');
     let users = JSON.parse(data);
-    for(let i=0;i<users.length;i++){
+    for (let i = 0 ; i < users.length; i++) {
         if (login === users[i].login && password === users[i].password) return true
     }
     return false;
@@ -30,7 +30,7 @@ app.get('/', function (req, res) {
 app.post('/', function (req, res) {
     let login = req.body.login;
     let password = req.body.password;
-    if (checkLogin_pass(login, password)){
+    if (checkLogin_pass(login, password)) {
         res.redirect('/pages/html/main.html');
     } else {
         alert("Неправильный логин или пароль");
@@ -47,7 +47,7 @@ app.post('/registration', function (req, res) {
     let login = req.body.login;
     let password = req.body.password;
     let user = new User(username, login, password);
-    if (!user.check()){
+    if (!user.check()) {
         user.save();
         res.redirect('/pages/html/chat.html');
     } else {
@@ -55,8 +55,6 @@ app.post('/registration', function (req, res) {
         res.redirect('back');
     }
 });
-
-
 
 io.on('connection', (socket) => {
     console.log('a user connected');

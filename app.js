@@ -8,7 +8,11 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const router = require('router');
 const fs = require('fs');
-const User = require('./models/user');
+const {
+    User,
+    joinUser,
+    removeUser,
+} = require('./models/user');
 
 const checkLogin_pass = function(login, password){
     let data = fs.readFileSync("../data/users.json", 'utf-8');

@@ -1,7 +1,16 @@
 {
   "name": "utp2020-1-chat",
   "version": "1.0.0",
-  "description": "* Резепин Никита [teamlead, back-end] : [@not-Whale](https://github.com/not-Whale) * Жолтиков Михаил [back-end] : [@Klaus1901](https://github.com/Klaus1901) * Иванов Максим [back-end] : [@maksimellian](https://github.com/maksimellian) * Якушев Константин [front-end] : [@YakushevK](https://github.com/YakushevK) * Максимов Евгений [front-end] : [@maxevg](https://github.com/maxevg) * Костриця Максим [front-end] : [@MaksimKoster](https://github.com/MaksimKoster)",
+  "description": "real-time web-chat",
+  "author": "bmstu-iu9",
+  "contributors": [
+    "Резепин Никита (https://github.com/not-Whale)",
+    "Жолтиков Михаил (https://github.com/Klaus1901)",
+    "Иванов Максим (https://github.com/maksimellian)",
+    "Якушев Константин (https://github.com/YakushevK)",
+    "Максимов Евгений (https://github.com/maxevg)",
+    "Костриця Максим (https://github.com/MaksimKoster)"
+  ],
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,17 +22,17 @@
     "express-session": "^1.17.1",
     "router": "^1.3.5"
   },
+  "devDependencies": {
+    "body-parser": "^1.19.0"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bmstu-iu9/utp2020-1-chat.git"
+    "url": "https://github.com/bmstu-iu9/utp2020-1-chat.git"
   },
-  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/bmstu-iu9/utp2020-1-chat/issues"
   },
   "homepage": "https://github.com/bmstu-iu9/utp2020-1-chat#readme",
-  "devDependencies": {
-    "body-parser": "^1.19.0"
-  }
+  "private": true
 }

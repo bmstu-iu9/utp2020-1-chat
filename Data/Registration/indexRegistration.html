@@ -1,7 +1,6 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="stylesRegistration.css">
-    <script src="eye-opener.js"></script> 
     <title> BULink </title>
     <meta charset="utf-8">
     <style> 
@@ -12,23 +11,31 @@
       background: url("Media/Logo.png"); 
       background-size: cover; 
       } 
-  </style>
-    <body>
-      <div class="input-login" align="center" >
-        <input type="login" id="login" placeholder="Enter your login" minlength="3" maxlength="16"/>
-      </div>
-      <div class="input-password" align="center" >
-        <input type="password" id="password" placeholder="Enter your password" minlength="8" maxlength="16"/>
-        <div class="input-icon" id="icon" onclick="togglePassword()">
-            <img src= "Media/eye-open.png"/>
-        </div>
-      </div>
-      <div class="input-name" align="center" >
-        <input type="name" id="name" placeholder="Enter your name" minlength="3" maxlength="24"/>
-      </div>
-      <div class="input-button" align="center">
-        <input type="button" value="Sign in"/>
-      </div>
-    </body>
+    </style>
   </head>
+    <body>
+      <form>
+        <div class="input-login" align="center" >
+          <input type="login" id="login" onKeyDown="checkLogin()" placeholder="Enter your login" minlength="3" maxlength="16" required/>
+        </div>
+        <div class="input-password" align="center" >
+          <input type="password" id="password" placeholder="Enter your password" minlength="8" maxlength="16" required/>
+          <div class="input-icon" id="icon" onclick="togglePassword()">
+              <img src= "Media/eye-open.png"/>
+          </div>
+        </div>
+        <div class="input-name" align="center" >
+          <input type="name" id="name" placeholder="Enter your name" minlength="3" maxlength="24" required/>
+        </div>
+        <div class="input-button" align="center">
+          <input type="button" value="Submit"/>
+        </div>
+        <div class="error">
+          <p id="error-login" style="display: none;">Только символы латинского алфавита, цифр 0-9 и знаков _, -, длиной от 3 до 16 символов</p>
+          <p id="error-password" style="display: none;">Только символы латинского алфавита, цифры 0-9 и знаков !, $, %, &, *, ., -, _, +, =, длиной от 8 до 16 символов, в которой обязательно должна присутствовать хотя бы одна заглавная и одна прописная латинские буквы, а также хотя бы одна цифра</p>
+          <p id="error-name" style="display: none;">Только символы латинского алфавита, длиной от 3 до 24 символов без цифр и специальных знаков</p>
+      </form>
+    <script src="eye-opener.js"></script> 
+    <script src="validation.js"></script> 
+  </body>
 </html>

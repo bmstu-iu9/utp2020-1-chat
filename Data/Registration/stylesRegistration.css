@@ -129,4 +129,16 @@
   width: 100%;
   top: 70%;
 }
+.error{
+  position: absolute;
+  max-width: 345px;
+  max-height: 45px;
+  width: auto;
+  height: auto;
+  left: 43%;
+  top: 75%;
+}
 
+::-webkit-input-placeholder {
+  color: #B2BECD;
+}

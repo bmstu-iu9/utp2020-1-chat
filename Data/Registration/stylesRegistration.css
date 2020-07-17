@@ -17,7 +17,7 @@
   width: auto;
   height: auto;
   left: 43%;
-  top: 60%;
+  top: 61%;
 }
 
 .input-password input{
@@ -67,7 +67,7 @@
   width: auto;
   height: auto;
   left: 43%;
-  top: 55%;
+  top: 56%;
 }
 
 .input-login input {
@@ -105,7 +105,7 @@
   width: auto;
   height: auto;
   left: 43%;
-  top: 65%;
+  top: 66%;
 }
 
 .input-name input {
@@ -127,7 +127,7 @@
 .input-button {
   position: absolute;
   width: 100%;
-  top: 70%;
+  top: 71%;
 }
 .error{
   position: absolute;
@@ -142,3 +142,39 @@
 ::-webkit-input-placeholder {
   color: #B2BECD;
 }
+.PutLogin{
+  position: absolute;
+  max-width: 345px;
+  max-height: 45px;
+  width: auto;
+  height: auto;
+  left: 46%;
+  top: 54%;
+}
+::-webkit-input-placeholder {
+  color: #B2BECD;
+}
+.PutPassword{
+  position: absolute;
+  max-width: 345px;
+  max-height: 45px;
+  width: auto;
+  height: auto;
+  left: 46%;
+  top: 59%;
+}
+::-webkit-input-placeholder {
+  color: #B2BECD;
+}  
+.PutName{
+  position: absolute;
+  max-width: 345px;
+  max-height: 45px;
+  width: auto;
+  height: auto;
+  left: 46%;
+  top: 64%;
+}
+::-webkit-input-placeholder {
+  color: #B2BECD;
+}  

@@ -56,11 +56,18 @@ app.post('/registration', function (req, res) {
     }
 });
 
+let thisRoom = "";
 io.on('connection', (socket) => {
-    console.log('a user connected');
-    socket.on('disconnect', () => {
-        console.log('user disconnected');
-    });
+    console.log('User connected');
+
+    socket.on("join room", (data) =>{
+        console.log('in room');
+        let newUser = joinUser(socket.id, data.userName, data.roomName);
+        socket.emit('send data', {id: socket.id, username: newUser.username, roomname: newUser.roomname});
+        thisRoom = newUser.roomname;
+        console.log(newUser);
+        socket.join(newUser.roomname);
+    })
 });
 
 http.listen(3000, function () {

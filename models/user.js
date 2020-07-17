@@ -4,8 +4,8 @@ let users = [];
 function joinUser(socketId, userName, roomName) {
     const user = {
         socketID :  socketId,
-        userName : userName,
-        roomName : roomName
+        username : userName,
+        roomname : roomName
     }
     users.push(user)
     return user;

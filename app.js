@@ -67,7 +67,20 @@ io.on('connection', (socket) => {
         thisRoom = newUser.roomname;
         console.log(newUser);
         socket.join(newUser.roomname);
-    })
+    });
+
+    socket.on("chat message", (data) => {
+       io.to(thisRoom).emit("chat message", {data:data, id: socket.id});
+    });
+
+    socket.on("disconnect", () => {
+       const user = removeUser(socket.id);
+       console.log(user);
+       if (user){
+           console.log(user.username + ' has left');
+       }
+       console.log("disconnected");
+    });
 });
 
 http.listen(3000, function () {

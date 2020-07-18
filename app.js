@@ -14,8 +14,11 @@ const {
     removeUser,
 } = require('./models/user');
 
+
+const urlencodedParser = bodyParser.urlencoded({extended: false});
+
 const checkLogin_pass = function(login, password) {
-    let data = fs.readFileSync("../data/users.json", 'utf-8');
+    let data = fs.readFileSync("./data/users.json", 'utf-8');
     let users = JSON.parse(data);
     for (let i = 0 ; i < users.length; i++) {
         if (login === users[i].login && password === users[i].password) return true
@@ -27,13 +30,12 @@ app.get('/', function (req, res) {
     res.sendFile(__dirname + "/pages/html/login.html");
 });
 
-app.post('/', function (req, res) {
+app.post('/', urlencodedParser, function (req, res) {
     let login = req.body.login;
     let password = req.body.password;
     if (checkLogin_pass(login, password)) {
         res.redirect('/pages/html/main.html');
     } else {
-        alert("Неправильный логин или пароль");
         res.redirect('back');
     }
 });
@@ -51,7 +53,6 @@ app.post('/registration', function (req, res) {
         user.save();
         res.redirect('/pages/html/chat.html');
     } else {
-        alert("Данный логин уже занят");
         res.redirect('back');
     }
 });

@@ -1,39 +1,35 @@
 .icon{
-    left: 50px;
+    left: 20px;
     top: 25px;
     position: absolute;
 }
 
-.bigText{
+body{
+    background-color: orange;
+}
+
+.profile{
     font-size: xx-large;
     position: absolute;
-    left: 290px;
+    left: 270px;
     top: 40px;
-    border: solid orangered 5px;
-    padding: 2px;
-    border-radius: 10px 0px 10px 0px;
 }
 
-.ramka {
-    border: solid orange 5px;
+.mainpage {
+    border: solid black 7px;
     width: 1000px;
-    height: 1000px;
+    height: 1100px;
     position: relative;
-    left: 450px;
+    left: calc((100% - 1000px - 7px)/2);
+    background-color: white;
+    border-radius: 20px;
 }
 
-.user_name{
+.name{
     font-size: xx-large;
     position: absolute;
-    left: 290px;
-    top: 95px;
-    text-decoration: orangered underline;
-}
-.user_info{
-    font-size: xx-large;
-    position: absolute;
-    left: 290px;
-    top: 138px;
+    left: 270px;
+    top: 115px;
     text-decoration: orangered underline;
 }
 
@@ -42,9 +38,10 @@
     right: 15px;
     position: absolute;
     font-size: x-large;
-    background: slategray;
-    color: aliceblue;
+    background: linear-gradient(45deg,orangered, orange);
     border-radius: 10px;
+    border: solid slategray 4px;
+    box-shadow: 5px 5px;
 }
 
 .exit{
@@ -52,56 +49,110 @@
     right: 15px;
     position: absolute;
     font-size: x-large;
-    background: slategray;
-    color: aliceblue;
+    background: linear-gradient(45deg,orangered, orange);
     border-radius: 10px;
+    border: solid slategray 4px;
+    box-shadow: 5px 5px;
 }
 
-.smth{
+.editForm{
     top: 40px;
-    border: solid orange 5px;
-    width: 380px;
+    border: solid slategray 5px;
+    width: 300px;
     height: 110px;
     position: absolute;
-    left: 450px;
+    left: 490px;
+    box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.5);
+    border-radius: 20px 10px 20px 10px;
 }
 
 .leftframe{
-    border: solid slategray 5px;
     width: 490px;
-    height: 790px;
+    height: 880px;
     position: absolute;
     top: 200px;
 }
 
 .bigTextOpt{
-    font-size: xx-large;
+    font-size: 50px;
+    border: solid slategray 5px;
+    width: 350px;
+    height: 70px;
+    box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.5);
+    border-radius: 20px 10px 20px 10px;
+    margin-left: 50px;
+    background: linear-gradient(45deg,orangered, orange);
 }
 
 li button{
     font-size: xx-large;
-    border: solid orangered 5px;
+    border: solid slategray 5px;
     padding: 2px;
-    border-radius: 10px 0px 10px 0px;
+    border-radius: 10px 5px 10px 5px;
+    background: linear-gradient(45deg,yellow,orange);
+    box-shadow: 5px 5px;
+    width: 250px;
+    height: 70px;
+}
+
+.leftframe ul li{
+    margin: 20px 0;
+}
+
+.right_window{
+    border: solid black 5px;
+    width: 410px;
+    height: 610px;
+    margin-left: 50px;
+    border-radius: 10px;
+    position: relative;
 }
 
 .rightframe{
-    left: 500px;
-    border: solid slategray 5px;
+    left: 450px;
+    border: 5px;
     width: 490px;
     height: 790px;
     position: absolute;
     top: 200px;
 }
 
-.create_room{
+.createRoom{
     position: absolute;
-    top: 400px;
-    left: 610px;
+    top: 200px;
+    left: 75px;
 }
 
-.send_message{
+.formMes{
     position: absolute;
-    top: 600px;
-    left: 610px;
+    bottom: 10px;
+    left: 80px;
+}
+
+.text{
+    width: 300px;
+    height: 30px;
+    border: solid black 3px;
+    padding: 2px;
+    border-radius: 10px 5px 10px 5px;
+    background: white;
+    box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.5);
+    font-size: large;
+}
+
+.send{
+    background: linear-gradient(45deg,orangered, orange);
+    border-radius: 10px;
+    border: solid slategray 4px;
+    box-shadow: 5px 5px;
+    font-size: large;
+}
+
+.tet{
+    width: 250px;
+    height: 15px;
+    border: solid black 2px;
+    padding: 2px;
+    border-radius: 5px;
+    background: white;
 }

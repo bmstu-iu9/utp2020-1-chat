@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>BUlink</title>
+        <link rel="stylesheet" type="text/css" href="./stylesLogin.css">
+        <link rel="icon" sizes="any" href="media/logo.jpg">
+    </head>
+    <body>
+        <div class="border">
+            <div class="text">
+                <p><font size="4" face="Courier New"><b>Вход</b></font></p>
+                <p><font size="3" face="Courier New">Пожалуйста, введите свои логин и пароль:</font></p>
+            </div>
+            <div class="login">
+                <p class="input"><font size="3" face="Courier New">Логин</font></p>
+                <input type="login" id="login" onKeyDown="checkLogin()"
+                       placeholder="Enter your login" required/>
+            </div>
+            <div class="password">
+                <p class="input"><font size="3" face="Courier New">Пароль</font></p>
+                <input type="password" id="password" onKeyDown="checkPassword()"
+                       placeholder="Enter password" required/>
+            </div>
+            <div class="button">
+                <a><span>Sign in</span></a>
+            </div>
+        </div>
+    </body>
+</html>

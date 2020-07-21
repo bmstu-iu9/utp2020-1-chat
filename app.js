@@ -1,9 +1,7 @@
 const app = require('express')();
 const http = require("http").createServer(app);
 const io = require('socket.io')(http);
-
-//app.set('views', '/pages/html');
-//app.set('view engine', 'ejs');
+app.set('view engine', 'ejs');
 
 const path = require('path');
 const bodyParser = require('body-parser');

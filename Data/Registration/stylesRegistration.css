@@ -11,7 +11,7 @@
 }
 
 .input-password {
-   position: absolute;
+  position: absolute;
   max-width: 325px;
   max-height: 45px;
   width: auto;
@@ -178,3 +178,6 @@
 ::-webkit-input-placeholder {
   color: #B2BECD;
 }  
+p {
+  font-family: 'Pacifico', cursive;
+}

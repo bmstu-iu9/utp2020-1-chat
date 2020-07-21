@@ -12,10 +12,13 @@
       background-size: cover; 
       } 
     </style>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+    </style> 
   </head>
   <body>
     <form>
-      <div class="input-login" align="center" >
+      <div class="input-login" align="center">
         <input type="login" id="login" onKeyDown="checkLogin()" placeholder="Enter your login" minlength="3" maxlength="16" required/>
       </div>
       <div class="input-password" align="center" >
@@ -31,8 +34,8 @@
         <input type="button" value="Submit"/>
       </div>
       <div class="error">
-        <p id="error-login" style="display: none;">Только символы латинского алфавита, цифр 0-9 и знаков _, -, длиной от 3 до 16 символов</p>
-        <p id="error-password" style="display: none;">Только символы латинского алфавита, цифры 0-9 и знаков !, $, %, &, *, ., -, _, +, =, длиной от 8 до 16 символов, в которой обязательно должна присутствовать хотя бы одна заглавная и одна прописная латинские буквы, а также хотя бы одна цифра</p>
+        <p id="error-login" style="display: none;"> <font size ="2" >Только символы латинского алфавита, цифр 0-9 и знаков _, -, длиной от 3 до 16 символов</p>
+        <p id="error-password" style="display: none;"> Только символы латинского алфавита, цифры 0-9 и знаков !, $, %, &, *, ., -, _, +, =, длиной от 8 до 16 символов, в которой обязательно должна присутствовать хотя бы одна заглавная и одна прописная латинские буквы, а также хотя бы одна цифра</p>
         <p id="error-name" style="display: none;">Только символы латинского алфавита, длиной от 3 до 24 символов без цифр и специальных знаков</p>
       </div>
       <div class="PutLogin" align="center">
@@ -42,7 +45,7 @@
         <p> Введите Пароль </p>
       </div>  
       <div class="PutName" align="center">
-        <p> Введите Имя </p>
+        <p>  Введите Имя </p>
       </div>       
     </form>
     <script src="eye-opener.js"></script> 

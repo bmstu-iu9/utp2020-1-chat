@@ -2,6 +2,9 @@ const app = require('express')();
 const http = require("http").createServer(app);
 const io = require('socket.io')(http);
 
+//app.set('views', '/pages/html');
+//app.set('view engine', 'ejs');
+
 const path = require('path');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
@@ -57,21 +60,37 @@ app.post('/registration', function (req, res) {
     }
 });
 
-let thisRoom = "";
+let rooms = {};
+
+app.get('/main', function (req, res) {
+    res.render(__dirname + "/pages/html/main.ejs", {rooms: rooms});
+});
+
+app.post('/main', urlencodedParser, function (req, res) {
+    rooms[req.body.room] = { users: {} };
+    res.render(__dirname + "/pages/html/main.ejs", {rooms: rooms});
+});
+
+app.get('/:chat', function (req, res) {
+    if (rooms[req.params.chat] == null){
+        res.redirect('back');
+    }
+    res.render(__dirname + "/pages/html/chat.ejs", { roomname: req.params.chat});
+});
+
 io.on('connection', (socket) => {
     console.log('User connected');
 
     socket.on("join room", (data) =>{
         console.log('in room');
-        let newUser = joinUser(socket.id, data.userName, data.roomName);
+        let newUser = joinUser(socket.id, data.username, data.roomname);
         socket.emit('send data', {id: socket.id, username: newUser.username, roomname: newUser.roomname});
-        thisRoom = newUser.roomname;
         console.log(newUser);
         socket.join(newUser.roomname);
     });
 
     socket.on("chat message", (data) => {
-       io.to(thisRoom).emit("chat message", {data:data, id: socket.id});
+       io.to(data.room).emit("chat message", {data:data, id: socket.id});
     });
 
     socket.on("disconnect", () => {

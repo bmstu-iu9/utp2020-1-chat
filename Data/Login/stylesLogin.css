@@ -13,7 +13,7 @@ body {
 p {
     margin-top: 0.5em;
     margin-bottom: 0.5em;
-    font-family: 'Comfortaa', cursive;
+    font-family: "Comfortaa", cursive;
 }
 
 .logo {
@@ -89,7 +89,7 @@ p {
 .login input {
     font-size: 14px;
     text-indent: 8px;
-    font-family: "Courier New", sans-serif;
+    font-family: "Comfortaa", cursive;
     color: #B2BECD;
     outline: 0;
     display: flex;
@@ -110,7 +110,7 @@ p {
 .password input {
     font-size: 14px;
     text-indent: 8px;
-    font-family: "Courier New", sans-serif;
+    font-family: "Comfortaa", cursive;
     color: #B2BECD;
     outline: 0;
     display: flex;
@@ -175,7 +175,7 @@ a {
 }
 
 span {
-    font-family: 'Comfortaa', sans-serif;
+    font-family: "Comfortaa", cursive;
     position: relative;
     z-index: 5;
 }

@@ -1,52 +1,51 @@
+<!DOCTYPE html>
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="stylesRegistration.css">
+    <link rel="icon" sizes="any" href="Media/logo.jpg">
     <title> BULink </title>
     <meta charset="utf-8">
-    <style> 
-      html { height: 100%; }
-      body {
-      margin: 0; 
-      height: 100%; 
-      background: url("Media/Logo.png"); 
-      background-size: cover; 
-      } 
-    </style>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
     </style> 
   </head>
   <body>
     <form>
-      <div class="input-login" align="center">
-        <input type="login" id="login" onKeyDown="checkLogin()" placeholder="Enter your login" minlength="3" maxlength="16" required/>
+      <div class="logo">
       </div>
-      <div class="input-password" align="center" >
-        <input type="password" id="password" placeholder="Enter your password" minlength="8" maxlength="16" required/>
-        <div class="input-icon" id="icon" onclick="togglePassword()">
-            <img src= "Media/eye-open.png"/>
+      <div class="border">
+      <div class="text" align="center">
+        <p><font size="4" ><b>Регистрация</b></font></p>
+      </div>
+        <div class="login">
+          <input type="login" id="login" onKeyDown="checkLogin()" placeholder="Enter your login" minlength="3" maxlength="16" required/>
         </div>
-      </div>
-      <div class="input-name" align="center" >
-        <input type="name" id="name" placeholder="Enter your name" minlength="3" maxlength="24" required/>
-      </div>
-      <div class="input-button" align="center">
-        <input type="button" value="Submit"/>
-      </div>
+        <div class="password">
+          <input type="password" id="password" placeholder="Enter your password" minlength="8" maxlength="16" required/>
+          <div class="eye-closed" id="password-hider" onclick="togglePassword()">
+          </div>
+        </div>
+        <div class="name" align="center" >
+          <input type="name" id="name" placeholder="Enter your name" minlength="3" maxlength="24" required/>
+        </div>
+        <div class="button" align="center">
+          <a><span>Register</span></a>
+        </div>
+        <div class="PutLogin" align="center">
+          <p><font size ="3" >Введите логин: </p>
+        </div>
+        <div class="PutPassword" align="center">
+          <p> Введите пароль: </p>
+        </div>  
+        <div class="PutName" align="center">
+          <p>  Введите имя: </p>
+        </div>
+      </div>   
       <div class="error">
-        <p id="error-login" style="display: none;"> <font size ="2" >Только символы латинского алфавита, цифр 0-9 и знаков _, -, длиной от 3 до 16 символов</p>
-        <p id="error-password" style="display: none;"> Только символы латинского алфавита, цифры 0-9 и знаков !, $, %, &, *, ., -, _, +, =, длиной от 8 до 16 символов, в которой обязательно должна присутствовать хотя бы одна заглавная и одна прописная латинские буквы, а также хотя бы одна цифра</p>
-        <p id="error-name" style="display: none;">Только символы латинского алфавита, длиной от 3 до 24 символов без цифр и специальных знаков</p>
-      </div>
-      <div class="PutLogin" align="center">
-        <p> Введите Логин </p>
-      </div>
-      <div class="PutPassword" align="center">
-        <p> Введите Пароль </p>
-      </div>  
-      <div class="PutName" align="center">
-        <p>  Введите Имя </p>
-      </div>       
+          <p id="error-login" style="display: none;"> <font size ="2" >Только символы латинского алфавита, цифр 0-9 и знаков _, -, длиной от 3 до 16 символов</p>
+          <p id="error-password" style="display: none;"> Только символы латинского алфавита, цифры 0-9 и знаков !, $, %, &, *, ., -, _, +, =, длиной от 8 до 16 символов, в которой обязательно должна присутствовать хотя бы одна заглавная и одна прописная латинские буквы, а также хотя бы одна цифра</p>
+          <p id="error-name" style="display: none;">Только символы латинского алфавита, длиной от 3 до 24 символов без цифр и специальных знаков</p>
+        </div>    
     </form>
     <script src="eye-opener.js"></script> 
     <script src="validation.js"></script> 

@@ -69,7 +69,7 @@ app.post('/main', urlencodedParser, function (req, res) {
     res.render(__dirname + "/pages/html/main.ejs", {rooms: rooms});
 });
 
-app.get('/:chat', function (req, res) {
+app.get('/main/:chat', function (req, res) {
     if (rooms[req.params.chat] == null){
         res.redirect('back');
     }
@@ -88,16 +88,16 @@ io.on('connection', (socket) => {
     });
 
     socket.on("chat message", (data) => {
-       io.to(data.room).emit("chat message", {data:data, id: socket.id});
+        io.to(data.room).emit("chat message", {data:data, id: socket.id});
     });
 
     socket.on("disconnect", () => {
-       const user = removeUser(socket.id);
-       console.log(user);
-       if (user){
-           console.log(user.username + ' has left');
-       }
-       console.log("disconnected");
+        const user = removeUser(socket.id);
+        console.log(user);
+        if (user){
+            console.log(user.username + ' has left');
+        }
+        console.log("disconnected");
     });
 });
 

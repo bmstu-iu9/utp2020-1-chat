@@ -16,32 +16,15 @@ p {
     font-family: "Comfortaa", cursive;
 }
 
+.input-text {
+    margin-bottom: 0.3em;
+}
+
 .login {
     width: 350px;
     height: 50px;
     margin-top: 25px;
     margin-left: 115px;
-}
-
-.login input {
-    font-size: 14px;
-    text-indent: 8px;
-    font-family: "Comfortaa", cursive;
-    color: #B2BECD;
-    outline: 0;
-    display: flex;
-}
-
-.login input {
-    background: transparent;
-    border-color: #597da3;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 10px;
-    box-shadow: rgba(113, 113, 113, 0.15) -5px -5px 11px;
-                rgba(0, 0, 0, 0.15) 5px 5px 11px;
-    height: 18px;
-    width: 160px;
 }
 
 .password {
@@ -51,27 +34,6 @@ p {
     margin-left: 115px;
 }
 
-.password input {
-    font-size: 14px;
-    text-indent: 8px;
-    font-family: "Comfortaa", cursive;
-    color: #B2BECD;
-    outline: 0;
-    display: flex;
-}
-
-.password input {
-    background: transparent;
-    border-color: #597da3;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 10px;
-    box-shadow: rgba(113, 113, 113, 0.15) -5px -5px 11px;
-                rgba(0, 0, 0, 0.15) 5px 5px 11px;
-    height: 18px;
-    width: 160px;
-}
-
 .name {
     width: 350px;
     height: 50px;
@@ -79,7 +41,7 @@ p {
     margin-left: 115px;
 }
 
-.name input {
+.input {
     font-size: 14px;
     text-indent: 8px;
     font-family: "Comfortaa", cursive;
@@ -88,7 +50,7 @@ p {
     display: flex;
 }
 
-.name input {
+.input {
     background: transparent;
     border-color: #597da3;
     border-style: solid;
@@ -112,9 +74,9 @@ p {
     background-image: url("Media/eye-closed.png");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 19px;
-    width: 19px;
-    margin-left: 166px;
+    height: 20px;
+    width: 20px;
+    margin-left: 167px;
     margin-top: -21px;
 }
 
@@ -123,9 +85,9 @@ p {
     background-image: url("Media/eye-opened.png");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 19px;
-    width: 19px;
-    margin-left: 166px;
+    height: 20px;
+    width: 20px;
+    margin-left: 167px;
     margin-top: -21px;
 }
 
@@ -241,10 +203,6 @@ p {
     height: 15px;
     margin-left: 135px;
     margin-top: 130px;
-}
-
-.input {
-    margin-bottom: 0.3em;
 }
 
 a {

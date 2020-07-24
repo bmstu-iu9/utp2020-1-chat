@@ -16,6 +16,10 @@ p {
     font-family: "Comfortaa", cursive;
 }
 
+.input-text {
+    margin-bottom: 0.3em;
+}
+
 .logo {
     position: absolute;
     width: 190px;
@@ -82,11 +86,7 @@ p {
     margin-left: 152px;
 }
 
-.input-text {
-    margin-bottom: 0.3em;
-}
-
-.login input {
+.input {
     font-size: 14px;
     text-indent: 8px;
     font-family: "Comfortaa", cursive;
@@ -95,28 +95,7 @@ p {
     display: flex;
 }
 
-.login input {
-    background: transparent;
-    border-color: #597da3;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 10px;
-    box-shadow: rgba(113, 113, 113, 0.15) -5px -5px 11px;
-                rgba(0, 0, 0, 0.15) 5px 5px 11px;
-    height: 18px;
-    width: 160px;
-}
-
-.password input {
-    font-size: 14px;
-    text-indent: 8px;
-    font-family: "Comfortaa", cursive;
-    color: #B2BECD;
-    outline: 0;
-    display: flex;
-}
-
-.password input {
+.input {
     background: transparent;
     border-color: #597da3;
     border-style: solid;
@@ -150,7 +129,7 @@ p {
     margin-top: -21px;
 }
 
-.reg {
+.register-a {
     width: 94px;
     margin-left: -5px;
 }

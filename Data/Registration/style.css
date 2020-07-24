@@ -132,7 +132,7 @@ p {
 .error {
     position: absolute;
     width: 400px;
-    height: 218px;
+    height: 298px;
     left: 50%;
     margin-left: -200px;
     margin-top: 600px;
@@ -141,64 +141,64 @@ p {
 .error {
     border-style: solid;
     border-color: transparent;
-    background-color: #e7f0f5;
+    background-color: transparent;
     background-repeat: no-repeat;
     background-size: cover;
     border-width: 2px;
     border-radius: 5px;
 }
 
-.error-log {
+.error-login {
     position: absolute;
     width: 370px;
-    height: 42px;
+    height: 65px;
     left: 50%;
     margin-left: -187px;
     margin-top: 12px;
 }
 
-.error-log {
+.error-login {
     border-style: solid;
     border-color: transparent;
-    background-color: #e7f0f5;
+    background-color: transparent;
     background-repeat: no-repeat;
     background-size: cover;
     border-width: 2px;
     border-radius: 5px;
 }
 
-.error-pas {
+.error-password {
     position: absolute;
     width: 370px;
-    height: 90px;
+    height: 137px;
     left: 50%;
     margin-left: -187px;
-    margin-top: 67px;
+    margin-top: 79px;
 }
 
-.error-pas {
+.error-password {
     border-style: solid;
     border-color: transparent;
-    background-color: #e7f0f5;
+    background-color: transparent;
     background-repeat: no-repeat;
     background-size: cover;
     border-width: 2px;
     border-radius: 5px;
 }
  
-.error-na{
+.error-name {
     position: absolute;
     width: 370px;
-    height: 35px;
+    height: 65px;
     left: 50%;
     margin-left: -187px;
-    margin-top: 170px;
+    margin-top: 218px;
 }
 
-.error-na {
+.error-name {
     border-style: solid;
     border-color: transparent;
-    background-color: #e7f0f5;
+    background-color: transparent;
     background-repeat: no-repeat;
     background-size: cover;
     border-width: 2px;

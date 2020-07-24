@@ -6,7 +6,7 @@ html {
 }
 
 body {
-    background: #e7f0f5 url("../media/back10.png");
+    background: #e7f0f5 url("../media/background.png");
     background-size: cover;
 }
 
@@ -20,7 +20,7 @@ p {
     position: absolute;
     width: 190px;
     height: 190px;
-    background-image: url("../media/logo1.png");
+    background-image: url("../media/logo-blue.png");
     background-repeat: no-repeat;
     background-size: cover;
     left: 50%;
@@ -40,7 +40,7 @@ p {
     border-style: solid;
     border-color: #597da3;
     background-color: #e7f0f5;
-    background-image: url("../media/div5.jpg");
+    background-image: url("../media/div.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     border-width: 2px;

@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background: #e7f0f5 url("../media/back10.png");
+    background-size: cover;
+}
+
+p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    font-family: "Comfortaa", cursive;
+}
+
+.logo {
+    position: absolute;
+    width: 190px;
+    height: 190px;
+    background-image: url("../media/logo1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    left: 50%;
+    margin-left: -95px;
+}
+
+.border {
+    position: absolute;
+    width: 400px;
+    height: 380px;
+    left: 50%;
+    margin-left: -200px;
+    margin-top: 185px;
+}
+
+.border {
+    border-style: solid;
+    border-color: #597da3;
+    background-color: #e7f0f5;
+    background-image: url("../media/div5.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-width: 2px;
+    border-radius: 5px;
+}
+
+.text {
+    width: 350px;
+    height: 15px;
+    margin-left: 175px;
+    margin-top: 130px;
+}
+
+.login {
+    width: 350px;
+    height: 50px;
+    margin-top: 25px;
+    margin-left: 115px;
+}
+
+.password {
+    width: 350px;
+    height: 50px;
+    margin-top: 10px;
+    margin-left: 115px;
+}
+
+.sign-in {
+    width: 350px;
+    height: 15px;
+    margin-top: 17px;
+    margin-left: 152px;
+}
+
+.register {
+    width: 350px;
+    height: 50px;
+    margin-top: 17px;
+    margin-left: 152px;
+}
+
+.input-text {
+    margin-bottom: 0.3em;
+}
+
+.login input {
+    font-size: 14px;
+    text-indent: 8px;
+    font-family: "Comfortaa", cursive;
+    color: #B2BECD;
+    outline: 0;
+    display: flex;
+}
+
+.login input {
+    background: transparent;
+    border-color: #597da3;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    box-shadow: rgba(113, 113, 113, 0.15) -5px -5px 11px;
+                rgba(0, 0, 0, 0.15) 5px 5px 11px;
+    height: 18px;
+    width: 160px;
+}
+
+.password input {
+    font-size: 14px;
+    text-indent: 8px;
+    font-family: "Comfortaa", cursive;
+    color: #B2BECD;
+    outline: 0;
+    display: flex;
+}
+
+.password input {
+    background: transparent;
+    border-color: #597da3;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    box-shadow: rgba(113, 113, 113, 0.15) -5px -5px 11px;
+                rgba(0, 0, 0, 0.15) 5px 5px 11px;
+    height: 18px;
+    width: 160px;
+}
+
+.eye-closed {
+    background-color: transparent;
+    background-image: url("../media/eye-closed.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 19px;
+    width: 19px;
+    margin-left: 166px;
+    margin-top: -21px;
+}
+
+.eye-opened {
+    background-color: transparent;
+    background-image: url("../media/eye-opened.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 19px;
+    width: 19px;
+    margin-left: 166px;
+    margin-top: -21px;
+}
+
+.reg {
+    width: 94px;
+    margin-left: -5px;
+}
+
+a {
+    text-decoration: none;
+    user-select: none;
+    outline: none;
+    display: inline-block;
+    color: #757575;
+    font-size: 15px;
+    box-shadow: 0 0 0 1px #597da3,
+                rgba(113, 113, 113, 0.15) -5px -5px 11px;
+                rgba(0, 0, 0, 0.15) 5px 5px 11px;
+    border-radius: 10px;
+    width: 84px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+span {
+    font-family: "Comfortaa", cursive;
+    position: relative;
+    z-index: 5;
+}
+
+a:before,
+a:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+a:before {
+    transform: translateX(-100%);
+    background: white;
+    transition: transform .3s cubic-bezier(.55,.055,.675,.19);
+}
+
+a:after {
+    background: #e7f0f5;
+    /* будет возвращаться на цвет фона после выплывания белого*/
+    /*background: white; будет оставаться белой*/
+    transform: translateX(100%);
+    transition: transform .3s cubic-bezier(.16,.73,.58,.62) .3s;
+}
+
+a:hover:before,
+a:hover:after {
+    transform: translateX(0);
+}

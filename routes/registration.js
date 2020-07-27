@@ -7,7 +7,7 @@ router.get('/registration', (req, res)=>{
     res.render("registration.ejs");
 });
 
-router.post('/register', (req, res) =>{
+router.post('/registration', (req, res) =>{
     let username = req.body.username;
     let login = req.body.login;
     let password = req.body.password;

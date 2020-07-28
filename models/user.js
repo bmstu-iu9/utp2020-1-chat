@@ -1,4 +1,5 @@
 const fs = require('fs');
+const mongoose = require('mongoose');
 
 let users = [];
 function joinUser(socketId, userName, roomName) {
@@ -19,28 +20,22 @@ function removeUser(id) {
     }
 }
 
-class User {
-    constructor(username, login, password) {
-        this.username = username;
-        this.login = login;
-        this.password = password;
-    }
-    check() {
-        let data = fs.readFileSync("../data/users.json", 'utf-8');
-        let users = JSON.parse(data);
-        for (let i = 0; i < users.length; i++) {
-            if (this.login === users[i].login) return true;
-        }
-        return false
-    }
-    save() {
-        let data = fs.readFileSync("../data/users.json", 'utf-8');
-        let users = JSON.parse(data);
-        users.push(this);
-        let json = JSON.stringify(users);
-        fs.writeFileSync("../data/users.json", json);
-    }
-}
+const UserSchema  = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true
+    },
+    login: {
+    type: String,
+    required : true,
+    },
+    password: {
+        type: String,
+        required: true
+    },
+});
+const User = mongoose.model('User', UserSchema);
+
 
 module.exports = {
     User,

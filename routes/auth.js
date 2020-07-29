@@ -8,13 +8,10 @@ router.get('/', (req, res)=>{
 });
 
 router.post('/', (req, res, next)=>{
-    let login = req.body.login;
-    let password = req.body.password;
-    if (checkLogin_pass(login, password)) {
-        res.redirect('main.ejs');
-    } else {
-        res.redirect('back');
-    }
+    passport.authenticate('local',{
+        successRedirect : '/main',
+        failureRedirect : '/login'
+        })(req,res,next);
 });
 
 module.exports = router;

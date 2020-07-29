@@ -4,17 +4,29 @@ const app = express();
 const http = require("http").createServer(app);
 const io = require('socket.io')(http);
 const mongoose = require('mongoose');
-app.set('view engine', 'ejs');
-app.use(express.urlencoded({extended: false}));
-
-const path = require('path');
-const session = require('express-session');
+const passport = require('passport');
 const fs = require('fs');
 const {
     User,
     joinUser,
     removeUser
 } = require('./models/user');
+
+app.set('view engine', 'ejs');
+app.use(express.urlencoded({extended: false}));
+
+const session = require('express-session');
+
+require("./config/passport")(passport);
+
+app.use(session({
+    secret : 'secret',
+    resave : true,
+    saveUninitialized : true
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use('/', require('./routes/auth'));
 app.use('/main', require('./routes/chat'));

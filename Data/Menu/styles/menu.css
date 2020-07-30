@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background: #e7f0f5 url("../media/background.png");
+    background-size: cover;
+}
+
+.toolbar {
+    width: 100%;
+    height: 75px;
+    background-color: #77accc;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.logo-toolbar {
+    width: 20%;
+    height: 75px;
+    position: absolute;
+    left: 10%;
+}
+
+.logo-toolbar:hover {
+    background-color: yellowgreen;
+    border: solid 2px black;
+}
+
+.logo-toolbar:hover .square-logo {
+    background-color: yellowgreen;
+    background-image: url("../media/logo-blue.png");
+}
+
+.logo-toolbar:hover .header1 {
+    background-color: yellowgreen;
+}
+
+.square-logo {
+    margin-top: 3px;
+    margin-left: 3px;
+    height: 90%;
+    width: 22%;
+    position: absolute;
+    left: 4%;
+}
+
+.square-logo {
+    background-color: transparent;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("../media/logo.png");
+    /*border: solid 2px black;*/
+}
+
+.header1 {
+    border: solid 2px black;
+    height: 90%;
+    width: 60%;
+    position: absolute;
+    left: 33%;
+    top: 5%;
+}
+
+.header2 {
+    border: solid 2px black;
+    height: 90%;
+    width: 90%;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+
+.about {
+    position: absolute;
+    width: 5%;
+    height: 75px;
+    left: 70%;
+}
+
+.about:hover {
+    background-color: yellowgreen;
+    border: solid 2px black;
+}
+
+.setting {
+    position: absolute;
+    width: 5%;
+    height: 75px;
+    left: 75%;
+}
+
+.setting:hover {
+    background-color: yellowgreen;
+    border: solid 2px black;
+}
+
+.logout {
+    position: absolute;
+    width: 10%;
+    height: 75px;
+    left: 80%;
+}
+
+.logout:hover {
+    background-color: yellowgreen;
+    border: solid 2px black;
+}
+
+.round-logo {
+    position: absolute;
+    left: 15%;
+    top: 15%;
+    height: 70%;
+    width: 70%;
+}
+
+.round-logo {
+    background-color: transparent;
+    text-align: -webkit-center;
+}
+
+.logo {
+    width: 100%;
+    height: 100%;
+}
+
+.main {
+    position: absolute;
+    width: 80%;
+    height: 625px;
+    left: 10%;
+    margin-top: 6px;
+}
+
+.main {
+    background-color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 4px;
+    border-width: 2px;
+}

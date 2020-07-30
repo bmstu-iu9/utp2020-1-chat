@@ -22,16 +22,13 @@ function removeUser(id) {
 
 const UserSchema  = new mongoose.Schema({
     name: {
-        type: String,
-        required: true
+        type: String
     },
     login: {
-    type: String,
-    required : true,
+        type: String
     },
     password: {
-        type: String,
-        required: true
+        type: String
     },
 });
 const User = mongoose.model('User', UserSchema);

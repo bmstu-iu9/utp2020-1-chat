@@ -19,6 +19,10 @@ const session = require('express-session');
 
 require("./config/passport")(passport);
 
+mongoose.connect('mongodb://localhost/test',{useNewUrlParser: true, useUnifiedTopology : true})
+.then(() => console.log('connected,,'))
+.catch((err)=> console.log(err));
+
 app.use(session({
     secret : 'secret',
     resave : true,

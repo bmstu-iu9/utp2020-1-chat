@@ -2,7 +2,12 @@ const express = require('express');
 const router = express.Router();
 const bodyParser = require ('body-parser');
 const urlencodedParser = bodyParser.urlencoded({extended: false});
-const User = require('../models/user');
+const mongoose = require('mongoose');
+const {
+    User,
+    joinUser,
+    removeUser
+} = require('../models/user');
 
 router.get('/', (req, res)=>{
     res.render("registration.ejs");

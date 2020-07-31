@@ -6,7 +6,7 @@ html {
 }
 
 body {
-    background: #e7f0f5 url("Media/back.png");
+    background: #e7f0f5 url("../Media/back.png");
     background-size: cover;
 }
 
@@ -71,7 +71,7 @@ p {
 
 .eye-closed {
     background-color: transparent;
-    background-image: url("Media/eye-closed.png");
+    background-image: url("../Media/eye-closed.png");
     background-repeat: no-repeat;
     background-size: cover;
     height: 20px;
@@ -82,7 +82,7 @@ p {
 
 .eye-opened {
     background-color: transparent;
-    background-image: url("Media/eye-opened.png");
+    background-image: url("../Media/eye-opened.png");
     background-repeat: no-repeat;
     background-size: cover;
     height: 20px;
@@ -191,7 +191,7 @@ p {
     border-style: solid;
     border-color: #597da3;
     background-color: #e7f0f5;
-    background-image: url("Media/div.png");
+    background-image: url("../Media/div.png");
     background-repeat: no-repeat;
     background-size: cover;
     border-width: 2px;

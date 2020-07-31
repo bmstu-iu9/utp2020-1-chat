@@ -3,6 +3,8 @@ const router = express.Router();
 const bodyParser = require ('body-parser');
 const urlencodedParser = bodyParser.urlencoded({extended: false});
 const mongoose = require('mongoose');
+const passport = require('passport');
+
 const {
     User,
     joinUser,
@@ -19,32 +21,37 @@ router.post('/', (req, res) =>{
     if(!name || !login || !password) {
         res.render("registration.ejs");
     }
-
-    if(password.length < 6 ) {
-        res.render("registration.ejs");
-    }
-
-    User.findOne({login : login}).exec((err,user)=>{
-        console.log(user);   
-        if(user) {
+    else {
+        if (password.length < 6) {
             res.render("registration.ejs");
-        } else {
-            const newUser = new User({
-                name : name,
-                login : login,
-                password : password
-            });
-            newUser.save(function(err){
-                if (err) {
-                    console.log(err);
-                    res.redirect("back");
-                }
-                else {
-                    res.redirect('/main');
+        }
+        else{
+            User.findOne({login : login}).exec((err,user)=>{
+                console.log(user);
+                if(user) {
+                    res.render("registration.ejs");
+                } else {
+                    const newUser = new User({
+                        name : name,
+                        login : login,
+                        password : password
+                    });
+                    newUser.save(function(err){
+                        if (err) {
+                            console.log(err);
+                            res.redirect("back");
+                        }
+                        else {
+                            passport.authenticate('local',{
+                                successRedirect : '/main',
+                                failureRedirect : '/login'
+                            })(req,res);
+                        }
+                    });
                 }
             });
         }
-    });
+    }
 });
 
 module.exports = router;

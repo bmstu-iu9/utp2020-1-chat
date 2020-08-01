@@ -8,16 +8,13 @@ html {
 body {
     background: #e7f0f5 url("Media/back.png");
     background-size: cover;
+	background-repeat: no-repeat;
 }
 
 p {
     margin-top: 0.5em;
     margin-bottom: 0.5em;
     font-family: "Comfortaa", cursive;
-}
-
-.input-text {
-    margin-bottom: 0.3em;
 }
 
 .login {
@@ -27,11 +24,53 @@ p {
     margin-left: 115px;
 }
 
+.login input {
+    font-size: 14px;
+    text-indent: 8px;
+    font-family: "Comfortaa", cursive;
+    color: #B2BECD;
+    outline: 0;
+    display: flex;
+}
+
+.login input {
+    background: transparent;
+    border-color: #597da3;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    box-shadow: rgba(113, 113, 113, 0.15) -5px -5px 11px;
+                rgba(0, 0, 0, 0.15) 5px 5px 11px;
+    height: 18px;
+    width: 160px;
+}
+
 .password {
     width: 350px;
     height: 50px;
     margin-top: 10px;
     margin-left: 115px;
+}
+
+.password input {
+    font-size: 14px;
+    text-indent: 8px;
+    font-family: "Comfortaa", cursive;
+    color: #B2BECD;
+    outline: 0;
+    display: flex;
+}
+
+.password input {
+    background: transparent;
+    border-color: #597da3;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    box-shadow: rgba(113, 113, 113, 0.15) -5px -5px 11px;
+                rgba(0, 0, 0, 0.15) 5px 5px 11px;
+    height: 18px;
+    width: 160px;
 }
 
 .name {
@@ -41,7 +80,7 @@ p {
     margin-left: 115px;
 }
 
-.input {
+.name input {
     font-size: 14px;
     text-indent: 8px;
     font-family: "Comfortaa", cursive;
@@ -50,7 +89,7 @@ p {
     display: flex;
 }
 
-.input {
+.name input {
     background: transparent;
     border-color: #597da3;
     border-style: solid;
@@ -74,9 +113,9 @@ p {
     background-image: url("Media/eye-closed.png");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 20px;
-    width: 20px;
-    margin-left: 167px;
+    height: 19px;
+    width: 19px;
+    margin-left: 166px;
     margin-top: -21px;
 }
 
@@ -85,16 +124,16 @@ p {
     background-image: url("Media/eye-opened.png");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 20px;
-    width: 20px;
-    margin-left: 167px;
+    height: 19px;
+    width: 19px;
+    margin-left: 166px;
     margin-top: -21px;
 }
 
 .error {
     position: absolute;
     width: 400px;
-    height: 298px;
+    height: 218px;
     left: 50%;
     margin-left: -200px;
     margin-top: 600px;
@@ -103,64 +142,94 @@ p {
 .error {
     border-style: solid;
     border-color: transparent;
-    background-color: transparent;
+    background-color: #e7f0f5;
     background-repeat: no-repeat;
     background-size: cover;
     border-width: 2px;
     border-radius: 5px;
 }
 
-.error-login {
+.error-log {
     position: absolute;
     width: 370px;
-    height: 65px;
+    height: 44px;
     left: 50%;
     margin-left: -187px;
-    margin-top: 12px;
+    margin-top: 9px;
 }
 
-.error-login {
+.error-log-closed {
     border-style: solid;
     border-color: transparent;
-    background-color: transparent;
+    background-color: #e7f0f5;
     background-repeat: no-repeat;
     background-size: cover;
     border-width: 2px;
     border-radius: 5px;
 }
 
-.error-password {
-    position: absolute;
-    width: 370px;
-    height: 137px;
-    left: 50%;
-    margin-left: -187px;
-    margin-top: 79px;
+.error-log-opened {
+    border-style: solid;
+    border-color: #fa0522;
+    background-color: #e7f0f5;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-width: 2px;
+    border-radius: 5px;
 }
 
-.error-password {
+.error-pas {
+    position: absolute;
+    width: 370px;
+    height: 96px;
+    left: 50%;
+    margin-left: -187px;
+    margin-top: 66px;
+}
+
+.error-pas-closed {
     border-style: solid;
     border-color: transparent;
-    background-color: transparent;
+    background-color: #e7f0f5;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-width: 2px;
+    border-radius: 5px;
+}
+
+.error-pas-opened {
+    border-style: solid;
+    border-color: #fa0522;
+    background-color: #e7f0f5;
     background-repeat: no-repeat;
     background-size: cover;
     border-width: 2px;
     border-radius: 5px;
 }
  
-.error-name {
+.error-na{
     position: absolute;
     width: 370px;
-    height: 65px;
+    height: 37px;
     left: 50%;
     margin-left: -187px;
-    margin-top: 218px;
+    margin-top: 173px;
 }
 
-.error-name {
+.error-na-closed {
     border-style: solid;
     border-color: transparent;
-    background-color: transparent;
+    background-color: #e7f0f5;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-width: 2px;
+    border-radius: 5px;
+}
+
+.error-na-opened {
+    border-style: solid;
+    border-color: #fa0522;
+    background-color: #e7f0f5;
     background-repeat: no-repeat;
     background-size: cover;
     border-width: 2px;
@@ -203,6 +272,10 @@ p {
     height: 15px;
     margin-left: 135px;
     margin-top: 130px;
+}
+
+.input {
+    margin-bottom: 0.3em;
 }
 
 a {

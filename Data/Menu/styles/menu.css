@@ -180,11 +180,6 @@ p {
 .finder-square {
     width: 100%;
     height: 50px;
-    border-color: #77accc;
-    /*border-style: solid;*/
-    border-width: 2px;
-    margin-top: -2px;
-    margin-left: -2px;
 }
 
 .user-finder {
@@ -195,7 +190,6 @@ p {
     margin-top: 11px;
     margin-left: -4px;
     border-radius: 10px;
-    border-color: #77accc;
 }
 
 .user-finder {
@@ -210,6 +204,8 @@ p {
     background-repeat: no-repeat;
     background-size: 15px;
     background-position: 5px 5px;
+    border-color: #77accc;
+    border-style: solid;
 }
 
 .right-menu { 
@@ -226,12 +222,12 @@ p {
     height: 50px;
 }
 
-#ChatFinder { 
+#ChatFinder {
     position: absolute;
     height: 25px;
     width: 90%;
     left: 5%;
-    margin-top: 11px;
+    margin-top: 12px;
     margin-left: -2px;
     border: #77accc solid 2px;
     border-radius: 10px;

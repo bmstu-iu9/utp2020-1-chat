@@ -1,5 +1,6 @@
 ## Bulink — web-чат, позволяющий обмениваться сообщениями и медиафайлами
-![](/Media/LOGO.jpg)
+![BULink](./Media/LOGO.jpg)
+***
 ### Разработчики
 * Резепин Никита [teamlead, front-end] : [@not-Whale](https://github.com/not-Whale)
 * Жолтиков Михаил [back-end] : [@Klaus1901](https://github.com/Klaus1901)

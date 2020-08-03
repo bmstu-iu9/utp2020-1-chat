@@ -160,20 +160,67 @@ p {
     background-color: white;
     background-repeat: no-repeat;
     background-size: cover;
+<<<<<<< HEAD
+    border: solid 2px #77accc;
+=======
     border-style: solid;
+>>>>>>> 0c15bce43001beee800bde446cd737098bb582d7
     border-radius: 4px;
-    border-width: 2px;
-    border-color: #77accc;
 }
 
 .left-menu {
     position: absolute;
+<<<<<<< HEAD
+    border: solid 2px;
+=======
     border-style: solid;
     border-radius: 4px;
+>>>>>>> 0c15bce43001beee800bde446cd737098bb582d7
     border-width: 2px;
     border-color: #77accc;
-    width: 625px;
+    width: 30%;
     height: 625px;
     margin-top: -2px;
     margin-left: -2px;
+<<<<<<< HEAD
+ 
 }
+
+.right-menu { 
+    position: absolute;
+    width: 70%;
+    height: 625px;
+    left: 30%;
+    margin-top: -1px;
+    margin-left: -1px;
+
+
+}
+
+.RoomFinder {
+    width: 100%;
+    height: 50px;
+}
+
+#ChatFinder { 
+    position: absolute;
+    height: 25px;
+    width: 90%;
+    left: 5%;
+    margin-top: 11px;
+    margin-left: -2px;
+    border: #77accc solid 2px;
+    border-radius: 10px;
+    text-indent: 25px;
+    outline: none;
+    font-family: "Comfortaa", cursive;
+    background-image: url("../media/search.png");
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-position: 5px 5px;
+}
+ 
+
+=======
+}
+>>>>>>> 0c15bce43001beee800bde446cd737098bb582d7

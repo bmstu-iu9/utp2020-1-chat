@@ -160,29 +160,22 @@ p {
     background-color: white;
     background-repeat: no-repeat;
     background-size: cover;
-<<<<<<< HEAD
     border: solid 2px #77accc;
-=======
     border-style: solid;
->>>>>>> 0c15bce43001beee800bde446cd737098bb582d7
     border-radius: 4px;
 }
 
 .left-menu {
     position: absolute;
-<<<<<<< HEAD
     border: solid 2px;
-=======
     border-style: solid;
     border-radius: 4px;
->>>>>>> 0c15bce43001beee800bde446cd737098bb582d7
     border-width: 2px;
     border-color: #77accc;
     width: 30%;
     height: 625px;
     margin-top: -2px;
     margin-left: -2px;
-<<<<<<< HEAD
  
 }
 
@@ -219,8 +212,3 @@ p {
     background-size: 15px;
     background-position: 5px 5px;
 }
- 
-
-=======
-}
->>>>>>> 0c15bce43001beee800bde446cd737098bb582d7

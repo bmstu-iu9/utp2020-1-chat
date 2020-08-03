@@ -30,8 +30,6 @@ p {
     left: 10%;
 }
 
-
-
 .square-logo {
     margin-top: -3px;
     margin-left: 3px;
@@ -49,7 +47,8 @@ p {
 }
 
 .header1 {
-    border: solid 2px;
+    border-style: solid;
+    border-width: 2px;
     border-color: #ff69b4;
     border-radius: 30px;
     background: #ff69b4;
@@ -62,13 +61,15 @@ p {
 
 .header1:hover {
     background-color: #ff0093;
-    border: solid 2px;
+    border-style: solid;
+    border-width: 2px;
     border-color: #ff0093;
     border-radius: 30px;
 }
 
 .header2 {
-    border: solid 2px;
+    border-style: solid;
+    border-width: 2px;
     border-color: #ff69b4;
     border-radius: 30px;
     background: #ff69b4;
@@ -81,7 +82,8 @@ p {
 
 .header2:hover {
     background-color: #ff0093;
-    border: solid 2px;
+    border-style: solid;
+    border-width: 2px;
     border-color: #ff0093;
     border-radius: 30px;
 }
@@ -92,7 +94,8 @@ p {
     height: 70px;
     left: 70%;
     top: 1%;
-    border: solid 2px;
+    border-style: solid;
+    border-width: 2px;
     border-color: #ff69b4;
     border-radius: 40px;
     background: #ff69b4;
@@ -100,7 +103,8 @@ p {
 
 .about:hover {
     background-color: #ff0093;
-    border: solid 2px;
+    border-style: solid;
+    border-width: 2px;
     border-color: #ff0093;
     border-radius: 40px; 
 }
@@ -111,7 +115,8 @@ p {
     height: 70px;
     left: 75%;
     top: 1%;
-    border: solid 2px;
+    border-style: solid;
+    border-width: 2px;
     border-color: #ff69b4;
     border-radius: 40px;
     background: #ff69b4;
@@ -119,11 +124,11 @@ p {
 
 .setting:hover {
     background-color: #ff0093;
-    border: solid 2px;
+    border-style: solid;
+    border-width: 2px;
     border-color: #ff0093;
     border-radius: 40px; 
 }
-
 
 .round-logo {
     position: absolute;
@@ -155,7 +160,7 @@ p {
     background-color: white;
     background-repeat: no-repeat;
     background-size: cover;
-    border: solid 2px;
+    border-style: solid;
     border-radius: 4px;
     border-width: 2px;
     border-color: #77accc;
@@ -163,7 +168,7 @@ p {
 
 .left-menu {
     position: absolute;
-    border: solid 2px;
+    border-style: solid;
     border-radius: 4px;
     border-width: 2px;
     border-color: #77accc;
@@ -171,6 +176,4 @@ p {
     height: 625px;
     margin-top: -2px;
     margin-left: -2px;
- 
 }
-

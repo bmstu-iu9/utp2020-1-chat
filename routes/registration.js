@@ -8,7 +8,8 @@ const passport = require('passport');
 const {
     User,
     joinUser,
-    removeUser
+    removeUser,
+    rooms_users
 } = require('../models/user');
 
 router.get('/', (req, res)=>{
@@ -43,7 +44,7 @@ router.post('/', (req, res) =>{
                 else {
                     passport.authenticate('local',{
                         successRedirect : '/main',
-                        failureRedirect : '/login'
+                        failureRedirect : '/'
                     })(req,res);
                 }
             });

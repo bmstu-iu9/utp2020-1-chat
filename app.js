@@ -9,9 +9,12 @@ const fs = require('fs');
 const {
     User,
     joinUser,
-    removeUser
+    removeUser,
+    rooms_users
 } = require('./models/user');
+const Room = require('./models/rooms');
 
+app.use('/static', express.static(__dirname + '/public'));
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended: false}));
 
@@ -52,7 +55,7 @@ io.on('connection', (socket) => {
     });
 
     socket.on("disconnect", () => {
-        const user = removeUser(socket.id);
+        const user = removeUser(socket);
         console.log(user);
         if (user){
             console.log(user.username + ' has left');

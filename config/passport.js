@@ -2,7 +2,8 @@ const LocalStrategy = require('passport-local').Strategy;
 const {
     User,
     joinUser,
-    removeUser
+    removeUser,
+    rooms_users
 } = require('../models/user');
 
 module.exports = function(passport) {

@@ -6,7 +6,8 @@ html {
 }
 
 body {
-    background: #e7f0f5 url("../media/back.png");
+    background-color: #e7f0f5;
+    background-image: url("../media/back.png");
     background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -15,6 +16,11 @@ p {
     margin-top: 0.5em;
     margin-bottom: 0.5em;
     font-family: "Comfortaa", cursive;
+}
+
+.error-text {
+    margin-top: 5px;
+    margin-left: 5px;
 }
 
 .login {

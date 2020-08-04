@@ -6,7 +6,7 @@ html {
 }
 
 body {
-    background: #e7f0f5 url("Media/back.png");
+    background: #e7f0f5 url("../media/back.png");
     background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -110,7 +110,7 @@ p {
 
 .eye-closed {
     background-color: transparent;
-    background-image: url("Media/eye-closed.png");
+    background-image: url("../media/eye-closed.png");
     background-repeat: no-repeat;
     background-size: cover;
     height: 19px;
@@ -121,7 +121,7 @@ p {
 
 .eye-opened {
     background-color: transparent;
-    background-image: url("Media/eye-opened.png");
+    background-image: url("../media/eye-opened.png");
     background-repeat: no-repeat;
     background-size: cover;
     height: 19px;
@@ -240,7 +240,7 @@ p {
     position: absolute;
     width: 190px;
     height: 190px;
-    background-image: url("Media/logo1.png");
+    background-image: url("../media/logo1.png");
     background-repeat: no-repeat;
     background-size: cover;
     left: 50%;
@@ -260,7 +260,7 @@ p {
     border-style: solid;
     border-color: #597da3;
     background-color: #e7f0f5;
-    background-image: url("Media/div.png");
+    background-image: url("../media/div.png");
     background-repeat: no-repeat;
     background-size: cover;
     border-width: 2px;

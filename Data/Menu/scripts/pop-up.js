@@ -8,8 +8,7 @@ function popUp() {
         document.getElementById("settings").id = "active-settings";
         document.getElementById("logout").id = "active-logout";
     } else {
-        button = document.getElementById("active-pop-up");
-        button.id = "pop-up";
+        document.getElementById("active-pop-up").id = "pop-up";
         document.getElementById("active-about").id = "about";
         document.getElementById("active-settings").id = "settings";
         document.getElementById("active-logout").id = "logout";

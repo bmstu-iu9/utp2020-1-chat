@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <title>BUlink</title>
         <link rel="stylesheet" type="text/css" href="./styles/registration.css">
-        <link rel="icon" sizes="any" href="./media/logo.jpg">
+        <link rel="icon" sizes="any" href="./Media/logo.jpg">
     </head>
     <body>
         <form>
@@ -15,20 +15,20 @@
                         <p><font size="4"><b>Регистрация</b></font></p>
                     </div>
                     <div class="login">
-                        <p class="input"><font size="3">Логин</font></p>
-                        <input type="login" id="login" onKeyDown="checkLogin()"
-                               placeholder="Enter your login" required/>
+                        <p class="input-text"><font size="3">Логин</font></p>
+                        <input type="login" id="login" class="input" maxlength="16"
+                               autocomplete="off" placeholder="Enter your login" required/>
                     </div>
                     <div class="password">
-                        <p class="input"><font size="3">Пароль</font></p>
-                        <input type="password" id="password" onKeyDown="checkPassword()"
-                               placeholder="Enter password" required/>
-                        <div class="eye-closed" id="password-hider" onclick="togglePassword()"></div>
+                        <p class="input-text"><font size="3">Пароль</font></p>
+                        <input type="password" id="password" class="input" maxlength="16"
+                               autocomplete="new-password" placeholder="Enter password" required/>
+                        <div class="eye" id="password-closed" onclick="togglePassword()"></div>
                     </div>
                     <div class="name">
-                        <p class="input"><font size="3">Имя</font></p>
-                        <input type="text" id="name" onKeyDown="checkName()"
-                            placeholder="Enter name" required/>
+                        <p class="input-text"><font size="3">Имя</font></p>
+                        <input type="text" id="name" class="input" maxlength="16"
+                            autocomplete="off" placeholder="Enter name" required/>
                     </div>
                     <div class="register" onclick="registration()">
                         <a><span>Register</span></a>
@@ -38,13 +38,26 @@
             </div>
             <div class="error">
                 <div class="error-log-closed">
-                    <p id="error-login" style="display: none;"> <font size ="2" >Только символы латинского алфавита, цифр 0-9 и знаков _, -, длиной от 3 до 16 символов</p>
+                    <p id="error-login" class="error-text" style="display: none;">
+                        <font size ="2"><b>Логин</b> может содержать только символы латинского алфавита,
+                            цифры 0-9 и специальные знаки "_", "-", и иметь длину от 3 до 16 символов.
+                        </font>
+                    </p>
                 </div>
                 <div class="error-pas-closed">
-                    <p id="error-password" style="display: none;"> Только символы латинского алфавита, цифры 0-9 и знаков !, $, %, &, *, ., -, _, +, =, длиной от 8 до 16 символов, в которой обязательно должна присутствовать хотя бы одна заглавная и одна прописная латинские буквы, а также хотя бы одна цифра</p>
+                    <p id="error-password" class="error-text" style="display: none;">
+                        <font size="2"><b>Пароль</b> может содержать только символы латинского алфавита,
+                            цифры 0-9 и специальные знаки "!", "$", "%", "&", "*", ".", "-", "_", "+", "=",
+                            и иметь длину от 8 до 16 символов. В пароле <b>обязательно</b> должны
+                            присутствовать хотя бы одна заглавная и одна прописная латинские буквы, а также
+                            хотя бы одна цифра.</font>
+                    </p>
                 </div>
                 <div class="error-na-closed">
-                    <p id="error-name" style="display: none;">Только символы латинского алфавита, длиной от 3 до 24 символов без цифр и специальных знаков</p>
+                    <p id="error-name" class="error-text" style="display: none;">
+                        <font size="2"><b>Имя</b> может содержать только символы латинского алфавита и
+                            иметь длину от 3 до 16.</font>
+                    </p>
                 </div>
             </div>
         </form>

@@ -93,7 +93,7 @@ p {
     position: absolute;
     width: 50px;
     height: 50px;
-    left: 75%;
+    left: 77.8%;
     top: 2%;
     border-style: solid;
     border-width: 2px;
@@ -114,7 +114,7 @@ p {
     position: absolute;
     width: 50px;
     height: 50px;
-    left: 79%;
+    left: 82.2%;
     top: 2%;
     border-style: solid;
     border-width: 2px;
@@ -129,6 +129,27 @@ p {
     border-width: 2px;
     border-color: #ff0093;
     border-radius: 40px; 
+}
+
+.logout {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 86.6%;
+    top: 2%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #ff69b4;
+    border-radius: 40px;
+    background: #ff69b4;
+}
+
+.logout:hover {
+    background-color: #ff0093;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #ff0093;
+    border-radius: 40px;
 }
 
 .round-logo {

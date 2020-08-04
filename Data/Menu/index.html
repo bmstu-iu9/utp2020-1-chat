@@ -5,6 +5,7 @@
         <title>BULink</title>
         <link rel="stylesheet" type="text/css" href="./styles/menu.css">
         <link rel="icon" sizes="any" href="./media/logo.png">
+        <script src="./scripts/pop-up.js"></script>
     </head>
     <body>
         <div>
@@ -12,26 +13,40 @@
                 <div class="logo-toolbar">
                     <div class="square-logo"></div>
                 </div>
-                <div class="header1">
+                <div id="header1" class="header">
                     <p align="center">
                         <font color="#ffffff">Главная страница</font>
                     </p>
                 </div>
-                <div class="about">
+                <div id="about" class="round-button">
                     <div class="round-logo">
                         <img class="logo" alt="about" src="./media/about.png">
                     </div>
                 </div>
-                <div class="setting">
+                <div id="settings" class="round-button">
                     <div class="round-logo">
-                        <img class="logo" alt="about" src="./media/settings.png">
+                        <img class="logo" alt="setting" src="./media/settings.png">
                     </div>
                 </div>
-                <div class="header2">
-                    <p align="center">
-                        <font color="#ffffff">Log out</font>
-                    </p>
+
+<!--                <div id="header2" class="header" hidden>-->
+<!--                    <p align="center">-->
+<!--                        <font color="#ffffff">Log out</font>-->
+<!--                    </p>-->
+<!--                </div>-->
+
+                <div id="logout" class="round-button">
+                    <div class="round-logo">
+                        <img class="logo" alt="logout" src="./media/logout.png">
+                    </div>
                 </div>
+
+                <div id="pop-up" class="round-button" onclick="popUp()">
+                    <div class="round-logo">
+                        <img class="round-logo" alt="pop-up" src="./media/open-menu.png">
+                    </div>
+                </div>
+
                 </div>
         </div>
         <div class="main">

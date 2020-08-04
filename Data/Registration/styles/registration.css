@@ -30,53 +30,11 @@ p {
     margin-left: 115px;
 }
 
-.login input {
-    font-size: 14px;
-    text-indent: 8px;
-    font-family: "Comfortaa", cursive;
-    color: #B2BECD;
-    outline: 0;
-    display: flex;
-}
-
-.login input {
-    background: transparent;
-    border-color: #597da3;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 10px;
-    box-shadow: rgba(113, 113, 113, 0.15) -5px -5px 11px;
-                rgba(0, 0, 0, 0.15) 5px 5px 11px;
-    height: 18px;
-    width: 160px;
-}
-
 .password {
     width: 350px;
     height: 50px;
     margin-top: 10px;
     margin-left: 115px;
-}
-
-.password input {
-    font-size: 14px;
-    text-indent: 8px;
-    font-family: "Comfortaa", cursive;
-    color: #B2BECD;
-    outline: 0;
-    display: flex;
-}
-
-.password input {
-    background: transparent;
-    border-color: #597da3;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 10px;
-    box-shadow: rgba(113, 113, 113, 0.15) -5px -5px 11px;
-                rgba(0, 0, 0, 0.15) 5px 5px 11px;
-    height: 18px;
-    width: 160px;
 }
 
 .name {
@@ -86,7 +44,7 @@ p {
     margin-left: 115px;
 }
 
-.name input {
+.input {
     font-size: 14px;
     text-indent: 8px;
     font-family: "Comfortaa", cursive;
@@ -95,7 +53,7 @@ p {
     display: flex;
 }
 
-.name input {
+.input {
     background: transparent;
     border-color: #597da3;
     border-style: solid;
@@ -114,26 +72,25 @@ p {
     margin-left: 152px;
 }
 
-.eye-closed {
-    background-color: transparent;
-    background-image: url("../media/eye-closed.png");
-    background-repeat: no-repeat;
-    background-size: cover;
+.eye {
     height: 19px;
     width: 19px;
-    margin-left: 166px;
+    margin-left: 140px;
     margin-top: -21px;
 }
 
-.eye-opened {
-    background-color: transparent;
+#password-opened {
     background-image: url("../media/eye-opened.png");
+    background-color: transparent;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 19px;
-    width: 19px;
-    margin-left: 166px;
-    margin-top: -21px;
+}
+
+#password-closed {
+    background-image: url("../media/eye-closed.png");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .error {
@@ -213,7 +170,7 @@ p {
     border-radius: 5px;
 }
  
-.error-na{
+.error-na {
     position: absolute;
     width: 370px;
     height: 37px;
@@ -280,7 +237,7 @@ p {
     margin-top: 130px;
 }
 
-.input {
+.input-text {
     margin-bottom: 0.3em;
 }
 

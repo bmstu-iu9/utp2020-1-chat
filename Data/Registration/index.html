@@ -15,19 +15,19 @@
                         <p><font size="4"><b>Регистрация</b></font></p>
                     </div>
                     <div class="login">
-                        <p class="input"><font size="3">Логин</font></p>
-                        <input type="login" id="login" onKeyDown="checkLogin()"
+                        <p class="input-text"><font size="3">Логин</font></p>
+                        <input type="login" id="login" class="input" maxlength="16"
                                autocomplete="off" placeholder="Enter your login" required/>
                     </div>
                     <div class="password">
-                        <p class="input"><font size="3">Пароль</font></p>
-                        <input type="password" id="password" onKeyDown="checkPassword()"
+                        <p class="input-text"><font size="3">Пароль</font></p>
+                        <input type="password" id="password" class="input" maxlength="16"
                                autocomplete="new-password" placeholder="Enter password" required/>
-                        <div class="eye-closed" id="password-hider" onclick="togglePassword()"></div>
+                        <div class="eye" id="password-closed" onclick="togglePassword()"></div>
                     </div>
                     <div class="name">
-                        <p class="input"><font size="3">Имя</font></p>
-                        <input type="text" id="name" onKeyDown="checkName()"
+                        <p class="input-text"><font size="3">Имя</font></p>
+                        <input type="text" id="name" class="input" maxlength="16"
                             autocomplete="off" placeholder="Enter name" required/>
                     </div>
                     <div class="register" onclick="registration()">
@@ -40,7 +40,8 @@
                 <div class="error-log-closed">
                     <p id="error-login" class="error-text" style="display: none;">
                         <font size ="2"><b>Логин</b> может содержать только символы латинского алфавита,
-                            цифры 0-9 и специальные знаки "_", "-", и иметь длину от 3 до 16 символов.</font>
+                            цифры 0-9 и специальные знаки "_", "-", и иметь длину от 3 до 16 символов.
+                        </font>
                     </p>
                 </div>
                 <div class="error-pas-closed">
@@ -55,7 +56,7 @@
                 <div class="error-na-closed">
                     <p id="error-name" class="error-text" style="display: none;">
                         <font size="2"><b>Имя</b> может содержать только символы латинского алфавита и
-                            иметь длину от 3 до 24.</font>
+                            иметь длину от 3 до 16.</font>
                     </p>
                 </div>
             </div>

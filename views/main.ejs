@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Главная</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+<div id="room-container">
+    <% rooms.forEach(room => { %>
+        <div><%= room%></div>
+        <a href="/main/<%= room %>">Join</a>
+    <% }) %>
+</div>
+<h1>Введите данные</h1>
+<form action="/main" method="post">
+    <label>Комната</label><br>
+    <input type="text" name="room" /><br><br>
+    <input type="submit" value="Отправить" />
+</form>
+</body>
+</html>

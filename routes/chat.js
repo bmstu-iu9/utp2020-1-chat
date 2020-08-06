@@ -10,6 +10,7 @@ const {
     removeUser,
     rooms_users
 } = require('../models/user');
+const Message = require('../models/messages');
 
 let rooms = [];
 
@@ -42,10 +43,17 @@ router.post('/', (req, res)=>{
 });
 
 router.get('/:chat', ensureAuthenticated, (req, res)=>{
+    let messages = [];
+    Message.find({roomName: req.params.chat}, function (err, docs) {
+        if (err) return console.log(err);
+        for (let i = 0;i < docs.length; i++){
+            messages.push(docs[i].name);
+        }
+    });
     Room.findOne({name : req.params.chat}).exec((err,room)=> {
         if (room) {
-            res.render("chat.ejs", {roomname: req.params.chat, user: req.user, roomusers: rooms_users});
-            console.log("users in room:")
+            res.render("chat.ejs", {roomname: req.params.chat, user: req.user, roomusers: rooms_users, data_messages: messages});
+            console.log("users in room:");
             console.log(rooms_users);
         } else {
             res.redirect("back");

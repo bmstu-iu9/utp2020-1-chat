@@ -13,6 +13,7 @@ const {
     rooms_users
 } = require('./models/user');
 const Room = require('./models/rooms');
+const Message = require('./models/messages');
 
 app.use('/static', express.static(__dirname + '/public'));
 app.set('view engine', 'ejs');
@@ -51,6 +52,13 @@ io.on('connection', (socket) => {
     });
 
     socket.on("chat message", (data) => {
+        const message = new Message({
+            username : data.user,
+            login : data.login,
+            roomName: data.room,
+            text: data.value,
+        });
+        message.save();
         io.to(data.room).emit("chat message", {data:data, id: socket.id});
     });
 

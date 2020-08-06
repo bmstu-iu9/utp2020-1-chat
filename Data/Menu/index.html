@@ -6,6 +6,7 @@
         <link rel="stylesheet" type="text/css" href="./styles/menu.css">
         <link rel="icon" sizes="any" href="./media/logo.png">
         <script src="./scripts/pop-up.js"></script>
+        <script src="./scripts/users.js"></script>
     </head>
     <body>
         <div>
@@ -18,7 +19,7 @@
                         <font color="#ffffff">Главная страница</font>
                     </p>
                 </div>
-                <div id="about" class="round-button">
+                <div id="about" class="round-button" onclick="addUser()">
                     <div class="round-logo">
                         <img class="logo" alt="about" src="./media/about.png">
                     </div>
@@ -55,18 +56,8 @@
                     <input type="text" class="user-finder" id="user-finder" onkeydown="findUser()"
                            placeholder="Search for users" title="Type user's login">
                 </div>
-                <div class="users-list">
-                    <div class="user">
-                        <div class="avatar">
-                            <img class="image" src="./media/avatars/001-woman-8.png">
-                        </div>
-                    </div>
-                    <div class="user">
-
-                    </div>
-                    <div class="user">
-
-                    </div>
+                <div id="users-list" class="users-list">
+<!--                    тут будут юзеры-->
                 </div>
             </div>
             <div class="right-menu">

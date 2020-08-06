@@ -246,23 +246,25 @@ p {
 }
 
 .avatar {
-    position: absolute;
     width: 30px;
     height: 30px;
-    left: 10px;
-    top: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
     border-radius: 15px;
     border-style: solid;
     border-color: black;
     border-width: 1px;
+    display: inline-block;
 }
 
 .image {
-    position: absolute;
-    left: 10%;
-    top: 10%;
+    margin-left: 10%;
+    margin-top: 10%;
     width: 80%;
     height: 80%;
+}
+.name {
+    display: inline-block;
 }
 
 .user:hover {

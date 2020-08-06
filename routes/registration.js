@@ -4,6 +4,7 @@ const bodyParser = require ('body-parser');
 const urlencodedParser = bodyParser.urlencoded({extended: false});
 const mongoose = require('mongoose');
 const passport = require('passport');
+const bcryptjs = require('bcryptjs');
 
 const {
     User,
@@ -18,7 +19,7 @@ router.get('/', (req, res)=>{
 
 router.post('/', (req, res) =>{
     const {name, login, password} = req.body;
-    console.log(' Name ' + name+ ' login :' + login+ ' pass:' + password);
+    console.log('The registration of user with ' + 'Name: ' + name + 'login: ' + login+ 'pass: ' + password);
     if(!name || !login || !password) {
         return res.render("registration.ejs");
     }
@@ -31,10 +32,11 @@ router.post('/', (req, res) =>{
         if(user) {
             return res.render("registration.ejs");
         } else {
+            var salt = bcryptjs.genSaltSync(10);
             const newUser = new User({
                 name : name,
                 login : login,
-                password : password
+                password : bcryptjs.hashSync(password, salt)
             });
             newUser.save(function(err){
                 if (err) {

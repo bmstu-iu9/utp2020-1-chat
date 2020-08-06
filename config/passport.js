@@ -1,3 +1,4 @@
+const bcryptjs = require('bcryptjs');
 const LocalStrategy = require('passport-local').Strategy;
 const {
     User,
@@ -16,11 +17,15 @@ module.exports = function(passport) {
                      return done(null,false);
                  }
                  
-                 if (password == user.password) {
-                     return done(null, user);
-                 } else {
-                     return done(null, false);
-                 }
+                 bcryptjs.compare(password, user.password, (err, isMatch)=>{
+                    if(err) throw err;
+
+                    if(isMatch) {
+                        return done(null,user);
+                    } else {
+                        return done(null,false);
+                    }
+                 })
                 })
                 .catch((err)=> {console.log(err)})
         })

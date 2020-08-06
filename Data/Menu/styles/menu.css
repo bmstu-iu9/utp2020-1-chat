@@ -245,6 +245,18 @@ p {
     margin-left: -2px;
 }
 
+.avatar {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 10px;
+    top: 10px;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+}
+
 .user:hover {
     background-color: #f1f1f1;
 }

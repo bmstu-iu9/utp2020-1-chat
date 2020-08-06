@@ -241,11 +241,14 @@ p {
 .user {
     width: 100%;
     height: 50px;
-    border: black solid 2px;
-    margin-left: -2px;
+}
+
+.user:hover {
+    background-color: #f1f1f1;
 }
 
 .avatar {
+    position: absolute;
     width: 30px;
     height: 30px;
     margin-left: 10px;
@@ -254,21 +257,26 @@ p {
     border-style: solid;
     border-color: black;
     border-width: 1px;
-    display: inline-block;
 }
 
 .image {
-    margin-left: 10%;
+    margin-left: 12%;
     margin-top: 10%;
-    width: 80%;
-    height: 80%;
-}
-.name {
-    display: inline-block;
+    width: 76%;
+    height: 76%;
 }
 
-.user:hover {
-    background-color: #f1f1f1;
+.name {
+    position: absolute;
+    width: auto;
+    margin-left: 50px;
+    margin-top: 18px;
+}
+
+.letter {
+    margin-top: 7px;
+    text-align: center;
+    font-weight: bold;
 }
 
 .right-menu { 

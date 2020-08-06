@@ -98,15 +98,6 @@ p {
     border-radius: 40px;
 }
 
-#active-pop-up {
-    left: 86.6%;
-    background-color: #ff0093;
-    border-style: solid;
-    border-width: 2px;
-    border-color: #ff0093;
-    border-radius: 40px;
-}
-
 #about {
     left: 86.6%;
     transition: 0.6s;
@@ -139,6 +130,14 @@ p {
 
 #active-pop-up {
     left: 86.6%;
+}
+
+#active-pop-up {
+    background-color: #ff0093;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #ff0093;
+    border-radius: 40px;
 }
 
 .round-logo {

@@ -232,19 +232,26 @@ p {
 
 #ChatFinder {
     position: absolute;
-    height: 25px;
-    width: 94%;
     left: 3%;
+    width: 94%;
+    height: 25px;
     margin-top: 11px;
     margin-left: -3px;
-    border: #77accc solid 2px;
     border-radius: 10px;
-    text-indent: 25px;
+
+}
+
+#ChatFinder {
     outline: none;
+    box-shadow: none;
+}
+
+#ChatFinder {
+    text-indent: 25px;
     font-family: "Comfortaa", cursive;
     background-image: url("../media/search.png");
     background-repeat: no-repeat;
     background-size: 15px;
     background-position: 5px 5px;
-    box-shadow: none;
+    border: #77accc solid 2px;
 }

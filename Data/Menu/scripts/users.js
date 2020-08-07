@@ -8,23 +8,6 @@ let names = [
     "Michael",
 ]
 
-let colors = [
-    "#FFC0CB",
-    "#FFA07A",
-    "#FFE4B5",
-    "#FFDAB9",
-    "#EEE8AA",
-    "#F0E68C",
-    "#E6E6FA",
-    "#DEB887",
-    "#FFDEAD",
-    "#98FB98",
-    "#20B2AA",
-    "#AFEEEE",
-    "#B0E0E6",
-    "#A9A9A9",
-]
-
 function findUser() {
     let usersList = document.getElementById("users-list");
     let input = document.getElementById("user-finder");
@@ -57,14 +40,7 @@ function addUser() {
     name.className = "name";
     name.innerText = generateName();
 
-    let letter = generateLetter(name.innerText);
-
-    if (Math.random() > 0.5) {
-        avatar.appendChild(img);
-    } else {
-        avatar.style.background = colors[Math.floor(Math.random()*colors.length)];
-        avatar.appendChild(letter);
-    }
+    avatar.appendChild(img);
     user.appendChild(avatar);
     user.appendChild(name);
     usersList.appendChild(user);
@@ -76,11 +52,4 @@ function generateAvatar() {
 
 function generateName() {
     return names[Math.floor(Math.random()*names.length)];
-}
-
-function generateLetter(name) {
-    let letter = document.createElement("p");
-    letter.className = "letter";
-    letter.innerText = name[0];
-    return letter;
 }

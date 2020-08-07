@@ -49,7 +49,7 @@
         <div class="main">
             <div class="left-menu">
                 <div class="finder-square">
-                    <input type="text" class="user-finder" id="user-finder" onkeydown="findUser()"
+                    <input type="text" class="user-finder" id="user-finder" oninput="findUser()"
                            placeholder="Search for users" title="Type user's login">
                 </div>
                 <div id="users-list" class="users-list">
@@ -78,12 +78,11 @@
                            placeholder= "Add room" title= "Type room's name">
                 </div>
                  <div class="plus">
-                   <button id="plus">
-                   </button>                     
+                   <button id="plus"></button>
                 </div>
-                    <div class="dialog"> 
-                        <div class="RoomImage">
-                           
+                    <div class="dialog">
+                        <div class="room-image">
+                            <img class="image" src="./media/avatars/female/1.png">
                         </div>
                         <p class="MessageTime">
                             13:47                            

@@ -273,6 +273,18 @@ p {
     font-weight: bold;
 }
 
+.room-image {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 25px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+}
+
 .right-menu { 
     position: absolute;
     width: 70%;
@@ -337,8 +349,7 @@ p {
     background-image: url("../media/plus.png");
     background-size: 21px 21px;
     background-color: transparent;
-    border: solid 2px;
-    border-color: transparent;
+    border: solid 2px transparent;
     outline: none;
 }
 
@@ -362,20 +373,19 @@ p {
     position: absolute;
     width: auto;
     margin-left: 75px;
-    margin-top: -70px;
 }
 
 .LastMessage {
     position: absolute;
     width: auto;
     margin-left: 75px;
-    margin-top: -50px;
+    margin-top: 35px;
 }
 
 .MessageTime {
     position: absolute;
     left: 96%;
-    margin-top: -50px;
+    margin-top: 35px;
 }
 
 .RoomImage { 

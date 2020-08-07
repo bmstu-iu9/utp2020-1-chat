@@ -22,7 +22,19 @@ Room.find({}, function (err, docs) {
 });
 
 router.get('/', ensureAuthenticated, (req, res)=>{
-    res.render("main.ejs", {rooms: rooms});
+    let all_users = [];
+
+    User.find({}, function (err, docs) {
+        if (err) return console.log(err);
+        for (let i = 0;i < docs.length; i++){
+            let user = {
+                name: docs[i].name,
+                login: docs[i].login
+            }
+            all_users.push(user);
+        }
+    });
+    res.render("main.ejs", {rooms: rooms, all_users: all_users});
 });
 
 router.post('/', (req, res)=>{

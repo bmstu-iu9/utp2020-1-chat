@@ -47,14 +47,20 @@ router.get('/:chat', ensureAuthenticated, (req, res)=>{
     Message.find({roomName: req.params.chat}, function (err, docs) {
         if (err) return console.log(err);
         for (let i = 0;i < docs.length; i++){
-            messages.push(docs[i].name);
+            let message = {
+                roomName: docs[i].roomName,
+                text: docs[i].text,
+                date: docs[i].date,
+                login: docs[i].login,
+                username: docs[i].username
+            }
+            messages.push(message);
         }
     });
     Room.findOne({name : req.params.chat}).exec((err,room)=> {
         if (room) {
             res.render("chat.ejs", {roomname: req.params.chat, user: req.user, roomusers: rooms_users, data_messages: messages});
-            console.log("users in room:");
-            console.log(rooms_users);
+            console.log("users in room " + req.params.chat + ": " + rooms_users[req.params.chat]);
         } else {
             res.redirect("back");
         }

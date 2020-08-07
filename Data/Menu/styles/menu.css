@@ -384,17 +384,18 @@ p {
     position: absolute;
     width: auto;
     left: 75px;
+    margin-top: 18px;
 }
 
 .last-message {
     position: absolute;
     width: auto;
-    top: 22px;
+    margin-top: 40px;
     left: 75px;
 }
 
 .time {
     position: absolute;
     left: 95%;
-    top: 10px;
+    margin-top: 26px;
 }

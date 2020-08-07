@@ -26,7 +26,18 @@ let colors = [
 ]
 
 function findUser() {
-
+    let usersList = document.getElementById("users-list");
+    let input = document.getElementById("user-finder");
+    let filter = input.value.toUpperCase();
+    let users = usersList.getElementsByClassName("user");
+    for (let i = 0; i < users.length; i++) {
+        let p = users[i].getElementsByClassName("name")[0];
+        if (p.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            users[i].style.display = "";
+        } else {
+            users[i].style.display = "none";
+        }
+    }
 }
 
 function addUser() {

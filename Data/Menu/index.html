@@ -44,55 +44,57 @@
                         <img class="round-logo" alt="pop-up" src="./media/open-menu.png">
                     </div>
                 </div>
-                </div>
-        </div>
-        <div class="main">
-            <div class="left-menu">
-                <div class="finder-square">
-                    <input type="text" class="user-finder" id="user-finder" oninput="findUser()"
-                           placeholder="Search for users" title="Type user's login">
-                </div>
-                <div id="users-list" class="users-list">
-                    <div class="user">
-                        <div class="avatar">
-                            <img class="image" src="./media/avatars/male/1.png">
-                        </div>
-                        <p class="name">Name</p>
-                    </div>
-                    <div class="user">
-                        <div class="avatar">
-                            <p class="letter">N</p>
-                        </div>
-                       <p class="name">Name</p>
-                         </div>
-<!--                    тут будут юзеры-->
-                </div>
             </div>
-            <div class="right-menu">
-                <div class="RoomFinder">
-                    <input type="text" id="ChatFinder"
-                           placeholder= "Search for chat" title="Type chat's name">
-                </div>
-                <div class="AddRoom">
-                    <input type="text" id="AddRoom" 
-                           placeholder= "Add room" title= "Type room's name">
-                </div>
-                 <div class="plus">
-                   <button id="plus"></button>
-                </div>
-                    <div class="dialog">
-                        <div class="room-image">
-                            <img class="image" src="./media/avatars/female/1.png">
+            <div class="main">
+                <div class="left-menu">
+                    <div class="finder-square">
+                        <input type="text" class="user-finder" id="user-finder" oninput="findUser()"
+                               placeholder="Search for users" title="Type user's login">
+                    </div>
+                    <div id="users-list" class="users-list">
+                        <div class="user">
+                            <div class="avatar">
+                                <img class="image" src="./media/avatars/male/1.png">
+                            </div>
+                            <p class="name">Name</p>
                         </div>
-                        <p class="MessageTime">
-                            13:47                            
-                        </p>
-                        <p class="RoomName"> 
-                            Ярослав
-                        </p>   
-                        <p class="LastMessage">
-                            Жотников: Эх, вот бы пост запросик
-                        </p>               
+                        <div class="user">
+                            <div class="avatar">
+                                <img class="image" src="./media/avatars/male/2.png">
+                            </div>
+                           <p class="name">Name</p>
+                        </div>
+    <!--                    тут будут юзеры-->
+                    </div>
+                </div>
+                <div class="right-menu">
+                    <div class="finder-square">
+                        <input type="text" id="ChatFinder"
+                               placeholder= "Search for chat" title="Type chat's name">
+                    </div>
+                    <div class="finder-square" id="adder">
+                        <input type="text" id="AddRoom"
+                               placeholder= "Add new room" title= "Type room's name">
+                    </div>
+                    <button class="plus"></button>
+                    <div class="rooms-list">
+                        <div class="room">
+                            <div class="room-image">
+                                <p class="letter">C1</p>
+                            </div>
+                            <p class="room-name"><b>Chatroom1</b></p>
+                            <p class="last-message">Michael: I love POST</p>
+                            <p class="time">13:47</p>
+                        </div>
+                        <div class="room">
+                            <div class="room-image">
+                                <p class="letter">C1</p>
+                            </div>
+                            <p class="room-name"><b>Chatroom1</b></p>
+                            <p class="last-message">Michael: I love POST</p>
+                            <p class="time">13:47</p>
+                        </div>
+                        <!--                        тут будут комнаты-->
                     </div>
                 </div>
             </div>

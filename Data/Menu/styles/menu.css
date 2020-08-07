@@ -267,34 +267,17 @@ p {
     margin-top: 18px;
 }
 
-.letter {
-    margin-top: 7px;
-    text-align: center;
-    font-weight: bold;
-}
-
-.room-image {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    margin-top: 10px;
-    margin-left: 10px;
-    border-radius: 25px;
-    border-style: solid;
-    border-color: black;
-    border-width: 1px;
-}
-
 .right-menu { 
     position: absolute;
     width: 70%;
     height: 800px;
     left: 30%;
+    border-left: 2px solid #77accc;
 }
 
-.RoomFinder {
-    width: 100%;
-    height: 50px;
+#adder {
+    margin-top: -2px;
+    border-top: 2px solid #77accc;
 }
 
 #ChatFinder {
@@ -322,74 +305,96 @@ p {
     border: #77accc solid 2px;
 }
 
-.AddRoom {
+#AddRoom {
     position: absolute;
-    margin-top: -2px;
-    margin-left: -2px;
-    width:100%;
-    height: 40px;
-    border-top: 2px solid #77accc;
+    left: 6%;
+    width: 89%;
+    height: 25px;   
+    margin-top: 8px;
+    margin-left: -3px;
+    border-radius: 10px;
 }
 
 #AddRoom {
-    position: absolute;
-    width: 86%;
-    height: 25px;   
-    margin-top: 4px;
-    left: 6%;
+    text-indent: 8px;
     border: 2px solid #77accc;
-    border-radius: 10px;
-    text-indent: 10px;
+    font-family: "Comfortaa", cursive;
 }
 
-#plus { 
-    position: absolute;
-    height: 25px;
-    width: 25px;
-    background-image: url("../media/plus.png");
-    background-size: 21px 21px;
-    background-color: transparent;
-    border: solid 2px transparent;
+#AddRoom {
     outline: none;
+    box-shadow: none;
 }
 
 .plus {
-    margin-left: 94%;
-    margin-top: 4px;
+    position: absolute;
+    left: 92.5%;
+    margin-top: -40px;
+    height: 25px;
+    width: 25px;
+    background-image: url("../media/plus.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 21px 21px;
+    background-color: transparent;
+    border: hidden;
+    outline: none;
 }
 
-.dialog {
+.rooms-list {
     position: absolute;
+    top: 100px;
+    width: 100%;
+    height: 700px;
+    margin-top: -2px;
+    margin-left: -2px;
+    border-top: 2px solid #77accc;
+    border-left: 2px solid #77accc;
+}
+
+.room {
     width: 99.8%;
     height: 70px;
-    top: 90px;
-    margin-left: 2px;
 }
 
-.dialog:hover{ 
+.room:hover{
     background-color: #f1f1f1;
 }
-.RoomName {
+
+.room-image {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 25px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+}
+
+.letter {
+    margin-top: 13px;
+    text-align: center;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.room-name {
     position: absolute;
     width: auto;
-    margin-left: 75px;
+    left: 75px;
 }
 
-.LastMessage {
+.last-message {
     position: absolute;
     width: auto;
-    margin-left: 75px;
-    margin-top: 35px;
+    top: 22px;
+    left: 75px;
 }
 
-.MessageTime {
+.time {
     position: absolute;
-    left: 96%;
-    margin-top: 35px;
+    left: 95%;
+    top: 10px;
 }
-
-.RoomImage { 
-    width: 70px;
-    height: 70px;
-}
-

@@ -72,7 +72,8 @@ router.get('/:chat', ensureAuthenticated, (req, res)=>{
     Room.findOne({name : req.params.chat}).exec((err,room)=> {
         if (room) {
             res.render("chat.ejs", {roomname: req.params.chat, user: req.user, roomusers: rooms_users, data_messages: messages});
-            console.log("users in room " + req.params.chat + ": " + rooms_users[req.params.chat]);
+            console.log("users in room " + req.params.chat + ": ");
+            console.log(rooms_users[req.params.chat]);
         } else {
             res.redirect("back");
         }

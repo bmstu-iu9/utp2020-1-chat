@@ -55,7 +55,7 @@ function addRoom() {
 
     let lastMessage = document.createElement("p");
     lastMessage.className = "last-message";
-    lastMessage.innerText = "Everybody: I love scheme!";
+    lastMessage.innerText = "Everybody: *love scheme*";
 
     let time = document.createElement("p");
     time.className = "time";

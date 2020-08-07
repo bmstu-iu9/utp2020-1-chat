@@ -74,28 +74,27 @@
                                placeholder= "Search for chat" title="Type chat's name">
                     </div>
                     <div class="finder-square" id="adder">
-                        <input type="text" id="AddRoom"
+                        <input type="text" id="AddRoom" maxlength="50"
                                placeholder= "Add new room" title= "Type room's name">
                     </div>
-                    <button class="plus"></button>
+                    <button class="plus" onclick="addRoom()"></button>
                     <div id="rooms-list" class="rooms-list">
                         <div class="room">
                             <div class="room-image" style="background: #FFC0CB">
                                 <p class="letter">C1</p>
                             </div>
-                            <p class="room-name"><b>Chatroom1</b></p>
+                            <p class="room-name">Chatroom1</p>
                             <p class="last-message">Michael: I love POST</p>
                             <p class="time">13:47</p>
                         </div>
-                        <div class="room">
-                            <div class="room-image" style="background: #E6E6FA">
-                                <p class="letter">C1</p>
-                            </div>
-                            <p class="room-name"><b>Chatroom2</b></p>
-                            <p class="last-message">Nick: Hello World!</p>
-                            <p class="time">14:15</p>
-                        </div>
-                        <!--                        тут будут комнаты-->
+<!--                        <div class="room">-->
+<!--                            <div class="room-image" style="background: #E6E6FA">-->
+<!--                                <p class="letter">C1</p>-->
+<!--                            </div>-->
+<!--                            <p class="room-name">Chatroom2</p>-->
+<!--                            <p class="last-message">Nick: Hello World!</p>-->
+<!--                            <p class="time">14:15</p>-->
+<!--                        </div>-->
                     </div>
                 </div>
             </div>

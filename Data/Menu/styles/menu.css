@@ -385,6 +385,7 @@ p {
     width: auto;
     left: 75px;
     margin-top: 18px;
+    font-weight: bold;
 }
 
 .last-message {

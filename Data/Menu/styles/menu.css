@@ -17,6 +17,7 @@ p {
 
 ::-webkit-scrollbar {
     width: 0;
+    background: transparent;
 }
 
 .toolbar {
@@ -228,7 +229,7 @@ p {
 }
 
 .users-list {
-    overflow-y: hidden;
+    overflow-y: scroll;
 }
 
 .user {
@@ -334,8 +335,8 @@ p {
     width: 25px;
     background-image: url("../media/plus.png");
     background-size: 21px 21px;
-    background-color: #ffffff;
-    border: solid 2px #ffffff;
+    background-color: transparent;
+    border: solid 2px transparent;
     outline: none;
 }
 
@@ -357,7 +358,7 @@ p {
     height: 20px;
     margin-left: 70px;
     border: 2px solid blue;
-    font-family: "Comfortaa";
+    font-family: "Comfortaa", cursive;
     text-indent: 10px;
 }
 
@@ -374,7 +375,7 @@ p {
     margin-top: -50px;
     margin-left: 70px;
     border: 2px solid yellow;
-    font-family: "Comfortaa";
+    font-family: "Comfortaa", cursive;
     text-indent: 10px;
 }
 
@@ -383,7 +384,7 @@ p {
     width: 600px;
     margin-left: 70px;
     border: 2px solid orange;
-    font-family: "Comfortaa";
+    font-family: "Comfortaa", cursive;
     text-indent: 10px;
 }
 
@@ -393,6 +394,6 @@ p {
     margin-left: 94%;
     margin-top: -22px;
     border: 2px solid yellowgreen;
-    font-family: "Comfortaa";
+    font-family: "Comfortaa", cursive;
     text-indent: 10px;
 }

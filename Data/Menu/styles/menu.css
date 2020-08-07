@@ -228,7 +228,7 @@ p {
 }
 
 .users-list {
-    overflow-y: scroll;
+    overflow-y: hidden;
 }
 
 .user {
@@ -307,4 +307,92 @@ p {
     background-size: 15px;
     background-position: 5px 5px;
     border: #77accc solid 2px;
+}
+
+.AddRoom {
+    position: absolute;
+    margin-top: -2px;
+    margin-left: -2px;
+    width:100%;
+    height: 40px;
+    border-top: 2px solid #77accc;
+}
+
+#AddRoom {
+    position: absolute;
+    width: 86%;
+    height: 25px;   
+    margin-top: 4px;
+    left: 6%;
+    border: 2px solid #77accc;
+    border-radius: 10px;
+    text-indent: 10px;
+}
+
+#plus { 
+    height: 25px;
+    width: 25px;
+    background-image: url("../media/plus.png");
+    background-size: 21px 21px;
+    background-color: #ffffff;
+    border: solid 2px #ffffff;
+    outline: none;
+}
+
+.plus {
+    margin-left: 94%;
+    margin-top: 4px;
+}
+
+.dialog {
+    position: absolute;
+    width: 100%;
+    height: 70px;
+    top: 90px;
+    border: solid 2px red;
+}
+
+.RoomName {
+    width: 600px;
+    height: 20px;
+    margin-left: 70px;
+    border: 2px solid blue;
+    font-family: "Comfortaa";
+    text-indent: 10px;
+}
+
+.RoomImage { 
+    height: 68px;
+    width: 68px;
+    margin-top: -24px;
+    border: 2px solid black;
+}
+
+.LastMessage { 
+    height: 20px;
+    width: 600px;
+    margin-top: -50px;
+    margin-left: 70px;
+    border: 2px solid yellow;
+    font-family: "Comfortaa";
+    text-indent: 10px;
+}
+
+.LastName { 
+    height: 20px;
+    width: 600px;
+    margin-left: 70px;
+    border: 2px solid orange;
+    font-family: "Comfortaa";
+    text-indent: 10px;
+}
+
+.MessageTime { 
+    height: 20px;
+    width: 60px;
+    margin-left: 94%;
+    margin-top: -22px;
+    border: 2px solid yellowgreen;
+    font-family: "Comfortaa";
+    text-indent: 10px;
 }

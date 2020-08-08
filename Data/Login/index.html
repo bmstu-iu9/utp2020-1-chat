@@ -5,7 +5,8 @@
         <title>BUlink</title>
         <link rel="stylesheet" type="text/css" href="./styles/login.css">
         <link rel="icon" sizes="any" href="./media/logo.png">
-        <script src="./scripts/eye-opener.js"></script>
+        <script src="scripts/eye-opener.js"></script>
+        <script src="scripts/bunch.js"></script>
     </head>
     <body>
         <form>
@@ -17,23 +18,41 @@
                     </div>
                     <div class="login">
                         <p class="input-text"><font size="3">Логин</font></p>
-                        <input class="input" type="login" id="login"
-                               placeholder="Enter your login" required/>
+                        <input class="input" type="login" id="login" maxlength="16"
+                               placeholder="Enter your login" />
                     </div>
                     <div class="password">
                         <p class="input-text"><font size="3">Пароль</font></p>
-                        <input class="input" type="password" id="password"
-                               placeholder="Enter password" required/>
-                        <div class="eye-closed" id="password-hider" onclick="togglePassword()"></div>
+                        <input class="input" type="password" id="password" maxlength="16"
+                               placeholder="Enter password" />
+                        <div class="eye" id="password-closed" onclick="togglePassword()"></div>
                     </div>
-                    <div class="sign-in">
+                    <button id="sign-in">
                         <a><span>Sign in</span></a>
-                    </div>
-                    <div class="register">
-                        <a class="register-a"><span>Register</span></a>
-                    </div>
+                    </button>
+                    <button id="register" onclick="registration()">
+                        <a><span>Register</span></a>
+                    </button>  
+                </div>
+                <div class="error">
+                <div class="error-log-closed">
+                    <p id="error-login" class="error-text" style="display: none;">
+                        <font size ="2"><b>Логин</b> может содержать только символы латинского алфавита,
+                            цифры 0-9 и специальные знаки "_", "-", и иметь длину от 3 до 16 символов.
+                        </font>
+                    </p>
+                </div>
+                <div class="error-pas-closed">
+                    <p id="error-password" class="error-text" style="display: none;">
+                        <font size="2"><b>Пароль</b> может содержать только символы латинского алфавита,
+                            цифры 0-9 и специальные знаки "!", "$", "%", "&", "*", ".", "-", "_", "+", "=",
+                            и иметь длину от 8 до 16 символов. В пароле <b>обязательно</b> должны
+                            присутствовать хотя бы одна заглавная и одна прописная латинские буквы, а также
+                            хотя бы одна цифра.</font>
+                    </p>
                 </div>
             </div>
         </form>
+        <script src="scripts/validation.js"></script>
     </body>
 </html>

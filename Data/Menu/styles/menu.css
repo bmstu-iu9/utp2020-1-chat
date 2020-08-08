@@ -12,7 +12,6 @@ body {
 
 p {
     font-family: "Comfortaa", cursive;
-    user-select: none;
 }
 
 ::-webkit-scrollbar {
@@ -352,6 +351,10 @@ p {
     border-left: 2px solid #77accc;
 }
 
+.rooms-list {
+    overflow-y: scroll;
+}
+
 .room {
     width: 99.8%;
     height: 70px;
@@ -378,6 +381,7 @@ p {
     text-align: center;
     font-weight: bold;
     font-size: x-large;
+    user-select: none;
 }
 
 .room-name {
@@ -399,4 +403,5 @@ p {
     position: absolute;
     left: 95%;
     margin-top: 26px;
+    user-select: none;
 }

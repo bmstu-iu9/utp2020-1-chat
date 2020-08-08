@@ -59,12 +59,13 @@ p {
     height: 50px;
 }
 
-.header:hover {
+.header:hover, :focus {
     background-color: #ff0093;
     border-style: solid;
     border-width: 2px;
     border-color: #ff0093;
     border-radius: 30px;
+    cursor: pointer;
 }
 
 #header1 {
@@ -87,12 +88,13 @@ p {
     background: #ff69b4;
 }
 
-.round-button:hover {
+.round-button:hover, :focus {
     background-color: #ff0093;
     border-style: solid;
     border-width: 2px;
     border-color: #ff0093;
     border-radius: 40px;
+    cursor: pointer;
 }
 
 #about {

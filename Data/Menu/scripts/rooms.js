@@ -32,6 +32,14 @@ function findRoom() {
     }
 }
 
+function showAllRooms() {
+    let roomsList = document.getElementById("rooms-list");
+    let rooms = roomsList.getElementsByClassName("room");
+    for (let i = 0; i < rooms.length; i++) {
+        rooms[i].style.display = "";
+    }
+}
+
 function addRoom() {
     let roomsList = document.getElementById("rooms-list");
     let input = document.getElementById("AddRoom");
@@ -71,4 +79,9 @@ function addRoom() {
 
 function generateColor() {
     return colors[Math.floor(Math.random()*colors.length)];
+}
+
+function deleteRoomsList() {
+    document.getElementById("ChatFinder").value = "";
+    showAllRooms();
 }

@@ -52,6 +52,7 @@
                     <div class="finder-square">
                         <input type="text" class="user-finder" id="user-finder" oninput="findUser()"
                                placeholder="Search for users" title="Type user's login">
+                        <span id="delete-users-list" class="delete-list" onclick="deleteUsersList()">&times;</span>
                     </div>
                     <div id="users-list" class="users-list">
                         <div class="user">
@@ -73,6 +74,7 @@
                     <div class="finder-square">
                         <input type="text" id="ChatFinder" oninput="findRoom()"
                                placeholder= "Search for chat" title="Type chat's name">
+                        <span id="delete-rooms-list" class="delete-list" onclick="deleteRoomsList()">&times;</span>
                     </div>
                     <div class="finder-square" id="adder">
                         <input type="text" id="AddRoom" maxlength="50"

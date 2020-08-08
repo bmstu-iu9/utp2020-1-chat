@@ -23,6 +23,14 @@ function findUser() {
     }
 }
 
+function showAllUsers() {
+    let usersList = document.getElementById("users-list");
+    let users = usersList.getElementsByClassName("user");
+    for (let i = 0; i < users.length; i++) {
+        users[i].style.display = "";
+    }
+}
+
 function addUser() {
     let usersList = document.getElementById("users-list");
 
@@ -52,4 +60,9 @@ function generateAvatar() {
 
 function generateName() {
     return names[Math.floor(Math.random()*names.length)];
+}
+
+function deleteUsersList() {
+    document.getElementById("user-finder").value = "";
+    showAllUsers()
 }

@@ -215,6 +215,30 @@ p {
     border-style: solid;
 }
 
+.delete-list {
+    position: absolute;
+    top: 4px;
+    color: lightgray;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.delete-list:hover, :focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#delete-users-list {
+    position: absolute;
+    left: 90%;
+}
+
+#delete-rooms-list {
+    position: absolute;
+    left: 95%;
+}
+
 .users-list {
     position: absolute;
     top: 50px;

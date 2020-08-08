@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>BUlink</title>
-        <link rel="stylesheet" type="text/css" href="./styles/registration.css">
+        <link rel="stylesheet" type="text/css" href="styles/registration.css">
         <link rel="icon" sizes="any" href="./Media/logo.jpg">
     </head>
     <body>
@@ -30,10 +30,18 @@
                         <input type="text" id="name" class="input" maxlength="16"
                             autocomplete="off" placeholder="Enter name" required/>
                     </div>
+                    <p class="gend"><font size="3">Пол</font></p> 
+                    <div class="gender">
+                        <select id="gender">
+                            <option disabled>Выберите пол</option>
+                            <option value="Female">Женский</option>
+                            <option value="Male"> Мужской </opiton> 
+                       </select>
+                    </div>
                     <div class="register" onclick="registration()">
                         <a><span>Register</span></a>
                     </div>
-                  </div>   
+                  </div> 
                 </div>
             </div>
             <div class="error">
@@ -61,7 +69,7 @@
                 </div>
             </div>
         </form>
-        <script src="./scripts/eye-opener.js"></script>
-        <script src="./scripts/validation.js"></script>
+        <script src="scripts/eye-opener.js"></script>
+        <script src="scripts/validation.js"></script>
     </body>
 </html>

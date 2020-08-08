@@ -182,3 +182,81 @@ a:hover:before,
 a:hover:after {
     transform: translateX(0);
 }
+
+.error {
+    position: absolute;
+    width: 400px;
+    height: 218px;
+    left: 50%;
+    margin-left: -200px;
+    margin-top: 600px;
+}
+
+.error {
+    border-style: solid;
+    border-color: transparent;
+    background-color: #e7f0f5;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-width: 2px;
+    border-radius: 5px;
+}
+
+.error-log {
+    position: absolute;
+    width: 370px;
+    height: 44px;
+    left: 50%;
+    margin-left: -187px;
+    margin-top: 9px;
+}
+
+.error-log-closed {
+    border-style: solid;
+    border-color: transparent;
+    background-color: #e7f0f5;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-width: 2px;
+    border-radius: 5px;
+}
+
+.error-log-opened {
+    border-style: solid;
+    border-color: #fa0522;
+    background-color: #e7f0f5;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-width: 2px;
+    border-radius: 5px;
+}
+
+.error-pas {
+    position: absolute;
+    width: 370px;
+    height: 96px;
+    left: 50%;
+    margin-left: -187px;
+    margin-top: 66px;
+}
+
+.error-pas-closed {
+    border-style: solid;
+    border-color: transparent;
+    background-color: #e7f0f5;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-width: 2px;
+    border-radius: 5px;
+}
+
+.error-pas-opened {
+    border-style: solid;
+    border-color: #fa0522;
+    background-color: #e7f0f5;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-width: 2px;
+    border-radius: 5px;
+}
+ 

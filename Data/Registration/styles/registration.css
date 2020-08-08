@@ -7,9 +7,9 @@ html {
 
 body {
     background-color: #e7f0f5;
-    background-image: url("../media/back.png");
+    background-image: url("../Media/back.png");
     background-size: cover;
-	background-repeat: no-repeat;
+	  background-repeat: no-repeat;
 }
 
 p {
@@ -89,14 +89,14 @@ select {
 }
 
 #password-opened {
-    background-image: url("../media/eye-opened.png");
+    background-image: url("../Media/eye-opened.png");
     background-color: transparent;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 #password-closed {
-    background-image: url("../media/eye-closed.png");
+    background-image: url("../Media/eye-closed.png");
     background-color: transparent;
     background-repeat: no-repeat;
     background-size: cover;
@@ -212,7 +212,7 @@ select {
     position: absolute;
     width: 190px;
     height: 190px;
-    background-image: url("../media/logo1.png");
+    background-image: url("../Media/logo1.png");
     background-repeat: no-repeat;
     background-size: cover;
     left: 50%;
@@ -232,7 +232,7 @@ select {
     border-style: solid;
     border-color: #597da3;
     background-color: #e7f0f5;
-    background-image: url("../media/div.png");
+    background-image: url("../Media/div.png");
     background-repeat: no-repeat;
     background-size: cover;
     border-width: 2px;

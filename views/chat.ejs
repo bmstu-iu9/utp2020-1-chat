@@ -1,0 +1,148 @@
+<html>
+<link
+        href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+        rel="stylesheet"
+/>
+<style>
+    form {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+    form input {
+        width: 40%;
+        margin-left: 45%;
+    }
+    #submitButton {
+        width: 8%;
+    }
+    .time {
+        color: white;
+        font-family: "Ubuntu";
+        text-align: right;
+    }
+
+    .message {
+        display: inline;
+        font-size: medium;
+    }
+    #messages {
+        list-style-type: none;
+        overflow: auto;
+        border: solid #597da3 4px;
+        border-radius: 10px;
+        width: 55%;
+        height: 90%;
+        margin-left: 40%;
+    }
+    .me {
+        font-family: sans-serif, "Courier New", Courier, monospace;
+        text-align: right;
+    }
+    .you {
+        font-family: sans-serif, "Courier New", Courier, monospace;
+        text-align: left;
+    }
+    .yourDiv {
+        position: relative;
+        right: 4%;
+        width: 50%;
+        background-color: #597da3;
+        color: white;
+        border-radius: 10px;
+    }
+    .myDiv {
+        position: relative;
+        left: 50%;
+        width: 50%;
+        background-color: cornflowerblue;
+        color: white;
+        border-radius: 10px;
+    }
+</style>
+
+<body>
+
+    <form>
+        <input type="text" id="m" />
+        <input type="submit" id="submitButton" value="Send" onclick="focusmessage()"/>
+    </form>
+
+    <ul id="messages"></ul>
+
+</body>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    focusmessage = function getFocus() {
+        document.getElementById("m").focus();
+    }
+</script>
+<script>
+    let userName = "<%= user.name %>";
+    let room = "<%= roomname %>";
+    let ID = "";
+    var socket = io();
+
+    socket.emit("join room", {username : userName, roomname : room});
+
+
+    socket.on('send data',(data)=>{
+        ID = data.id;
+        console.log(" my ID:" + ID);
+    })
+
+
+    document
+        .getElementsByTagName("form")[0]
+        .addEventListener("submit", function (event) {
+            event.preventDefault();
+            socket.emit("chat message", {
+                value: document.getElementById("m").value,
+                user: userName,
+                room: room,
+                login: "<%= user.login %>"
+            });
+
+            document.getElementById("m").value = "";
+        });
+    socket.on("chat message", (data) => {
+        console.log(data.data.user + ": " + data.id);
+        displayMessage(data);
+    });
+
+    function displayMessage(data) {
+        let authorClass = "";
+        let divClass = "";
+
+        if (data.id === ID) {
+            console.log("This person has sent a message")
+            authorClass = "me";
+            divClass = "myDiv";
+        } else {
+            authorClass = "you";
+            divClass = "yourDiv";
+        }
+        const div = document.createElement("div");
+        div.className = divClass;
+        const li = document.createElement("li");
+        const p = document.createElement("p");
+        p.className = "time";
+        let now = new Date();
+        let hours = now.getHours();
+        let minutes = now.getMinutes();
+        p.innerText = "" + hours + ":" + minutes;
+        div.innerHTML =
+            '<p class="' + authorClass + '">' + data.data.user +
+
+            "</p>" + '<p class="message"> ' + data.data.value + "</p>" ;
+
+        div.appendChild(p);
+        li.appendChild(div);
+
+        document.getElementById("messages").appendChild(li);
+
+        li.scrollIntoView();
+    }
+</script>
+</html>

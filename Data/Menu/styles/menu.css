@@ -262,8 +262,9 @@ p {
     height: 50px;
 }
 
-.user:hover {
+.user:hover, :focus {
     background-color: #f1f1f1;
+    cursor: pointer;
 }
 
 .avatar {
@@ -386,8 +387,9 @@ p {
     height: 70px;
 }
 
-.room:hover{
+.room:hover, :focus {
     background-color: #f1f1f1;
+    cursor: pointer;
 }
 
 .room-image {

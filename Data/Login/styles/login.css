@@ -72,18 +72,24 @@ p {
     margin-left: 115px;
 }
 
-.sign-in {
-    width: 350px;
-    height: 15px;
-    margin-top: 17px;
+#sign-in {
+    width: 92px;
+    height: 25px;
+    margin-top: 15px;
     margin-left: 152px;
+    background-color: transparent;
+    border: 1px solid transparent;
+    outline: none;
 }
 
-.register {
-    width: 350px;
-    height: 50px;
-    margin-top: 17px;
+#register {
+    width: 92px;
+    height: 25px;
+    margin-top: 15px;
     margin-left: 152px;
+    background-color: transparent;
+    border: 1px solid transparent;
+    outline: none;
 }
 
 .input {
@@ -126,11 +132,6 @@ p {
     background-color: transparent;
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-.register-a {
-    width: 94px;
-    margin-left: -5px;
 }
 
 a {

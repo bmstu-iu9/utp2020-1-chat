@@ -8,6 +8,7 @@
         <script src="./scripts/pop-up.js"></script>
         <script src="./scripts/users.js"></script>
         <script src="./scripts/rooms.js"></script>
+        <script src="./scripts/toolbar.js"></script>
     </head>
     <body>
         <div>
@@ -22,13 +23,13 @@
                     </p>
                 </div>
 
-                <div id="about" class="round-button" onclick="addUser()">
+                <div id="about" class="round-button" onclick="about()">
                     <div class="round-logo">
                         <img class="logo" alt="about" src="./media/about.png">
                     </div>
                 </div>
 
-                <div id="settings" class="round-button">
+                <div id="settings" class="round-button" onclick="settings()">
                     <div class="round-logo">
                         <img class="logo" alt="setting" src="./media/settings.png">
                     </div>
@@ -92,9 +93,28 @@
                 </div>
             </div>
         </div>
-        <div class="modal">
-            <div class="about-modal">
-                <span class="close">&times;</span>
+        <div id="about-modal" class="modal">
+            <div class="body-modal">
+                <div class="top-strip">
+                    <p class="top-text">About</p>
+                </div>
+                <div class="bottom-strip">
+                    <p class="bottom-text">Coming soon...</p>
+                    <div class="loader"></div>
+                </div>
+                <span class="close" onclick="closeModal('about-modal')">&times;</span>
+            </div>
+        </div>
+        <div id="settings-modal" class="modal">
+            <div class="body-modal">
+                <div class="top-strip">
+                    <p class="top-text">Settings</p>
+                </div>
+                <div class="bottom-strip">
+                    <p class="bottom-text">Coming soon...</p>
+                    <div class="loader"></div>
+                </div>
+                <span class="close" onclick="closeModal('settings-modal')">&times;</span>
             </div>
         </div>
     </body>

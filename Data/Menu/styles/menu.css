@@ -405,3 +405,38 @@ p {
     margin-top: 26px;
     user-select: none;
 }
+
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.about-modal {
+    position: fixed;
+    width: 60%;
+    height: 50%;
+    left: 20%;
+    top: 20%;
+    background-color: white;
+    border: 1px solid #888;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}

@@ -85,3 +85,7 @@ function deleteRoomsList() {
     document.getElementById("ChatFinder").value = "";
     showAllRooms();
 }
+
+function deleteAddList() {
+    document.getElementById("AddRoom").value = "";
+}

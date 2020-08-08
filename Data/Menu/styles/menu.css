@@ -59,7 +59,7 @@ p {
     height: 50px;
 }
 
-.header:hover, :focus {
+.header:hover {
     background-color: #ff0093;
     border-style: solid;
     border-width: 2px;
@@ -88,7 +88,7 @@ p {
     background: #ff69b4;
 }
 
-.round-button:hover, :focus {
+.round-button:hover {
     background-color: #ff0093;
     border-style: solid;
     border-width: 2px;
@@ -210,6 +210,7 @@ p {
     text-indent: 25px;
     font-family: "Comfortaa", cursive;
     background-image: url("../media/search.png");
+    background-color: transparent;
     background-repeat: no-repeat;
     background-size: 15px;
     background-position: 5px 5px;
@@ -225,7 +226,7 @@ p {
     font-weight: bold;
 }
 
-.delete-list:hover, :focus {
+.delete-list:hover {
     color: black;
     text-decoration: none;
     cursor: pointer;
@@ -238,7 +239,13 @@ p {
 
 #delete-rooms-list {
     position: absolute;
-    left: 95%;
+    left: 94.9%;
+}
+
+#delete-add-list {
+    position: absolute;
+    left: 92.8%;
+    margin-top: 50px;
 }
 
 .users-list {
@@ -262,7 +269,7 @@ p {
     height: 50px;
 }
 
-.user:hover, :focus {
+.user:hover {
     background-color: #f1f1f1;
     cursor: pointer;
 }
@@ -324,6 +331,7 @@ p {
 #ChatFinder {
     text-indent: 25px;
     font-family: "Comfortaa", cursive;
+    background-color: transparent;
     background-image: url("../media/search.png");
     background-repeat: no-repeat;
     background-size: 15px;
@@ -342,9 +350,10 @@ p {
 }
 
 #AddRoom {
-    text-indent: 8px;
+    text-indent: 25px;
     border: 2px solid #77accc;
     font-family: "Comfortaa", cursive;
+    background-color: transparent;
 }
 
 #AddRoom {
@@ -354,17 +363,21 @@ p {
 
 .plus {
     position: absolute;
-    left: 92.5%;
+    left: 6%;
     margin-top: -40px;
     height: 25px;
     width: 25px;
-    background-image: url("../media/plus.png");
+    background-image: url("../media/plus-gray.png");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 21px 21px;
+    background-size: 16px 16px;
     background-color: transparent;
     border: hidden;
     outline: none;
+}
+
+.plus:hover {
+    cursor: pointer;
 }
 
 .rooms-list {
@@ -387,7 +400,7 @@ p {
     height: 70px;
 }
 
-.room:hover, :focus {
+.room:hover {
     background-color: #f1f1f1;
     cursor: pointer;
 }
@@ -464,8 +477,7 @@ p {
     font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.close:hover {
     color: black;
     text-decoration: none;
     cursor: pointer;

@@ -74,7 +74,7 @@ select {
 #register {
     width: 92px;
     height: 25px;
-    margin-top: 15px;
+    margin-top: 8px;
     margin-left: 152px;
     background-color: transparent;
     border: 1px solid transparent;
@@ -301,9 +301,8 @@ a:hover:after {
 }
 
 .gender {
-    width: 350px:
-    height: 50px:
-    margin-top: 20px;
+    width: 350px;
+    height: 26px;
     margin-left: 115px;
 }
 
@@ -319,7 +318,7 @@ a:hover:after {
     outline: none;
 }
 
-.gend {
+.gender-box {
     margin-left: 115px;
     margin-top: -1px;
 }

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Room = require('./rooms');
-
+ 
 let rooms_users = {};
 Room.find({}, function (err, docs) {
     if (err) return console.log(err);
@@ -8,7 +8,7 @@ Room.find({}, function (err, docs) {
         rooms_users[docs[i].name] = { users: {} };
     }
 });
-
+ 
 function joinUser(socketId, userName, roomName) {
     const user = {
         socketID :  socketId,
@@ -18,29 +18,28 @@ function joinUser(socketId, userName, roomName) {
     rooms_users[roomName].users[socketId] = userName;
     return user;
 }
-
+ 
 function removeUser(socket) {
-    getUserRooms(socket).forEach(room => {
-        //console.log(rooms_users[room].users[socket.id]);
-        //console.log("disconnected");
-        const user = {
-            socketID :  socket.id,
-            username : rooms_users[room].users[socket.id],
-            roomname : room,
-        }
+    room = getUserRooms(socket);
+    if (room !== "") {
+        let user = rooms_users[room].users[socket.id];
         delete rooms_users[room].users[socket.id];
+        console.log(user);
+        console.log("disconnected");
         return user;
-    });
+    } else {
+        return "";
+    }
 }
-
+ 
 //Массив - на случай, если сделаем возможность подлючаться к нескольким комнатам
 function getUserRooms(socket) {
-    return Object.entries(rooms_users).reduce((names, [name, room]) => {
-        if (room.users[socket.id] != null) names.push(name)
-        return names;
-    }, [])
+    return Object.entries(rooms_users).reduce((resname, [name, room]) => {
+        if (room.users[socket.id] != null) resname = name;
+        return resname;
+    }, "")
 }
-
+ 
 const UserSchema  = new mongoose.Schema({
     name: {
         type: String
@@ -53,8 +52,8 @@ const UserSchema  = new mongoose.Schema({
     },
 });
 const User = mongoose.model('User', UserSchema);
-
-
+ 
+ 
 module.exports = {
     User,
     joinUser,

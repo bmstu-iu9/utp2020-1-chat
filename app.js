@@ -14,43 +14,50 @@ const {
 } = require('./models/user');
 const Room = require('./models/rooms');
 const Message = require('./models/messages');
-
+ 
 app.use('/static', express.static(__dirname + '/public'));
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended: false}));
-
+ 
 const session = require('express-session');
-
+ 
 require("./config/passport")(passport);
-
+ 
 mongoose.connect('mongodb://localhost/test',{useNewUrlParser: true, useUnifiedTopology : true})
 .then(() => console.log('connected,,'))
 .catch((err)=> console.log(err));
-
+ 
 app.use(session({
     secret : 'secret',
     resave : true,
     saveUninitialized : true
 }));
-
+ 
 app.use(passport.initialize());
 app.use(passport.session());
-
+ 
 app.use('/', require('./routes/auth'));
 app.use('/main', require('./routes/chat'));
 app.use('/registration', require('./routes/registration'));
-
+ 
+let online_users = [];
+ 
 io.on('connection', (socket) => {
-    console.log('User connected');
-
+ 
+    socket.on("logged in", (data) =>{
+        online_users.push(data.user);
+        socket.emit("new online", {online_users: online_users});
+    });
+ 
     socket.on("join room", (data) =>{
+        console.log('User connected');
         console.log('in room');
         let newUser = joinUser(socket.id, data.username, data.roomname);
         socket.emit('send data', {id: socket.id, username: newUser.username, roomname: newUser.roomname});
         console.log(newUser);
         socket.join(newUser.roomname);
     });
-
+ 
     socket.on("chat message", (data) => {
         const message = new Message({
             username : data.user,
@@ -61,17 +68,28 @@ io.on('connection', (socket) => {
         message.save();
         io.to(data.room).emit("chat message", {data:data, id: socket.id});
     });
-
+ 
     socket.on("disconnect", () => {
-        const user = removeUser(socket);
-        console.log(user);
-        if (user){
-            console.log(user.username + ' has left');
+        let user = removeUser(socket);
+        if (user === "") {
+            socket.emit("user-disconnected", () => {
+                socket.on("user-disconnected", (data) => {
+                    user = data.user;
+                });
+            });
         }
-        console.log("disconnected");
+        let index;
+        for (let i = 0; i < online_users.length; i++) {
+            if (online_users[i] === user) {
+                index = i;
+                break;
+            }
+        }
+        online_users.splice(index, 1);
+        console.log(user + " disconnected");
     });
 });
-
+ 
 http.listen(3000, function () {
     console.log('Server is listening on port 3000');
 });

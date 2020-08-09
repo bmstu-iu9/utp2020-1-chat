@@ -11,19 +11,19 @@ const {
     rooms_users
 } = require('../models/user');
 const Message = require('../models/messages');
-
+ 
 let rooms = [];
-
+ 
 Room.find({}, function (err, docs) {
     if (err) return console.log(err);
     for (let i = 0;i < docs.length; i++){
         rooms.push(docs[i].name);
     }
 });
-
+ 
 router.get('/', ensureAuthenticated, (req, res)=>{
     let all_users = [];
-
+ 
     User.find({}, function (err, docs) {
         if (err) return console.log(err);
         for (let i = 0;i < docs.length; i++){
@@ -34,9 +34,9 @@ router.get('/', ensureAuthenticated, (req, res)=>{
             all_users.push(user);
         }
     });
-    res.render("main.ejs", {rooms: rooms, all_users: all_users});
+    res.render("main.ejs", {rooms: rooms, all_users: all_users, user: req.user});
 });
-
+ 
 router.post('/', (req, res)=>{
     const newroom = new Room({
         name : req.body.room,
@@ -53,7 +53,7 @@ router.post('/', (req, res)=>{
         }
     });
 });
-
+ 
 router.get('/:chat', ensureAuthenticated, (req, res)=>{
     let messages = [];
     Message.find({roomName: req.params.chat}, function (err, docs) {
@@ -79,10 +79,10 @@ router.get('/:chat', ensureAuthenticated, (req, res)=>{
         }
     });
 });
-
+ 
 router.get('/logout',ensureAuthenticated, (req, res)=>{
     req.logout();
     res.redirect('/');
 });
-
+ 
 module.exports = router;

@@ -16,6 +16,7 @@ const Room = require('./models/rooms');
 const Message = require('./models/messages');
  
 app.use('/static', express.static(__dirname + '/public'));
+app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended: false}));
  
@@ -74,10 +75,11 @@ io.on('connection', (socket) => {
     });
  
     socket.on("disconnect", () => {
-        let user = removeUser(socket);
+        removeUser(socket);
+        let user;
         socket.emit("user-disconnected", () => {
             socket.on("user-disconnected", (data) => {
-                let user = {
+                user = {
                     name: data.user,
                     login: data.login
                 }

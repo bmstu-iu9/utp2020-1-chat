@@ -24,8 +24,6 @@ function removeUser(socket) {
     if (room !== "") {
         let user = rooms_users[room].users[socket.id];
         delete rooms_users[room].users[socket.id];
-        console.log(user);
-        console.log("disconnected");
         return user;
     } else {
         return "";

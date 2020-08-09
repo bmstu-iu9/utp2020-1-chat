@@ -38,6 +38,19 @@ router.get('/', ensureAuthenticated, (req, res)=>{
 });
  
 router.post('/', (req, res)=>{
+    let all_users = [];
+
+    User.find({}, function (err, docs) {
+        if (err) return console.log(err);
+        for (let i = 0;i < docs.length; i++){
+            let user = {
+                name: docs[i].name,
+                login: docs[i].login
+            }
+            all_users.push(user);
+        }
+    });
+
     const newroom = new Room({
         name : req.body.room,
     });
@@ -49,7 +62,7 @@ router.post('/', (req, res)=>{
         else {
             rooms_users[req.body.room] = { users: {} };
             rooms.push(newroom.name);
-            res.render("main.ejs", {rooms: rooms});
+            res.render("main.ejs", {rooms: rooms, all_users: all_users, user: req.user});
         }
     });
 });

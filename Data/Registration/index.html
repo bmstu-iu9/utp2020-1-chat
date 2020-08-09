@@ -2,9 +2,9 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>BUlink</title>
+      <title>BUlink</title>
         <link rel="stylesheet" type="text/css" href="./styles/registration.css">
-        <link rel="icon" sizes="any" href="./Media/logo.jpg">
+        <link rel="icon" sizes="any" href="./media/logo.jpg">
     </head>
     <body>
         <form>
@@ -30,10 +30,18 @@
                         <input type="text" id="name" class="input" maxlength="16"
                             autocomplete="off" placeholder="Enter name" required/>
                     </div>
-                    <div class="register" onclick="registration()">
-                        <a><span>Register</span></a>
+                    <p class="gend"><font size="3">Пол</font></p> 
+                    <div class="gender">
+                        <select id="gender">
+                            <option disabled>Выберите пол</option>
+                            <option value="Female">Женский</option>
+                            <option value="Male"> Мужской </opiton> 
+                       </select>
                     </div>
-                  </div>   
+                    <button id="register">
+                        <a><span>Register</span></a>
+                    </button>             
+                  </div> 
                 </div>
             </div>
             <div class="error">

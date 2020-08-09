@@ -9,13 +9,19 @@ body {
     background-color: #e7f0f5;
     background-image: url("../media/back.png");
     background-size: cover;
-	background-repeat: no-repeat;
+	  background-repeat: no-repeat;
 }
 
 p {
     margin-top: 0.5em;
     margin-bottom: 0.5em;
     font-family: "Comfortaa", cursive;
+}
+
+select { 
+    color: #757575;
+    font-family: "Comfortaa", cursive;
+    text-indent: 8px;
 }
 
 .error-text {
@@ -26,21 +32,21 @@ p {
 .login {
     width: 350px;
     height: 50px;
-    margin-top: 25px;
+    margin-top: 20px;
     margin-left: 115px;
 }
 
 .password {
     width: 350px;
     height: 50px;
-    margin-top: 10px;
+    margin-top: -5px;
     margin-left: 115px;
 }
 
 .name {
     width: 350px;
     height: 50px;
-    margin-top: 5px;
+    margin-top: -10px;
     margin-left: 115px;
 }
 
@@ -61,15 +67,18 @@ p {
     border-radius: 10px;
     box-shadow: rgba(113, 113, 113, 0.15) -5px -5px 11px;
                 rgba(0, 0, 0, 0.15) 5px 5px 11px;
-    height: 18px;
+    height: 20px;
     width: 160px;
 }
 
-.register {
-    width: 350px;
-    height: 50px;
+#register {
+    width: 92px;
+    height: 25px;
     margin-top: 15px;
     margin-left: 152px;
+    background-color: transparent;
+    border: 1px solid transparent;
+    outline: none;
 }
 
 .eye {
@@ -234,7 +243,7 @@ p {
     width: 350px;
     height: 15px;
     margin-left: 135px;
-    margin-top: 130px;
+    margin-top: 110px;
 }
 
 .input-text {
@@ -291,4 +300,26 @@ a:hover:after {
     transform: translateX(0);
 }
 
+.gender {
+    width: 350px:
+    height: 50px:
+    margin-top: 20px;
+    margin-left: 115px;
+}
 
+#gender { 
+    width: 164px;
+    height: 26px;
+    margin-top: -3px;
+    background-color: transparent;
+    border: solid 1px #597da3;
+    border-radius: 20px;
+    box-shadow: rgba(113, 113, 113, 0.15) -5px -5px 11px;
+                rgba(0, 0, 0, 0.15) 5px 5px 11px;
+    outline: none;
+}
+
+.gend {
+    margin-left: 115px;
+    margin-top: -1px;
+}

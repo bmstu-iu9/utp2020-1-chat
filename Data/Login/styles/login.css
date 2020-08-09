@@ -72,18 +72,24 @@ p {
     margin-left: 115px;
 }
 
-.sign-in {
-    width: 350px;
-    height: 15px;
-    margin-top: 17px;
+#sign-in {
+    width: 92px;
+    height: 25px;
+    margin-top: 15px;
     margin-left: 152px;
+    background-color: transparent;
+    border: 1px solid transparent;
+    outline: none;
 }
 
-.register {
-    width: 350px;
-    height: 50px;
-    margin-top: 17px;
+#register {
+    width: 92px;
+    height: 25px;
+    margin-top: 15px;
     margin-left: 152px;
+    background-color: transparent;
+    border: 1px solid transparent;
+    outline: none;
 }
 
 .input {
@@ -126,11 +132,6 @@ p {
     background-color: transparent;
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-.register-a {
-    width: 94px;
-    margin-left: -5px;
 }
 
 a {
@@ -182,3 +183,81 @@ a:hover:before,
 a:hover:after {
     transform: translateX(0);
 }
+
+.error {
+    position: absolute;
+    width: 400px;
+    height: 218px;
+    left: 50%;
+    margin-left: -200px;
+    margin-top: 600px;
+}
+
+.error {
+    border-style: solid;
+    border-color: transparent;
+    background-color: #e7f0f5;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-width: 2px;
+    border-radius: 5px;
+}
+
+.error-log {
+    position: absolute;
+    width: 370px;
+    height: 44px;
+    left: 50%;
+    margin-left: -187px;
+    margin-top: 9px;
+}
+
+.error-log-closed {
+    border-style: solid;
+    border-color: transparent;
+    background-color: #e7f0f5;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-width: 2px;
+    border-radius: 5px;
+}
+
+.error-log-opened {
+    border-style: solid;
+    border-color: #fa0522;
+    background-color: #e7f0f5;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-width: 2px;
+    border-radius: 5px;
+}
+
+.error-pas {
+    position: absolute;
+    width: 370px;
+    height: 96px;
+    left: 50%;
+    margin-left: -187px;
+    margin-top: 66px;
+}
+
+.error-pas-closed {
+    border-style: solid;
+    border-color: transparent;
+    background-color: #e7f0f5;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-width: 2px;
+    border-radius: 5px;
+}
+
+.error-pas-opened {
+    border-style: solid;
+    border-color: #fa0522;
+    background-color: #e7f0f5;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-width: 2px;
+    border-radius: 5px;
+}
+ 

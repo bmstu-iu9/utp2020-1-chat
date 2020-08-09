@@ -261,3 +261,94 @@ p {
     border-color: #ff0093;
     border-radius: 10px;
 }
+
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.body-modal {
+    position: fixed;
+    width: 60%;
+    height: 60%;
+    left: 20%;
+    top: 15%;
+    background-color: white;
+    border: 2px solid #77accc;
+}
+
+.close {
+    position: absolute;
+    left: 97.7%;
+    top: -5px;
+    color: lightgray;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.top-strip {
+    position: absolute;
+    width: 100%;
+    height: 25%;
+    top: 0;
+    left: 0;
+    background: #77accc;
+}
+
+.top-text {
+    margin-left: 15px;
+    font-size: 60px;
+    color: white;
+    user-select: none;
+}
+
+.bottom-strip {
+    position: absolute;
+    width: 100%;
+    height: 75%;
+    top: 25%;
+    left: 0;
+    background: white;
+}
+
+.bottom-text {
+    margin-top: 20px;
+    margin-left: 15px;
+    font-size: 20px;
+    color: #77accc;
+    user-select: none;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #aaaaaa;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 2.5s linear infinite;
+}
+
+.loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -40px;
+    margin-top: -80px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

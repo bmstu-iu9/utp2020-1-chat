@@ -19,7 +19,7 @@
                         <font color="#ffffff">Главная страница</font>
                     </p>
                 </div>
-                <div id="about" class="round-button">
+                <div id="about" class="round-button" onclick="about()">
                     <div class="round-logo">
                         <img class="logo" alt="about" src="./media/about.png">
                     </div>
@@ -44,27 +44,39 @@
         </div>
         <div class="main">
             <div class="left-part">
-				<div class="left-top-part">
-					<p align="center">
-							<font color="#ffffff">Пользователи чата</font>
-					</p>
-				</div>
+                <div class="left-top-part">
+                    <p align="center">
+                         <font color="#ffffff">Пользователи чата</font>
+                    </p>
+                </div>
             </div>
             <div class="right-part">
-				<div class="right-top-part">
-					<p align="center">
-						<font color="#ffffff">Название чата</font>
-					</p>
-				</div>
+                <div class="right-top-part">
+                    <p align="center">
+                        <font color="#ffffff">Название чата</font>
+                    </p>
+                </div>
                 <div class="Messages">
                     <input type="text" id="WriteMessage"
                         placeholder= "Write a message...">
-					<div class="SendMessage">
-						<p align="center">
-							<font color="#ffffff">Send</font>
-						</p>
-					</div>
+                    <div class="SendMessage">
+                        <p align="center">
+                            <font color="#ffffff">Send</font>
+                        </p>
+                    </div>
                 </div>
+            </div>
+        </div>
+        <div id="about-modal" class="modal">
+            <div class="body-modal">
+                <div class="top-strip">
+                    <p class="top-text">About</p>
+                </div>
+                <div class="bottom-strip">
+                    <p class="bottom-text">Coming soon...</p>
+                    <div class="loader"></div>
+                </div>
+                <span class="close" onclick="closeModal('about-modal')">&times;</span>
             </div>
         </div>
     </body>

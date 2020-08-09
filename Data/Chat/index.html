@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <title>BULink</title>
         <link rel="stylesheet" type="text/css" href="./styles/chat.css">
-        <link rel="icon" sizes="any" href="./media/logo.png">
+        <link rel="icon" sizes="any" href="./Media/logo.png">
         <script src="./scripts/pop-up.js"></script>
 		<script src="./scripts/toolbar.js"></script>
 		<script src="./scripts/users.js"></script>
@@ -16,34 +16,32 @@
                     <div class="square-logo"></div>
                 </div>
                 <div id="header1" class="header">
-                    <p align="center">
-                        <font color="#ffffff">Главная страница</font>
-                    </p>
+                    <p align="center" style="color: white">Главная страница</p>
                 </div>
                 <div id="about" class="round-button" onclick="about()">
                     <div class="round-logo">
-                        <img class="logo" alt="about" src="./media/about.png">
+                        <img class="logo" alt="about" src="./Media/about.png">
                     </div>
                 </div>
                 <div id="settings" class="round-button" onclick="settings()">
                     <div class="round-logo">
-                        <img class="logo" alt="setting" src="./media/settings.png">
+                        <img class="logo" alt="setting" src="./Media/settings.png">
                     </div>
                 </div>
                 <div id="leave" class="round-button">
                     <div class="round-logo">
-                        <img class="logo" alt="leave" src="./media/leave.png">
+                        <img class="logo" alt="leave" src="./Media/leave.png">
                     </div>
                 </div>
 				<div id="logout" class="round-button">
                     <div class="round-logo">
-                        <img class="round-logo" alt="logout" src="./media/logout.png">
+                        <img class="round-logo" alt="logout" src="./Media/logout.png">
                     </div>
                 </div>
 
                 <div id="pop-up" class="round-button" onclick="popUp()">
                     <div class="round-logo">
-                        <img class="round-logo" alt="pop-up" src="./media/open-menu.png">
+                        <img class="round-logo" alt="pop-up" src="./Media/open-menu.png">
                     </div>
                 </div>
             </div>
@@ -51,9 +49,7 @@
         <div class="main">
             <div class="left-part">
                 <div class="left-top-part">
-                    <p align="center">
-                         <font color="#ffffff">Пользователи чата</font>
-                    </p>
+                    <p align="center" style="color: white">Пользователи чата</p>
                 </div>
 				<div class="finder-square">
                     <input type="text" class="user-finder" id="user-finder" oninput="findUser()"
@@ -65,19 +61,15 @@
             </div>
             <div class="right-part">
                 <div class="right-top-part">
-                    <p align="center">
-                        <font color="#ffffff">Название чата</font>
-                    </p>
+                    <p align="center" style="color: white">Название чата</p>
                 </div>
 				<div id="chat-list" class="chat-list">
 				</div>
                 <div class="Messages">
                     <input type="text" id="WriteMessage"
-                        placeholder= "Write a message...">
+                        placeholder= "Write a message..." title="Type your message"/>
                     <div class="SendMessage">
-                        <p align="center">
-                            <font color="#ffffff">Send</font>
-                        </p>
+                        <p align="center" style="color: white">Send</p>
                     </div>
                 </div>
             </div>

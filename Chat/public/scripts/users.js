@@ -55,7 +55,7 @@ function addUser() {
 }
 
 function generateAvatar() {
-    return "./media/avatars/male/" + Math.floor(Math.random()*29 + 1) + ".png";
+    return "../../public/media/avatars/male/" + Math.floor(Math.random()*29 + 1) + ".png";
 }
 
 function generateName() {

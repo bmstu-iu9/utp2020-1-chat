@@ -6,7 +6,7 @@ html {
 }
 
 body {
-    background: #e7f0f5 url("../media/chat-background.png");
+    background: #e7f0f5 url("../../public/media/menu/chat-background.png");
     background-size: cover;
 }
 
@@ -47,7 +47,7 @@ p {
     background-color: transparent;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url("../media/white-logo.png");
+    background-image: url("../../public/media/menu/white-logo.png");
 }
 
 .header {
@@ -209,7 +209,7 @@ p {
 .user-finder {
     text-indent: 25px;
     font-family: "Comfortaa", cursive;
-    background-image: url("../media/search.png");
+    background-image: url("../../public/media/menu/search.png");
     background-color: transparent;
     background-repeat: no-repeat;
     background-size: 15px;
@@ -332,7 +332,7 @@ p {
     text-indent: 25px;
     font-family: "Comfortaa", cursive;
     background-color: transparent;
-    background-image: url("../media/search.png");
+    background-image: url("../../public/media/menu/search.png");
     background-repeat: no-repeat;
     background-size: 15px;
     background-position: 5px 5px;
@@ -367,7 +367,7 @@ p {
     margin-top: -40px;
     height: 25px;
     width: 25px;
-    background-image: url("../media/plus-gray.png");
+    background-image: url("../../public/media/menu/plus-gray.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 16px 16px;

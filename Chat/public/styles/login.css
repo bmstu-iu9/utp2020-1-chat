@@ -6,7 +6,7 @@ html {
 }
 
 body {
-    background: #e7f0f5 url("../media/main-background.png");
+    background: #e7f0f5 url("../media/login/main-background.png");
     background-size: cover;
 }
 
@@ -24,7 +24,7 @@ p {
     position: absolute;
     width: 190px;
     height: 190px;
-    background-image: url("../media/lightblue-logo.png");
+    background-image: url("../media/login/lightblue-logo.png");
     background-repeat: no-repeat;
     background-size: cover;
     left: 50%;
@@ -44,7 +44,7 @@ p {
     border-style: solid;
     border-color: #597da3;
     background-color: #e7f0f5;
-    background-image: url("../media/div.jpg");
+    background-image: url("../media/login/div.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     border-width: 2px;
@@ -121,14 +121,14 @@ p {
 }
 
 #password-closed {
-    background-image: url("../media/eye-closed.png");
+    background-image: url("../media/login/eye-closed.png");
     background-color: transparent;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 #password-opened {
-    background-image: url("../media/eye-opened.png");
+    background-image: url("../media/login/eye-opened.png");
     background-color: transparent;
     background-repeat: no-repeat;
     background-size: cover;

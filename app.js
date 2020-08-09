@@ -45,7 +45,11 @@ let online_users = [];
 io.on('connection', (socket) => {
  
     socket.on("logged in", (data) =>{
-        online_users.push(data.user);
+        let user = {
+            name: data.user,
+            login: data.login
+        }
+        online_users.push(user);
         socket.emit("new online", {online_users: online_users});
     });
  
@@ -71,13 +75,14 @@ io.on('connection', (socket) => {
  
     socket.on("disconnect", () => {
         let user = removeUser(socket);
-        if (user === "") {
-            socket.emit("user-disconnected", () => {
-                socket.on("user-disconnected", (data) => {
-                    user = data.user;
-                });
+        socket.emit("user-disconnected", () => {
+            socket.on("user-disconnected", (data) => {
+                let user = {
+                    name: data.user,
+                    login: data.login
+                }
             });
-        }
+        });
         let index;
         for (let i = 0; i < online_users.length; i++) {
             if (online_users[i] === user) {
@@ -86,6 +91,7 @@ io.on('connection', (socket) => {
             }
         }
         online_users.splice(index, 1);
+        socket.emit("new online", {online_users: online_users});
         console.log(user + " disconnected");
     });
 });

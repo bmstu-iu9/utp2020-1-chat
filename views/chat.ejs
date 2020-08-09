@@ -20,23 +20,23 @@
         </div>
         <div id="about" class="round-button">
             <div class="round-logo">
-                <img class="logo" alt="about" src="static/Chat/Media/about.png">
+                <img class="logo" alt="about" src="/static/Chat/Media/about.png">
             </div>
         </div>
         <div id="settings" class="round-button">
             <div class="round-logo">
-                <img class="logo" alt="setting" src="static/Chat/Media/settings.png">
+                <img class="logo" alt="setting" src="/static/Chat/Media/settings.png">
             </div>
         </div>
         <div id="logout" class="round-button">
             <div class="round-logo">
-                <img class="logo" alt="logout" src="static/Chat/Media/logout.png">
+                <img class="logo" alt="logout" src="/static/Chat/Media/logout.png">
             </div>
         </div>
 
         <div id="pop-up" class="round-button" onclick="popUp()">
             <div class="round-logo">
-                <img class="round-logo" alt="pop-up" src="static/Chat/Media//open-menu.png">
+                <img class="round-logo" alt="pop-up" src="/static/Chat/Media//open-menu.png">
             </div>
         </div>
     </div>
@@ -78,6 +78,18 @@
     let room = "<%= roomname %>";
     let ID = "";
     var socket = io();
+    let login = "<%= user.login %>"
+    let online_users = [];
+
+    socket.emit("logged in", {user: userName, login: login});
+
+    socket.on("user-disconnected", ()=>{
+        socket.emit("user-disconnected", {user: userName, login: login});
+    });
+
+    socket.on("new online", (data)=>{
+        online_users = data.online_users;
+    });
 
     document.getElementById("chat_name").textContent = room;
 
@@ -88,7 +100,6 @@
         ID = data.id;
         console.log(" my ID:" + ID);
     })
-
 
     document
         .getElementsByTagName("form")[0]

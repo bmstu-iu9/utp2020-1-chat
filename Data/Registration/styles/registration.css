@@ -7,7 +7,7 @@ html {
 
 body {
     background-color: #e7f0f5;
-    background-image: url("../media/back.png");
+    background-image: url("../media/main-background.png");
     background-size: cover;
 	  background-repeat: no-repeat;
 }
@@ -212,7 +212,7 @@ select {
     position: absolute;
     width: 190px;
     height: 190px;
-    background-image: url("../media/logo1.png");
+    background-image: url("../media/lightblue-logo.png");
     background-repeat: no-repeat;
     background-size: cover;
     left: 50%;

@@ -6,7 +6,7 @@ html {
 }
 
 body {
-    background: #e7f0f5 url("../media/background.png");
+    background: #e7f0f5 url("../media/chat-background.png");
     background-size: cover;
 }
 
@@ -47,7 +47,7 @@ p {
     background-color: transparent;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url("../media/logo.png");
+    background-image: url("../media/white-logo.png");
 }
 
 .header {

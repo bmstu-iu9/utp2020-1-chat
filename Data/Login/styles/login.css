@@ -6,7 +6,7 @@ html {
 }
 
 body {
-    background: #e7f0f5 url("../media/background.png");
+    background: #e7f0f5 url("../media/main-background.png");
     background-size: cover;
 }
 
@@ -24,7 +24,7 @@ p {
     position: absolute;
     width: 190px;
     height: 190px;
-    background-image: url("../media/logo-blue.png");
+    background-image: url("../media/lightblue-logo.png");
     background-repeat: no-repeat;
     background-size: cover;
     left: 50%;

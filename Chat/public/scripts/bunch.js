@@ -1,5 +1,5 @@
 "use strict";
 
 function registration() {
-    document.location.href = "../Registration/index.html";
+    document.location.href = "../pages/registrartion.html";
 }

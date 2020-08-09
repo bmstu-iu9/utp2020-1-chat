@@ -15,6 +15,11 @@ p {
     user-select: none;
 }
 
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
 .toolbar {
     width: 100%;
     height: 75px;
@@ -110,20 +115,30 @@ p {
 
 #about {
     left: 86.6%;
-    transition: 0.6s;
+    transition: 0.8s;
 }
 
 #active-about {
-    left: 73.4%;
-    transition: 0.6s;
+    left: 69%;
+    transition: 0.8s;
 }
 
 #settings {
     left: 86.6%;
-    transition: 0.4s;
+    transition: 0.6s;
 }
 
 #active-settings {
+    left: 73.4%;
+    transition: 0.6s;
+}
+
+#leave {
+    left: 86.6%;
+    transition: 0.4s;
+}
+
+#active-leave {
     left: 77.8%;
     transition: 0.4s;
 }
@@ -197,6 +212,73 @@ p {
 	font-family: "Comfortaa", cursive;
 }	
 
+.finder-square {
+	position: absolute;
+    width: 100%;
+    height: 48px;
+	margin-top: 50px;
+	border-bottom-width: 2px;
+    border-bottom-color: #77accc;
+    border-bottom-style: solid;
+}
+
+.user-finder {
+    position: absolute;
+    left: 5%;
+    width: 90%;
+    height: 25px;
+    margin-top: 8px;
+    margin-left: -4px;
+    border-radius: 10px;
+}
+
+.user-finder {
+    outline: none;
+    box-shadow: none;
+}
+
+.user-finder {
+    text-indent: 25px;
+    font-family: "Comfortaa", cursive;
+    background-image: url("../media/search.png");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-position: 5px 5px;
+    border-color: #77accc;
+    border-style: solid;
+}
+
+.delete-list {
+    position: absolute;
+    top: 4px;
+    color: lightgray;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.delete-list:hover {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#delete-users-list {
+    position: absolute;
+    left: 90%;
+}
+
+.users-list {
+    position: absolute;
+    top: 100px;
+    width: 100%;
+    height: 700px;
+}
+
+.users-list {
+    overflow-y: scroll;
+}
+
 .right-part { 
     position: absolute;
     width: 70%;
@@ -210,6 +292,17 @@ p {
 	height: 50px;
 	background-color:#77accc;
 	font-family: "Comfortaa", cursive;
+}
+
+.chat-list {
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    height: 687px;
+}
+
+.chat-list {
+    overflow-y: scroll;
 }
 
 .Messages {

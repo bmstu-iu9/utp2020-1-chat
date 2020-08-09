@@ -7,6 +7,7 @@
         <link rel="icon" sizes="any" href="./media/logo.png">
         <script src="./scripts/pop-up.js"></script>
 		<script src="./scripts/toolbar.js"></script>
+		<script src="./scripts/users.js"></script>
     </head>
     <body>
         <div>
@@ -29,7 +30,12 @@
                         <img class="logo" alt="setting" src="./media/settings.png">
                     </div>
                 </div>
-                <div id="logout" class="round-button">
+                <div id="leave" class="round-button">
+                    <div class="round-logo">
+                        <img class="logo" alt="leave" src="./media/leave.png">
+                    </div>
+                </div>
+				<div id="logout" class="round-button">
                     <div class="round-logo">
                         <img class="round-logo" alt="logout" src="./media/logout.png">
                     </div>
@@ -49,6 +55,13 @@
                          <font color="#ffffff">Пользователи чата</font>
                     </p>
                 </div>
+				<div class="finder-square">
+                    <input type="text" class="user-finder" id="user-finder" oninput="findUser()"
+                         placeholder="Search for users" title="Type user's login"/>
+                    <span id="delete-users-list" class="delete-list" onclick="deleteUsersList()">&times;</span>
+                </div>
+				<div id="users-list" class="users-list">
+                </div>
             </div>
             <div class="right-part">
                 <div class="right-top-part">
@@ -56,6 +69,8 @@
                         <font color="#ffffff">Название чата</font>
                     </p>
                 </div>
+				<div id="chat-list" class="chat-list">
+				</div>
                 <div class="Messages">
                     <input type="text" id="WriteMessage"
                         placeholder= "Write a message...">

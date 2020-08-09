@@ -78,12 +78,13 @@
     let room = "<%= roomname %>";
     let ID = "";
     var socket = io();
-    let login = "<%= user.login %>"
+    let login = "<%= user.login %>";
     let online_users = [];
 
     socket.emit("logged in", {user: userName, login: login});
 
     socket.on("user-disconnected", ()=>{
+        console.log("done");
         socket.emit("user-disconnected", {user: userName, login: login});
     });
 

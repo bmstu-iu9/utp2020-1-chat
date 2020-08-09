@@ -51,11 +51,12 @@ io.on('connection', (socket) => {
             login: data.login
         }
         online_users.push(user);
+        console.log(user.login + " connected");
         socket.emit("new online", {online_users: online_users});
     });
  
     socket.on("join room", (data) =>{
-        console.log('User connected');
+        //console.log('User connected');
         console.log('in room');
         let newUser = joinUser(socket.id, data.username, data.roomname);
         socket.emit('send data', {id: socket.id, username: newUser.username, roomname: newUser.roomname});
@@ -73,28 +74,23 @@ io.on('connection', (socket) => {
         message.save();
         io.to(data.room).emit("chat message", {data:data, id: socket.id});
     });
- 
+
     socket.on("disconnect", () => {
         removeUser(socket);
-        let user;
-        socket.emit("user-disconnected", () => {
-            socket.on("user-disconnected", (data) => {
-                user = {
-                    name: data.user,
-                    login: data.login
-                }
-            });
-        });
+        socket.emit("user-disconnected");
+    });
+
+    socket.on("user-disconnected", (data) => {
+        let login = data.login;
         let index;
         for (let i = 0; i < online_users.length; i++) {
-            if (online_users[i] === user) {
+            if (online_users[i].login === login) {
                 index = i;
                 break;
             }
         }
         online_users.splice(index, 1);
-        socket.emit("new online", {online_users: online_users});
-        console.log(user + " disconnected");
+        console.log(login + " disconnected");
     });
 });
  

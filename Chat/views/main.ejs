@@ -21,8 +21,8 @@
 <script src="/socket.io/socket.io.js"></script>
 <script>
     var socket = io();
-    let username = "<%= user.name %>";
-    let login = "<%= user.login %>"
+    let username = "<% user.name %>";
+    let login = "<%= user.login %>";
     let online_users = [];
 
     socket.emit("logged in", {user: username, login: login});

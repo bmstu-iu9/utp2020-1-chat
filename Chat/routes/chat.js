@@ -20,10 +20,10 @@ Room.find({}, function (err, docs) {
         rooms.push(docs[i].name);
     }
 });
- 
+
 router.get('/', ensureAuthenticated, (req, res)=>{
     let all_users = [];
- 
+
     User.find({}, function (err, docs) {
         if (err) return console.log(err);
         for (let i = 0;i < docs.length; i++){

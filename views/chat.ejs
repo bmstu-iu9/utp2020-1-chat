@@ -1,88 +1,85 @@
+<!DOCTYPE html>
 <html>
-<link
-        href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
-        rel="stylesheet"
-/>
-<style>
-    form {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-    }
-    form input {
-        width: 40%;
-        margin-left: 45%;
-    }
-    #submitButton {
-        width: 8%;
-    }
-    .time {
-        color: white;
-        font-family: "Ubuntu";
-        text-align: right;
-    }
-
-    .message {
-        display: inline;
-        font-size: medium;
-    }
-    #messages {
-        list-style-type: none;
-        overflow: auto;
-        border: solid #597da3 4px;
-        border-radius: 10px;
-        width: 55%;
-        height: 90%;
-        margin-left: 40%;
-    }
-    .me {
-        font-family: sans-serif, "Courier New", Courier, monospace;
-        text-align: right;
-    }
-    .you {
-        font-family: sans-serif, "Courier New", Courier, monospace;
-        text-align: left;
-    }
-    .yourDiv {
-        position: relative;
-        right: 4%;
-        width: 50%;
-        background-color: #597da3;
-        color: white;
-        border-radius: 10px;
-    }
-    .myDiv {
-        position: relative;
-        left: 50%;
-        width: 50%;
-        background-color: cornflowerblue;
-        color: white;
-        border-radius: 10px;
-    }
-</style>
-
+<head>
+    <meta charset="UTF-8">
+    <title>BULink</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/chat.css">
+    <link rel="icon" sizes="any" href="static/Chat/Media/logo.png">
+    <script src="/static/js/pop-up.js"></script>
+</head>
 <body>
+<div>
+    <div class="toolbar">
+        <div class="logo-toolbar">
+            <div class="square-logo"></div>
+        </div>
+        <div id="header1" class="header">
+            <p align="center">
+                <font color="#ffffff">Главная страница</font>
+            </p>
+        </div>
+        <div id="about" class="round-button">
+            <div class="round-logo">
+                <img class="logo" alt="about" src="static/Chat/Media/about.png">
+            </div>
+        </div>
+        <div id="settings" class="round-button">
+            <div class="round-logo">
+                <img class="logo" alt="setting" src="static/Chat/Media/settings.png">
+            </div>
+        </div>
+        <div id="logout" class="round-button">
+            <div class="round-logo">
+                <img class="logo" alt="logout" src="static/Chat/Media/logout.png">
+            </div>
+        </div>
 
-    <form>
-        <input type="text" id="m" />
-        <input type="submit" id="submitButton" value="Send" onclick="focusmessage()"/>
-    </form>
+        <div id="pop-up" class="round-button" onclick="popUp()">
+            <div class="round-logo">
+                <img class="round-logo" alt="pop-up" src="static/Chat/Media//open-menu.png">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="main">
+    <div class="left-part">
+        <div class="left-top-part">
+            <p align="center">
+                <font color="#ffffff">Пользователи чата</font>
+            </p>
+        </div>
+    </div>
+    <div class="right-part">
+        <div class="right-top-part">
+            <p align="center" id="chat_name">
+                <font color="#ffffff">Название чата</font>
+            </p>
+        </div>
 
-    <ul id="messages"></ul>
+        <ul id="messages"></ul>
 
+        <form>
+            <input type="text" id="m" class="messageText"/>
+            <input type="submit" id="submitButton" value="Send" onclick="focusmessage()" class="SendMessage"/>
+        </form>
+
+    </div>
+</div>
 </body>
-
 <script src="/socket.io/socket.io.js"></script>
 <script>
     focusmessage = function getFocus() {
         document.getElementById("m").focus();
     }
+
 </script>
 <script>
     let userName = "<%= user.name %>";
     let room = "<%= roomname %>";
     let ID = "";
     var socket = io();
+
+    document.getElementById("chat_name").textContent = room;
 
     socket.emit("join room", {username : userName, roomname : room});
 

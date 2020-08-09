@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
 
 html {
@@ -102,7 +103,7 @@ p {
     border-width: 2px;
     border-color: #ff0093;
     border-radius: 40px;
-	cursor: pointer;
+    cursor: pointer;
 }
 
 #active-pop-up {
@@ -206,19 +207,19 @@ p {
 }
 
 .left-top-part {
-	position: absolute;
-	width: 100%;
-	height: 50px;
-	background-color:#77accc;
-	font-family: "Comfortaa", cursive;
-}	
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    background-color:#77accc;
+    font-family: "Comfortaa", cursive;
+}
 
 .finder-square {
-	position: absolute;
+    position: absolute;
     width: 100%;
     height: 48px;
-	margin-top: 50px;
-	border-bottom-width: 2px;
+    margin-top: 50px;
+    border-bottom-width: 2px;
     border-bottom-color: #77accc;
     border-bottom-style: solid;
 }
@@ -280,7 +281,7 @@ p {
     overflow-y: scroll;
 }
 
-.right-part { 
+.right-part {
     position: absolute;
     width: 70%;
     height: 800px;
@@ -288,11 +289,11 @@ p {
 }
 
 .right-top-part {
-	position: absolute;
-	width: 100%;
-	height: 50px;
-	background-color:#77accc;
-	font-family: "Comfortaa", cursive;
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    background-color:#77accc;
+    font-family: "Comfortaa", cursive;
 }
 
 .chat-list {
@@ -306,24 +307,10 @@ p {
     overflow-y: scroll;
 }
 
-.Messages {
-    width: 100%;
-    height: 63px;
-	margin-top: 736px;
-	margin-left: 1px;
-	background-size: cover;
-    border-top-width: 2px;
-    border-top-color: #77accc;
-    border-top-style: solid;
-}
-
-#WriteMessage {
+.WriteMessage {
     position: absolute;
     height: 40px;
     width: 75%;
-    left: 3%;
-    margin-top: 10px;
-    margin-left: -2px;
     border: #77accc solid 2px;
     border-radius: 10px;
     text-indent: 5px;
@@ -335,20 +322,19 @@ p {
 }
 
 .SendMessage {
-	position: absolute;
-	border-style: solid;
+    margin-left: 83%;
+    position: absolute;
+    border-style: solid;
     border-width: 2px;
     border-color: #ff69b4;
     border-radius: 10px;
     background: #ff69b4;
     height: 40px;
-	width: 17%;
-	margin-top: 10px;
-	margin-left: 80%;
-	font-family: "Comfortaa", cursive;
+    width: 17%;
+    font-family: "Comfortaa", cursive;
 }
 
-.SendMessage:hover {
+.SendMessage:active {
     background-color: #ff0093;
     border-style: solid;
     border-width: 2px;
@@ -447,3 +433,63 @@ p {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
+@keyframes appear {
+    from{ opacity: 0;}
+    to{ opacity: 1;}
+}
+
+.send-form{
+    margin-left: 3px;
+    position: absolute;
+    margin-top: calc(50px + 82%);
+    width: 94%;
+    height: 50px;
+}
+
+.time {
+    color: white;
+    font-family: "Ubuntu";
+    text-align: right;
+}
+
+.message {
+    display: inline;
+    font-size: medium;
+}
+#messages {
+    margin-top: 50px;
+    margin-left: 1px;
+    position: absolute;
+    list-style-type: none;
+    overflow: auto;
+    width: 94%;
+    height: 82%;
+}
+.me {
+    font-family: sans-serif, "Courier New", Courier, monospace;
+    text-align: right;
+}
+.you {
+    font-family: sans-serif, "Courier New", Courier, monospace;
+    text-align: left;
+}
+.yourDiv {
+    animation: appear 0.3s linear 1;
+    position: relative;
+    right: 4%;
+    width: 50%;
+    background-color: #597da3;
+    color: white;
+    border-radius: 10px;
+}
+.myDiv {
+    animation: appear 0.3s linear 1;
+    position: relative;
+    left: 50%;
+    width: 50%;
+    background-color: cornflowerblue;
+    color: white;
+    border-radius: 10px;
+}
+

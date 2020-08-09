@@ -1,75 +1,101 @@
-const app = require('express')();
+const express = require('express');
+const router = express.Router();
+const app = express();
 const http = require("http").createServer(app);
 const io = require('socket.io')(http);
-
-const path = require('path');
-const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
-const session = require('express-session');
-const router = require('router');
+const mongoose = require('mongoose');
+const passport = require('passport');
 const fs = require('fs');
 const {
     User,
     joinUser,
     removeUser,
+    rooms_users
 } = require('./models/user');
-
-const checkLogin_pass = function(login, password) {
-    let data = fs.readFileSync("../data/users.json", 'utf-8');
-    let users = JSON.parse(data);
-    for (let i = 0 ; i < users.length; i++) {
-        if (login === users[i].login && password === users[i].password) return true
-    }
-    return false;
-};
-
-app.get('/', function (req, res) {
-    res.sendFile(__dirname + "/pages/html/login.html");
-});
-
-app.post('/', function (req, res) {
-    let login = req.body.login;
-    let password = req.body.password;
-    if (checkLogin_pass(login, password)) {
-        res.redirect('/pages/html/main.html');
-    } else {
-        alert("Неправильный логин или пароль");
-        res.redirect('back');
-    }
-});
-
-app.get('/registration', function (req, res) {
-    res.sendFile(__dirname + "/pages/html/registration.html");
-});
-
-app.post('/registration', function (req, res) {
-    let username = req.body.username;
-    let login = req.body.login;
-    let password = req.body.password;
-    let user = new User(username, login, password);
-    if (!user.check()) {
-        user.save();
-        res.redirect('/pages/html/chat.html');
-    } else {
-        alert("Данный логин уже занят");
-        res.redirect('back');
-    }
-});
-
-let thisRoom = "";
+const Room = require('./models/rooms');
+const Message = require('./models/messages');
+ 
+app.use('/static', express.static(__dirname + '/public'));
+app.set('view engine', 'ejs');
+app.use(express.urlencoded({extended: false}));
+ 
+const session = require('express-session');
+ 
+require("./config/passport")(passport);
+ 
+mongoose.connect('mongodb://localhost/test',{useNewUrlParser: true, useUnifiedTopology : true})
+.then(() => console.log('connected,,'))
+.catch((err)=> console.log(err));
+ 
+app.use(session({
+    secret : 'secret',
+    resave : true,
+    saveUninitialized : true
+}));
+ 
+app.use(passport.initialize());
+app.use(passport.session());
+ 
+app.use('/', require('./routes/auth'));
+app.use('/main', require('./routes/chat'));
+app.use('/registration', require('./routes/registration'));
+ 
+let online_users = [];
+ 
 io.on('connection', (socket) => {
-    console.log('User connected');
-
+ 
+    socket.on("logged in", (data) =>{
+        let user = {
+            name: data.user,
+            login: data.login
+        }
+        online_users.push(user);
+        socket.emit("new online", {online_users: online_users});
+    });
+ 
     socket.on("join room", (data) =>{
+        console.log('User connected');
         console.log('in room');
-        let newUser = joinUser(socket.id, data.userName, data.roomName);
+        let newUser = joinUser(socket.id, data.username, data.roomname);
         socket.emit('send data', {id: socket.id, username: newUser.username, roomname: newUser.roomname});
-        thisRoom = newUser.roomname;
         console.log(newUser);
         socket.join(newUser.roomname);
-    })
+    });
+ 
+    socket.on("chat message", (data) => {
+        const message = new Message({
+            username : data.user,
+            login : data.login,
+            roomName: data.room,
+            text: data.value,
+        });
+        message.save();
+        io.to(data.room).emit("chat message", {data:data, id: socket.id});
+    });
+ 
+    socket.on("disconnect", () => {
+        let user = removeUser(socket);
+        socket.emit("user-disconnected", () => {
+            socket.on("user-disconnected", (data) => {
+                let user = {
+                    name: data.user,
+                    login: data.login
+                }
+            });
+        });
+        let index;
+        for (let i = 0; i < online_users.length; i++) {
+            if (online_users[i] === user) {
+                index = i;
+                break;
+            }
+        }
+        online_users.splice(index, 1);
+        socket.emit("new online", {online_users: online_users});
+        console.log(user + " disconnected");
+    });
 });
-
+ 
 http.listen(3000, function () {
     console.log('Server is listening on port 3000');
 });

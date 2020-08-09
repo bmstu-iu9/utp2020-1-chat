@@ -1,49 +1,62 @@
-const fs = require('fs');
-
-let users = [];
+const mongoose = require('mongoose');
+const Room = require('./rooms');
+ 
+let rooms_users = {};
+Room.find({}, function (err, docs) {
+    if (err) return console.log(err);
+    for (let i = 0;i < docs.length; i++){
+        rooms_users[docs[i].name] = { users: {} };
+    }
+});
+ 
 function joinUser(socketId, userName, roomName) {
     const user = {
         socketID :  socketId,
         username : userName,
         roomname : roomName
     }
-    users.push(user)
+    rooms_users[roomName].users[socketId] = userName;
     return user;
 }
-
-function removeUser(id) {
-    const getID = users => users.socketID === id;
-    const index =  users.findIndex(getID);
-    if (index !== -1) {
-        return users.splice(index, 1)[0];
+ 
+function removeUser(socket) {
+    room = getUserRooms(socket);
+    if (room !== "") {
+        let user = rooms_users[room].users[socket.id];
+        delete rooms_users[room].users[socket.id];
+        console.log(user);
+        console.log("disconnected");
+        return user;
+    } else {
+        return "";
     }
 }
-
-class User {
-    constructor(username, login, password) {
-        this.username = username;
-        this.login = login;
-        this.password = password;
-    }
-    check() {
-        let data = fs.readFileSync("../data/users.json", 'utf-8');
-        let users = JSON.parse(data);
-        for (let i = 0; i < users.length; i++) {
-            if (this.login === users[i].login) return true;
-        }
-        return false
-    }
-    save() {
-        let data = fs.readFileSync("../data/users.json", 'utf-8');
-        let users = JSON.parse(data);
-        users.push(this);
-        let json = JSON.stringify(users);
-        fs.writeFileSync("../data/users.json", json);
-    }
+ 
+//Массив - на случай, если сделаем возможность подлючаться к нескольким комнатам
+function getUserRooms(socket) {
+    return Object.entries(rooms_users).reduce((resname, [name, room]) => {
+        if (room.users[socket.id] != null) resname = name;
+        return resname;
+    }, "")
 }
-
+ 
+const UserSchema  = new mongoose.Schema({
+    name: {
+        type: String
+    },
+    login: {
+        type: String
+    },
+    password: {
+        type: String
+    },
+});
+const User = mongoose.model('User', UserSchema);
+ 
+ 
 module.exports = {
     User,
     joinUser,
-    removeUser
+    removeUser,
+    rooms_users
 };

@@ -24,7 +24,7 @@
                         <img class="logo" alt="about" src="./media/about.png">
                     </div>
                 </div>
-                <div id="settings" class="round-button">
+                <div id="settings" class="round-button" onclick="settings()">
                     <div class="round-logo">
                         <img class="logo" alt="setting" src="./media/settings.png">
                     </div>
@@ -77,6 +77,18 @@
                     <div class="loader"></div>
                 </div>
                 <span class="close" onclick="closeModal('about-modal')">&times;</span>
+            </div>
+        </div>
+        <div id="settings-modal" class="modal">
+            <div class="body-modal">
+                <div class="top-strip">
+                    <p class="top-text">Settings</p>
+                </div>
+                <div class="bottom-strip">
+                    <p class="bottom-text">Coming soon...</p>
+                    <div class="loader"></div>
+                </div>
+                <span class="close" onclick="closeModal('settings-modal')">&times;</span>
             </div>
         </div>
     </body>

@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background-color: #e7f0f5;
+    background-image: url("../media/registration/main-background.png");
+    background-size: cover;
+	  background-repeat: no-repeat;
+}
+
+p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    font-family: "Comfortaa", cursive;
+}
+
+select { 
+    color: #757575;
+    font-family: "Comfortaa", cursive;
+    text-indent: 8px;
+}
+
+.error-text {
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.login {
+    width: 350px;
+    height: 50px;
+    margin-top: 20px;
+    margin-left: 115px;
+}
+
+.password {
+    width: 350px;
+    height: 50px;
+    margin-top: -5px;
+    margin-left: 115px;
+}
+
+.name {
+    width: 350px;
+    height: 50px;
+    margin-top: -10px;
+    margin-left: 115px;
+}
+
+.input {
+    font-size: 14px;
+    text-indent: 8px;
+    font-family: "Comfortaa", cursive;
+    color: #B2BECD;
+    outline: 0;
+    display: flex;
+}
+
+.input {
+    background: transparent;
+    border-color: #597da3;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    box-shadow: rgba(113, 113, 113, 0.15) -5px -5px 11px;
+                rgba(0, 0, 0, 0.15) 5px 5px 11px;
+    height: 20px;
+    width: 160px;
+}
+
+#register {
+    width: 92px;
+    height: 25px;
+    margin-top: 8px;
+    margin-left: 152px;
+    background-color: transparent;
+    border: 1px solid transparent;
+    outline: none;
+}
+
+.eye {
+    height: 19px;
+    width: 19px;
+    margin-left: 140px;
+    margin-top: -21px;
+}
+
+#password-opened {
+    background-image: url("../media/registration/eye-opened.png");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#password-closed {
+    background-image: url("../media/registration/eye-closed.png");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.error {
+    position: absolute;
+    width: 400px;
+    height: 218px;
+    left: 50%;
+    margin-left: -200px;
+    margin-top: 600px;
+}
+
+.error {
+    border-style: solid;
+    border-color: transparent;
+    background-color: #e7f0f5;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-width: 2px;
+    border-radius: 5px;
+}
+
+.error-log {
+    position: absolute;
+    width: 370px;
+    height: 44px;
+    left: 50%;
+    margin-left: -187px;
+    margin-top: 9px;
+}
+
+.error-log-closed {
+    border-style: solid;
+    border-color: transparent;
+    background-color: #e7f0f5;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-width: 2px;
+    border-radius: 5px;
+}
+
+.error-log-opened {
+    border-style: solid;
+    border-color: #fa0522;
+    background-color: #e7f0f5;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-width: 2px;
+    border-radius: 5px;
+}
+
+.error-pas {
+    position: absolute;
+    width: 370px;
+    height: 96px;
+    left: 50%;
+    margin-left: -187px;
+    margin-top: 66px;
+}
+
+.error-pas-closed {
+    border-style: solid;
+    border-color: transparent;
+    background-color: #e7f0f5;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-width: 2px;
+    border-radius: 5px;
+}
+
+.error-pas-opened {
+    border-style: solid;
+    border-color: #fa0522;
+    background-color: #e7f0f5;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-width: 2px;
+    border-radius: 5px;
+}
+ 
+.error-na {
+    position: absolute;
+    width: 370px;
+    height: 37px;
+    left: 50%;
+    margin-left: -187px;
+    margin-top: 173px;
+}
+
+.error-na-closed {
+    border-style: solid;
+    border-color: transparent;
+    background-color: #e7f0f5;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-width: 2px;
+    border-radius: 5px;
+}
+
+.error-na-opened {
+    border-style: solid;
+    border-color: #fa0522;
+    background-color: #e7f0f5;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-width: 2px;
+    border-radius: 5px;
+}
+
+.logo {
+    position: absolute;
+    width: 190px;
+    height: 190px;
+    background-image: url("../media/registration/lightblue-logo.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    left: 50%;
+    margin-left: -95px;
+}
+
+.border {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    left: 50%;
+    margin-left: -200px;
+    margin-top: 185px;
+}
+
+.border {
+    border-style: solid;
+    border-color: #597da3;
+    background-color: #e7f0f5;
+    background-image: url("../media/registration/div.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-width: 2px;
+    border-radius: 5px;
+}
+
+.text {
+    width: 350px;
+    height: 15px;
+    margin-left: 135px;
+    margin-top: 110px;
+}
+
+.input-text {
+    margin-bottom: 0.3em;
+}
+
+a {
+    text-decoration: none;
+    user-select: none;
+    outline: none;
+    display: inline-block;
+    color: #757575;
+    font-size: 15px;
+    box-shadow: 0 0 0 1px #597da3,
+                rgba(113, 113, 113, 0.15) -5px -5px 11px;
+                rgba(0, 0, 0, 0.15) 5px 5px 11px;
+    border-radius: 10px;
+    width: 84px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+span {
+    font-family: "Comfortaa", cursive;
+    position: relative;
+    z-index: 5;
+}
+
+a:before,
+a:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+a:before {
+    transform: translateX(-100%);
+    background: white;
+    transition: transform .3s cubic-bezier(.55,.055,.675,.19);
+}
+
+a:after {
+    background: #e7f0f5;
+    transform: translateX(100%);
+    transition: transform .3s cubic-bezier(.16,.73,.58,.62) .3s;
+}
+
+a:hover:before,
+a:hover:after {
+    transform: translateX(0);
+}
+
+.gender {
+    width: 350px;
+    height: 26px;
+    margin-left: 115px;
+}
+
+#gender { 
+    width: 164px;
+    height: 26px;
+    margin-top: -3px;
+    background-color: transparent;
+    border: solid 1px #597da3;
+    border-radius: 20px;
+    box-shadow: rgba(113, 113, 113, 0.15) -5px -5px 11px;
+                rgba(0, 0, 0, 0.15) 5px 5px 11px;
+    outline: none;
+}
+
+.gender-box {
+    margin-left: 115px;
+    margin-top: -1px;
+}

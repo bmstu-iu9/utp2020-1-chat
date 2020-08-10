@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>BUlink</title>
+        <link rel="stylesheet" type="text/css" href="/static/styles/login.css">
+        <link rel="icon" sizes="any" href="/static/media/login/white-logo.png">
+        <script src="/static/scripts/eye-opener.js"></script>
+    </head>
+    <body>
+        <form action="/" method="POST">
+            <div>
+                <div class="logo"></div>
+                <div class="border">
+                    <div class="text">
+                        <p style="font-size: large; font-weight: bold">Вход</p>
+                    </div>
+                    <div class="login">
+                        <p class="input-text" style="font-size: medium">Логин</p>
+                        <input class="input" type="text" name="login" id="login" maxlength="16"
+                               placeholder="Enter your login" />
+                    </div>
+                    <div class="password">
+                        <p class="input-text" style="font-size: medium">Пароль</p>
+                        <input class="input" type="password" name="password" id="password" maxlength="16"
+                               placeholder="Enter password" />
+                        <div class="eye" id="password-closed" onclick="togglePassword()"></div>
+                    </div>
+                    <button type="submit" id="sign-in">
+                        <a><span>Sign in</span></a>
+                    </button>
+                    <button type="submit" id="register">
+                        <a href="/registration">Register</a>
+                    </button>  
+                </div>
+            </div>
+        </form>
+    </body>
+</html>

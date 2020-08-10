@@ -18,8 +18,8 @@ router.get('/', (req, res)=>{
 });
 
 router.post('/', (req, res) =>{
-    const {name, login, password} = req.body;
-    console.log('The registration of user with ' + 'Name: ' + name + ' login: ' + login+ ' pass: ' + password);
+    const {name, login, password, gender} = req.body;
+    console.log('The registration of user with ' + 'Name: ' + name + ' login: ' + login+ ' pass: ' + password + ' gender: ' + gender);
     if(!name || !login || !password) {
         return res.render("registration.ejs");
     }

@@ -90,6 +90,7 @@ p {
     background-color: transparent;
     border: 1px solid transparent;
     outline: none;
+    font-family: "Comfortaa", cursive;
 }
 
 .input {

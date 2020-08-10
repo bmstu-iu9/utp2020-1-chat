@@ -34,7 +34,7 @@ router.get('/', ensureAuthenticated, (req, res)=>{
             all_users.push(user);
         }
     });
-    res.render("main.ejs", {rooms: rooms, all_users: all_users, user: req.user});
+    res.render("menu.ejs", {rooms: rooms, all_users: all_users, user: req.user});
 });
  
 router.post('/', (req, res)=>{
@@ -62,7 +62,7 @@ router.post('/', (req, res)=>{
         else {
             rooms_users[req.body.room] = { users: {} };
             rooms.push(newroom.name);
-            res.render("main.ejs", {rooms: rooms, all_users: all_users, user: req.user});
+            res.render("menu.ejs", {rooms: rooms, all_users: all_users, user: req.user});
         }
     });
 });

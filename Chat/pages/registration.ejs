@@ -3,11 +3,11 @@
     <head>
         <meta charset="UTF-8">
       <title>BUlink</title>
-        <link rel="stylesheet" type="text/css" href="../public/styles/registration.css">
-        <link rel="icon" sizes="any" href="../public/media/registration/white-logo.png">
+        <link rel="stylesheet" type="text/css" href="/static/styles/registration.css">
+        <link rel="icon" sizes="any" href="/static/media/registration/white-logo.png">
     </head>
     <body>
-        <form>
+        <form action="/registration" method="POST">
             <div>
                 <div class="logo"></div>
                 <div class="border">
@@ -16,18 +16,18 @@
                     </div>
                     <div class="login">
                         <p class="input-text" style="font-size: medium">Логин</p>
-                        <input type="text" id="login" class="input" maxlength="16"
+                        <input type="text" name="login" id="login" class="input" maxlength="16"
                                autocomplete="off" placeholder="Enter your login" required/>
                     </div>
                     <div class="password">
                         <p class="input-text" style="font-size: medium">Пароль</p>
-                        <input type="password" id="password" class="input" maxlength="16"
+                        <input type="password" name="password" id="password" class="input" maxlength="16"
                                autocomplete="new-password" placeholder="Enter password" required/>
                         <div class="eye" id="password-closed" onclick="togglePassword()"></div>
                     </div>
                     <div class="name">
                         <p class="input-text" style="font-size: medium">Имя</p>
-                        <input type="text" id="name" class="input" maxlength="16"
+                        <input type="text" name="name" id="name" class="input" maxlength="16"
                             autocomplete="off" placeholder="Enter name" required/>
                     </div>
                     <p class="gender-box" style="font-size: medium">Пол</p>
@@ -38,9 +38,9 @@
                             <option value="Male"> Мужской</option>
                        </select>
                     </div>
-                    <button id="register">
+                    <button type="submit" id="register">
                         <a><span>Register</span></a>
-                    </button>             
+                    </button>          
                 </div>
             </div>
             <div class="error">
@@ -66,7 +66,7 @@
                 </div>
             </div>
         </form>
-        <script src="../public/scripts/eye-opener.js"></script>
-        <script src="../public/scripts/validation.js"></script>
+        <script src="/static/scripts/eye-opener.js"></script>
+        <script src="/static/scripts/validation.js"></script>
     </body>
 </html>

@@ -16,7 +16,7 @@ const Room = require('./models/rooms');
 const Message = require('./models/messages');
  
 app.use('/static', express.static(__dirname + '/public'));
-app.set('views', __dirname + '/views');
+app.set('views', __dirname + '/pages');
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended: false}));
  
@@ -38,7 +38,7 @@ app.use(passport.initialize());
 app.use(passport.session());
  
 app.use('/', require('./routes/auth'));
-app.use('/main', require('./routes/chat'));
+app.use('/menu', require('./routes/chat'));
 app.use('/registration', require('./routes/registration'));
  
 let online_users = [];

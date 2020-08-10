@@ -45,7 +45,7 @@ router.post('/', (req, res) =>{
                 }
                 else {
                     passport.authenticate('local',{
-                        successRedirect : '/main',
+                        successRedirect : '/menu',
                         failureRedirect : '/'
                     })(req,res);
                 }

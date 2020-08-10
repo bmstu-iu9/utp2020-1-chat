@@ -3,13 +3,13 @@
     <head>
         <meta charset="UTF-8">
         <title>BUlink</title>
-        <link rel="stylesheet" type="text/css" href="../public/styles/login.css">
-        <link rel="icon" sizes="any" href="../public/media/login/white-logo.png">
-        <script src="../public/scripts/eye-opener.js"></script>
-        <script src="../public/scripts/bunch.js"></script>
+        <link rel="stylesheet" type="text/css" href="/static/styles/login.css">
+        <link rel="icon" sizes="any" href="/static/media/login/white-logo.png">
+        <script src="/static/scripts/eye-opener.js"></script>
+        <script src="/static/scripts/bunch.js"></script>
     </head>
     <body>
-        <form>
+        <form action="/" method="POST">
             <div>
                 <div class="logo"></div>
                 <div class="border">
@@ -18,21 +18,18 @@
                     </div>
                     <div class="login">
                         <p class="input-text" style="font-size: medium">Логин</p>
-                        <input class="input" type="text" id="login" maxlength="16"
+                        <input class="input" type="text" name="login" id="login" maxlength="16"
                                placeholder="Enter your login" />
                     </div>
                     <div class="password">
                         <p class="input-text" style="font-size: medium">Пароль</p>
-                        <input class="input" type="password" id="password" maxlength="16"
+                        <input class="input" type="password" name="password" id="password" maxlength="16"
                                placeholder="Enter password" />
                         <div class="eye" id="password-closed" onclick="togglePassword()"></div>
                     </div>
                     <button id="sign-in">
                         <a><span>Sign in</span></a>
                     </button>
-                    <button id="register" onclick="registration()">
-                        <a><span>Register</span></a>
-                    </button>  
                 </div>
                 <div class="error">
                     <div class="error-log-closed">
@@ -53,6 +50,6 @@
                 </div>
             </div>
         </form>
-        <script src="../public/scripts/validation.js"></script>
+        <script src="/static/scripts/validation.js"></script>
     </body>
 </html>

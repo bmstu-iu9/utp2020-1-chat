@@ -22,7 +22,7 @@ Room.find({}, function (err, docs) {
 });
 
 router.get('/', ensureAuthenticated, (req, res)=>{
-    let all_users = [];
+    var all_users = [];
 
     User.find({}, function (err, docs) {
         if (err) return console.log(err);
@@ -32,9 +32,9 @@ router.get('/', ensureAuthenticated, (req, res)=>{
                 login: docs[i].login
             }
             all_users.push(user);
+            if (i === docs.length-1) res.render("menu.ejs", {rooms: rooms, all_users: all_users, user: req.user});
         }
     });
-    res.render("menu.ejs", {rooms: rooms, all_users: all_users, user: req.user});
 });
  
 router.post('/', (req, res)=>{
@@ -50,21 +50,24 @@ router.post('/', (req, res)=>{
             all_users.push(user);
         }
     });
-
-    const newroom = new Room({
-        name : req.body.room,
-    });
-    newroom.save(function(err){
-        if (err) {
-            console.log(err);
-            res.redirect("back");
-        }
-        else {
-            rooms_users[req.body.room] = { users: {} };
-            rooms.push(newroom.name);
-            res.render("menu.ejs", {rooms: rooms, all_users: all_users, user: req.user});
-        }
-    });
+    setTimeout(function() {
+        const newroom = new Room({
+            name : req.body.room,
+        });
+        newroom.save(function(err){
+            if (err) {
+                console.log(err);
+                res.redirect("back");
+            }
+            else {
+                rooms_users[req.body.room] = { users: {} };
+                rooms.push(newroom.name);
+                console.log(rooms.length);
+                console.log(all_users.length);
+                res.render("menu.ejs", {rooms: rooms, all_users: all_users, user: req.user});
+            }
+        });
+    }, 100);
 });
  
 router.get('/:chat', ensureAuthenticated, (req, res)=>{

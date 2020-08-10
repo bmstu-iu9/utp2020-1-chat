@@ -32,7 +32,6 @@ function removeUser(socket) {
     }
 }
 
-//Массив - на случай, если сделаем возможность подлючаться к нескольким комнатам
 function getUserRooms(socket) {
     return Object.entries(rooms_users).reduce((resname, [name, room]) => {
         if (room.users[socket.id] != null) resname = name;

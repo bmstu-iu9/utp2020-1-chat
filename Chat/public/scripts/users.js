@@ -1,13 +1,5 @@
 'use strict'
 
-let names = [
-    "Nick",
-    "Max",
-    "Kane",
-    "Eugene",
-    "Michael",
-]
-
 function findUser() {
     let usersList = document.getElementById("users-list");
     let input = document.getElementById("user-finder");
@@ -31,35 +23,8 @@ function showAllUsers() {
     }
 }
 
-function addUser() {
-    let usersList = document.getElementById("users-list");
-
-    let user = document.createElement("div");
-    user.className = "user";
-
-    let avatar = document.createElement("div");
-    avatar.className = "avatar";
-
-    let img = document.createElement("img");
-    img.className = "image";
-    img.src = generateAvatar();
-
-    let name = document.createElement("p");
-    name.className = "name";
-    name.innerText = generateName();
-
-    avatar.appendChild(img);
-    user.appendChild(avatar);
-    user.appendChild(name);
-    usersList.appendChild(user);
-}
-
 function generateAvatar() {
-    return "../../public/media/avatars/male/" + Math.floor(Math.random()*29 + 1) + ".png";
-}
-
-function generateName() {
-    return names[Math.floor(Math.random()*names.length)];
+    return "/static/media/avatars/male/" + Math.floor(Math.random()*29 + 1) + ".png";
 }
 
 function deleteUsersList() {

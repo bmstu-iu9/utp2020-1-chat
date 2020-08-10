@@ -1,27 +1,146 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Главная</title>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8">
+    <title>BULink</title>
+    <link rel="stylesheet" type="text/css" href="/static/styles/menu.css">
+    <link rel="icon" sizes="any" href="/static/media/menu/lightblue-logo.png">
+    <script src="/static/scripts/pop-up.js"></script>
+    <script src="/static/scripts/users.js"></script>
+    <script src="/static/scripts/rooms.js"></script>
+    <script src="/static/scripts/toolbar.js"></script>
 </head>
 <body>
-<div id="room-container">
-    <% rooms.forEach(room => { %>
-        <div><%= room%></div>
-        <a href="/menu/<%= room %>">Join</a>
-    <% }) %>
+<div>
+    <div class="toolbar">
+        <div class="logo-toolbar">
+            <div class="square-logo"></div>
+        </div>
+
+        <div id="header1" class="header">
+            <p align="center" style="user-select: none; color: #ffffff;">
+                Главная страница
+            </p>
+        </div>
+
+        <div id="about" class="round-button" onclick="about()">
+            <div class="round-logo">
+                <img class="logo" alt="about" src="/static/media/menu/about.png">
+            </div>
+        </div>
+
+        <div id="settings" class="round-button" onclick="settings()">
+            <div class="round-logo">
+                <img class="logo" alt="setting" src="/static/media/menu/settings.png">
+            </div>
+        </div>
+
+        <div id="logout" class="round-button" onclick="logout()">
+            <div class="round-logo">
+                <img class="round-logo" alt="logout" src="/static/media/menu/logout.png">
+            </div>
+        </div>
+
+        <div id="pop-up" class="round-button" onclick="popUp()">
+            <div class="round-logo">
+                <img class="round-logo" alt="pop-up" src="/static/media/menu/open-menu.png">
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="left-menu">
+            <div class="finder-square">
+                <input type="text" class="user-finder" id="user-finder" oninput="findUser()"
+                       placeholder="Search for users" title="Type user's login"/>
+                <span id="delete-users-list" class="delete-list" onclick="deleteUsersList()">
+                            &times;
+                        </span>
+            </div>
+            <div id="users-list" class="users-list">
+
+                <% all_users.forEach (user => { %>
+                    <div class="user">
+                        <!--                                <div class="avatar">-->
+                        <!--                                    <img class="image" src="/static/media/avatars/male/1.png">-->
+                        <!--                                </div>-->
+                        <p class="name"> <%= user.name %> </p>
+                    </div>
+                <% }) %>
+
+                <!--                    тут будут юзеры-->
+            </div>
+        </div>
+        <div class="right-menu">
+            <div class="finder-square">
+                <input type="text" id="ChatFinder" oninput="findRoom()"
+                       placeholder= "Search for chat" title="Type chat's name"/>
+                <span id="delete-rooms-list" class="delete-list" onclick="deleteRoomsList()">
+                            &times;
+                        </span>
+            </div>
+            <form action="/menu" method="POST">
+            <div class="finder-square" id="adder">
+                <input type="text" name="room" id="AddRoom" maxlength="50"
+                       placeholder= "Add new room" title= "Type room's name"/>
+                <span id="delete-add-list" class="delete-list" onclick="deleteAddList()">
+                            &times;
+                        </span>
+            </div>
+            <button type="submit" class="plus"></button>
+            </form>
+            <div id="rooms-list" class="rooms-list">
+
+                <% rooms.forEach (room => { %>
+                    <div class="room">
+                        <!--                                <div class="room-image" style="background: #FFC0CB">-->
+                        <!--                                    <p class="letter">C1</p>-->
+                        <!--                                </div>-->
+                        <p class="room-name"> <a href="/menu/<%= room %>"> <%= room %> </a></p>
+                        <p class="last-message">Name: Last message!</p>
+                        <!--                                <p class="time">13:47</p>-->
+                    </div>
+                <% }) %>
+
+                <!--                        тут будут комнаты-->
+            </div>
+        </div>
+    </div>
 </div>
-<h1>Введите данные</h1>
-<form action="/menu" method="post">
-    <label>Комната</label><br>
-    <input type="text" name="room" /><br><br>
-    <input type="submit" value="Отправить" />
-</form>
+<div id="about-modal" class="modal">
+    <div class="body-modal">
+        <div class="top-strip">
+            <p class="top-text">About</p>
+        </div>
+        <div class="bottom-strip">
+            <p class="bottom-text">Coming soon...</p>
+            <div class="loader"></div>
+        </div>
+        <span class="close" onclick="closeModal('about-modal')">
+                    &times;
+                </span>
+    </div>
+</div>
+<div id="settings-modal" class="modal">
+    <div class="body-modal">
+        <div class="top-strip">
+            <p class="top-text">Settings</p>
+        </div>
+        <div class="bottom-strip">
+            <p class="bottom-text">Coming soon...</p>
+            <div class="loader"></div>
+        </div>
+        <span class="close" onclick="closeModal('settings-modal')">
+                    &times;
+                </span>
+    </div>
+</div>
 </body>
+<script src="/static/scripts/add-users.js"></script>
+<script src="/static/scripts/add-rooms.js"></script>
 <script src="/socket.io/socket.io.js"></script>
 <script>
-    var socket = io();
-    let username = "<% user.name %>";
+    let socket = io();
+    let username = "<%= user.name %>";
     let login = "<%= user.login %>";
     let online_users = [];
     socket.emit("logged in", {user: username, login: login});

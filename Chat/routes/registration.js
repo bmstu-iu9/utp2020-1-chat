@@ -45,8 +45,8 @@ router.post('/', (req, res) =>{
                 }
                 else {
                     passport.authenticate('local',{
-                        successRedirect : '/menu',
-                        failureRedirect : '/'
+                        successRedirect : '/',
+                        failureRedirect : '/login'
                     })(req,res);
                 }
             });

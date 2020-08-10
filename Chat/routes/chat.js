@@ -62,8 +62,6 @@ router.post('/', (req, res)=>{
             else {
                 rooms_users[req.body.room] = { users: {} };
                 rooms.push(newroom.name);
-                console.log(rooms.length);
-                console.log(all_users.length);
                 res.render("menu.ejs", {rooms: rooms, all_users: all_users, user: req.user});
             }
         });
@@ -98,7 +96,7 @@ router.get('/:chat', ensureAuthenticated, (req, res)=>{
  
 router.get('/logout',ensureAuthenticated, (req, res)=>{
     req.logout();
-    res.redirect('/');
+    res.redirect('/login');
 });
  
 module.exports = router;

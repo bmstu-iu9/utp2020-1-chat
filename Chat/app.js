@@ -36,10 +36,10 @@ app.use(session({
  
 app.use(passport.initialize());
 app.use(passport.session());
- 
-app.use('/', require('./routes/auth'));
-app.use('/menu', require('./routes/chat'));
+
+app.use('/login', require('./routes/auth'));
 app.use('/registration', require('./routes/registration'));
+app.use('/', require('./routes/chat'));
  
 let online_users = [];
  

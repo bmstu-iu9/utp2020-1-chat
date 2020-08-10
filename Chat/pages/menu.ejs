@@ -36,7 +36,7 @@
         </div>
 
         <div id="logout" class="round-button">
-            <a href="menu/logout">
+            <a href="/logout">
             <div class="round-logo">
                 <img class="round-logo" alt="logout" src="/static/media/menu/logout.png">
             </div>
@@ -80,7 +80,7 @@
                             &times;
                         </span>
             </div>
-            <form action="/menu" method="POST">
+            <form action="/" method="POST">
             <div class="finder-square" id="adder">
                 <input type="text" name="room" id="AddRoom" maxlength="50"
                        placeholder= "Add new room" title= "Type room's name"/>
@@ -97,7 +97,7 @@
                         <!--                                <div class="room-image" style="background: #FFC0CB">-->
                         <!--                                    <p class="letter">C1</p>-->
                         <!--                                </div>-->
-                        <p class="room-name"> <a href="/menu/<%= room %>"> <%= room %> </a></p>
+                        <p class="room-name"> <a href="/<%= room %>"> <%= room %> </a></p>
                         <p class="last-message">Name: Last message!</p>
                         <!--                                <p class="time">13:47</p>-->
                     </div>

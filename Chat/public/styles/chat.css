@@ -445,7 +445,30 @@ p {
     position: absolute;
     width: 94%;
     height: 50px;
-    margin-top: calc(50px + 82%);
+    margin-top: calc(50px + 80%);
+}
+
+.showEmoji{
+    position: absolute;
+    margin-top: calc(50px + 80%);
+    width: 50px;
+    display: block;
+}
+
+.emoji{
+    display: block;
+    width: 94%;
+    height: 60px;
+    margin-top: calc(50px + 70%);
+    margin-left: 5px;
+    border: #77accc solid 2px;
+    border-radius: 10px;
+    text-indent: 5px;
+    outline: none;
+    font-family: "Comfortaa", cursive;
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-position: 5px 5px;
 }
 
 .time {
@@ -465,7 +488,7 @@ p {
     list-style-type: none;
     overflow: auto;
     width: 94%;
-    height: 82%;
+    height: 70%;
 }
 .me {
     font-family: sans-serif, "Courier New", Courier, monospace;

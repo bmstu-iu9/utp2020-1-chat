@@ -22,7 +22,7 @@ Room.find({}, function (err, docs) {
 });
 
 router.get('/', ensureAuthenticated, (req, res)=>{
-    let all_users = [];
+    var all_users = [];
 
     User.find({}, function (err, docs) {
         if (err) return console.log(err);
@@ -32,9 +32,9 @@ router.get('/', ensureAuthenticated, (req, res)=>{
                 login: docs[i].login
             }
             all_users.push(user);
+            if (i === docs.length-1) res.render("menu.ejs", {rooms: rooms, all_users: all_users, user: req.user});
         }
     });
-    res.render("menu.ejs", {rooms: rooms, all_users: all_users, user: req.user});
 });
  
 router.post('/', (req, res)=>{

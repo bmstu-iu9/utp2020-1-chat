@@ -11,3 +11,8 @@
 * Якушев Константин [front-end] : @YakushevK
 * Максимов Евгений [front-end] : @maxevg
 * Костриця Максим [support] : @MaksimKoster
+***
+### Инструкция по запуску:
+* Установить(если еще не установлена) MongoDB
+* Установка зависимостей: npm install
+* Запуск: node Chat/app.js

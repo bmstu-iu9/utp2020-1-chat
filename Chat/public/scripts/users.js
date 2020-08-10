@@ -24,7 +24,7 @@ function showAllUsers() {
 }
 
 function generateAvatar() {
-    return "../../public/media/avatars/male/" + Math.floor(Math.random()*29 + 1) + ".png";
+    return "/static/media/avatars/male/" + Math.floor(Math.random()*29 + 1) + ".png";
 }
 
 function deleteUsersList() {

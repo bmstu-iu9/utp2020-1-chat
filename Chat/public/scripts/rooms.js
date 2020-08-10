@@ -40,42 +40,42 @@ function showAllRooms() {
     }
 }
 
-function addRoom() {
-    let roomsList = document.getElementById("rooms-list");
-    let input = document.getElementById("AddRoom");
-    let chatroom = input.value;
-    input.value = "";
-
-    let room = document.createElement("div");
-    room.className = "room";
-
-    let roomImg = document.createElement("div");
-    roomImg.className = "room-image";
-    roomImg.style.background = generateColor();
-
-    let letter = document.createElement("p");
-    letter.className = "letter";
-    letter.innerText = chatroom[0].toUpperCase();
-
-    let roomName = document.createElement("p");
-    roomName.className = "room-name";
-    roomName.innerText = chatroom;
-
-    let lastMessage = document.createElement("p");
-    lastMessage.className = "last-message";
-    lastMessage.innerText = "Everybody: *love scheme*";
-
-    let time = document.createElement("p");
-    time.className = "time";
-    time.innerText = Math.floor(Math.random()*13 + 10) + ":" + Math.floor(Math.random()*49 + 10);
-
-    roomImg.appendChild(letter);
-    room.appendChild(roomImg);
-    room.appendChild(roomName);
-    room.appendChild(lastMessage);
-    room.appendChild(time);
-    roomsList.appendChild(room);
-}
+// function addRoom() {
+//     let roomsList = document.getElementById("rooms-list");
+//     let input = document.getElementById("AddRoom");
+//     let chatroom = input.value;
+//     input.value = "";
+//
+//     let room = document.createElement("div");
+//     room.className = "room";
+//
+//     let roomImg = document.createElement("div");
+//     roomImg.className = "room-image";
+//     roomImg.style.background = generateColor();
+//
+//     let letter = document.createElement("p");
+//     letter.className = "letter";
+//     letter.innerText = chatroom[0].toUpperCase();
+//
+//     let roomName = document.createElement("p");
+//     roomName.className = "room-name";
+//     roomName.innerText = chatroom;
+//
+//     let lastMessage = document.createElement("p");
+//     lastMessage.className = "last-message";
+//     lastMessage.innerText = "Everybody: *love scheme*";
+//
+//     let time = document.createElement("p");
+//     time.className = "time";
+//     time.innerText = Math.floor(Math.random()*13 + 10) + ":" + Math.floor(Math.random()*49 + 10);
+//
+//     roomImg.appendChild(letter);
+//     room.appendChild(roomImg);
+//     room.appendChild(roomName);
+//     room.appendChild(lastMessage);
+//     room.appendChild(time);
+//     roomsList.appendChild(room);
+// }
 
 function generateColor() {
     return colors[Math.floor(Math.random()*colors.length)];

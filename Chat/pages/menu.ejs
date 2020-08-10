@@ -52,17 +52,21 @@
             <div class="finder-square">
                 <input type="text" class="user-finder" id="user-finder" oninput="findUser()"
                        placeholder="Search for users" title="Type user's login"/>
-                <span id="delete-users-list" class="delete-list" onclick="deleteUsersList()">&times;</span>
+                <span id="delete-users-list" class="delete-list" onclick="deleteUsersList()">
+                            &times;
+                        </span>
             </div>
             <div id="users-list" class="users-list">
+
                 <% all_users.forEach (user => { %>
                     <div class="user">
-                        <div class="avatar">
-                            <img class="image" src="/static/media/avatars/male/1.png">
-                        </div>
+                        <!--                                <div class="avatar">-->
+                        <!--                                    <img class="image" src="/static/media/avatars/male/1.png">-->
+                        <!--                                </div>-->
                         <p class="name"> <%= user.name %> </p>
                     </div>
                 <% }) %>
+
                 <!--                    тут будут юзеры-->
             </div>
         </div>
@@ -70,24 +74,30 @@
             <div class="finder-square">
                 <input type="text" id="ChatFinder" oninput="findRoom()"
                        placeholder= "Search for chat" title="Type chat's name"/>
-                <span id="delete-rooms-list" class="delete-list" onclick="deleteRoomsList()">&times;</span>
+                <span id="delete-rooms-list" class="delete-list" onclick="deleteRoomsList()">
+                            &times;
+                        </span>
             </div>
+            <form action="/menu" method="POST">
             <div class="finder-square" id="adder">
-                <input type="text" id="AddRoom" maxlength="50"
+                <input type="text" name="room" id="AddRoom" maxlength="50"
                        placeholder= "Add new room" title= "Type room's name"/>
-                <span id="delete-add-list" class="delete-list" onclick="deleteAddList()">&times;</span>
+                <span id="delete-add-list" class="delete-list" onclick="deleteAddList()">
+                            &times;
+                        </span>
             </div>
-            <button class="plus" onclick="addRoom()"></button>
+            <button type="submit" class="plus"></button>
+            </form>
             <div id="rooms-list" class="rooms-list">
 
                 <% rooms.forEach (room => { %>
                     <div class="room">
-                        <div class="room-image" style="background: #FFC0CB">
-                            <p class="letter">C1</p>
-                        </div>
+                        <!--                                <div class="room-image" style="background: #FFC0CB">-->
+                        <!--                                    <p class="letter">C1</p>-->
+                        <!--                                </div>-->
                         <p class="room-name"> <a href="/menu/<%= room %>"> <%= room %> </a></p>
-                        <p class="last-message">Michael: I love POST!</p>
-                        <p class="time">13:47</p>
+                        <p class="last-message">Name: Last message!</p>
+                        <!--                                <p class="time">13:47</p>-->
                     </div>
                 <% }) %>
 
@@ -105,7 +115,9 @@
             <p class="bottom-text">Coming soon...</p>
             <div class="loader"></div>
         </div>
-        <span class="close" onclick="closeModal('about-modal')">&times;</span>
+        <span class="close" onclick="closeModal('about-modal')">
+                    &times;
+                </span>
     </div>
 </div>
 <div id="settings-modal" class="modal">
@@ -117,13 +129,17 @@
             <p class="bottom-text">Coming soon...</p>
             <div class="loader"></div>
         </div>
-        <span class="close" onclick="closeModal('settings-modal')">&times;</span>
+        <span class="close" onclick="closeModal('settings-modal')">
+                    &times;
+                </span>
     </div>
 </div>
 </body>
+<script src="/static/scripts/add-users.js"></script>
+<script src="/static/scripts/add-rooms.js"></script>
 <script src="/socket.io/socket.io.js"></script>
 <script>
-    var socket = io();
+    let socket = io();
     let username = "<%= user.name %>";
     let login = "<%= user.login %>";
     let online_users = [];

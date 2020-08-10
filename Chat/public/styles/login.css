@@ -158,33 +158,6 @@ span {
     z-index: 5;
 }
 
-a:before,
-a:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-}
-
-a:before {
-    transform: translateX(-100%);
-    background: white;
-    transition: transform .3s cubic-bezier(.55,.055,.675,.19);
-}
-
-a:after {
-    background: #e7f0f5;
-    transform: translateX(100%);
-    transition: transform .3s cubic-bezier(.16,.73,.58,.62) .3s;
-}
-
-a:hover:before,
-a:hover:after {
-    transform: translateX(0);
-}
-
 .error {
     position: absolute;
     width: 400px;

@@ -1,9 +1,9 @@
 {
     let rooms = document.getElementById("rooms-list");
-    let room = rooms.getElementsByTagName("a");
-    for (let i = 0; i < room.length; i++) {
-        room[i] = room[i].getElementsByClassName("room")[0];
-        let name = room[i].getElementsByClassName("room-name")[0].getElementsByTagName("a")[0].innerText;
+    let as = rooms.getElementsByTagName("a");
+    for (let i = 0; i < as.length; i++) {
+        let room = as[i].getElementsByClassName("room")[0];
+        let name = room.getElementsByClassName("room-name")[0].innerText;
         let roomImg = document.createElement("div");
         roomImg.className = "room-image";
         roomImg.style.background = generateColor();
@@ -17,7 +17,7 @@
         time.innerText = Math.floor(Math.random()*13 + 10) + ":" + Math.floor(Math.random()*49 + 10);
 
         roomImg.appendChild(letter);
-        room[i].appendChild(roomImg);
-        room[i].appendChild(time);
+        room.appendChild(roomImg);
+        room.appendChild(time);
     }
 }

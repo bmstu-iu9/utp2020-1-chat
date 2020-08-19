@@ -18,15 +18,15 @@ Web-чат включает в себя 4 страницы: авторизаци
 ***
 ### Инструкция по установке и запуску:
 1\. Склонируйте репозиторий в папку на персональном компьютере: <br>
-`git clone https://github.com/bmstu-iu9/utp2020-1-chat` <br>
+> git clone https://github.com/bmstu-iu9/utp2020-1-chat <br>
 2\. Перейдите в рабочую папку проекта: <br>
-`cd utp2020-1-chat/Chat` <br>
+> cd utp2020-1-chat/Chat <br>
 3\. Установите MongoDB: <br>
 Установочный пакет можно скачать с [официального сайта](https://www.mongodb.com/try/download/community) 
 (либо используйте менеджер установок) <br>
 4\. Установите зависимости: <br>
-`npm install` <br>
+> npm install <br>
 5\. Запустите сервер: <br>
-`node app.js` <br>
+> node app.js <br>
 6\. Откройте в браузере страницу localhost:3000 <br>
 7\. Готово! 

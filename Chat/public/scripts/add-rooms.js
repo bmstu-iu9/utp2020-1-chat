@@ -2,6 +2,7 @@
     let rooms = document.getElementById("rooms-list");
     let room = rooms.getElementsByClassName("room");
     for (let i = 0; i < room.length; i++) {
+        room[i] = room[i].getElementsByTagName("a")[0];
         let name = room[i].getElementsByClassName("room-name")[0].getElementsByTagName("a")[0].innerText;
         let roomImg = document.createElement("div");
         roomImg.className = "room-image";

@@ -25,7 +25,7 @@
         </div>
         <div id="settings" class="round-button" onclick="settings()">
             <div class="round-logo">
-                <img class="logo" alt="setting" src="/static/media/chat/Media/settings.png">
+                <img class="logo" alt="setting" src="/static/media/menu/settings.png">
             </div>
         </div>
         <div id="leave" class="round-button">
@@ -64,12 +64,37 @@
             <p align="center" style="color: white" id="roomName">Название чата</p>
         </div>
 
+        <!--Блок сообщений-->
         <ul id="messages"></ul>
 
+        <!--Форма для отправки сообщений-->
         <form class="send-form">
             <input type="text" id="m" class="WriteMessage"/>
             <input type="submit" id="submitButton" value="Send" onclick="focusmessage()" class="SendMessage"/>
         </form>
+
+        <!--Блок эмодзи(начало)-->
+        <button id="emoji-but" class="showEmoji">😀</button>
+        <div class="emoji" id="emoji-block">
+                <button id="😀" value="😀">😀</button>
+                <button id="😃" value="😃">😃</button>
+                <button id="😄" value="😄">😄</button>
+                <button id="😁" value="😁">😁</button>
+                <button id="😆" value="😆">😆</button>
+                <button id="😅" value="😅">😅</button>
+                <button id="😂" value="😂">😂</button>
+                <button id="🤣" value="🤣">🤣</button>
+                <button id="😊" value="😊">😊</button>
+                <button id="😇" value="😇">😇</button>
+                <button id="🙂" value="🙂">🙂</button>
+                <button id="🙃" value="🙃">🙃</button>
+                <button id="😉" value="😉">😉</button>
+                <button id="😌" value="😌">😌</button>
+                <button id="😍" value="😍">😍</button>
+        </div>
+
+
+    </div>
 
     </div>
 </div>
@@ -99,6 +124,8 @@
 </div>
 
 </body>
+<script src="/static/scripts/show-emoji.js"></script>
+<script src="/static/scripts/add-emoji.js"></script>
 <script src="/socket.io/socket.io.js"></script>
 <script>
     focusmessage = function getFocus() {

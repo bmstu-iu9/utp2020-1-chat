@@ -94,7 +94,7 @@ router.get('/:chat', ensureAuthenticated, (req, res)=>{
     });
 });
  
-router.get('/logout',ensureAuthenticated, (req, res)=>{
+router.post('/logout',ensureAuthenticated, (req, res)=>{
     req.logout();
     res.redirect('/login');
 });

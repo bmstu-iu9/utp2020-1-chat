@@ -36,14 +36,13 @@
         </div>
 
         <form action="/logout" method="POST">
-         <button>
-        <div id="logout" class="round-button">
-            <div class="round-logo">
-                <img class="round-logo" alt="logout" src="/static/media/menu/logout.png">
-            </div>
-            </a>
-        </div>
-        </button>
+            <button>
+                <div id="logout" class="round-button">
+                    <div class="round-logo">
+                        <img class="round-logo" alt="logout" src="/static/media/menu/logout.png">
+                    </div>
+                </div>
+            </button>
         </form>
 
         <div id="pop-up" class="round-button" onclick="popUp()">
@@ -59,7 +58,7 @@
                        placeholder="Search for users" title="Type user's login"/>
                 <span id="delete-users-list" class="delete-list" onclick="deleteUsersList()">
                             &times;
-                        </span>
+                </span>
             </div>
             <div id="users-list" class="users-list">
 
@@ -81,29 +80,31 @@
                        placeholder= "Search for chat" title="Type chat's name"/>
                 <span id="delete-rooms-list" class="delete-list" onclick="deleteRoomsList()">
                             &times;
-                        </span>
+                </span>
             </div>
             <form action="/" method="POST">
-            <div class="finder-square" id="adder">
-                <input type="text" name="room" id="AddRoom" maxlength="50"
-                       placeholder= "Add new room" title= "Type room's name"/>
-                <span id="delete-add-list" class="delete-list" onclick="deleteAddList()">
-                            &times;
-                        </span>
-            </div>
-            <button type="submit" class="plus"></button>
+                <div class="finder-square" id="adder">
+                    <input type="text" name="room" id="AddRoom" maxlength="50"
+                           placeholder= "Add new room" title= "Type room's name"/>
+                    <span id="delete-add-list" class="delete-list" onclick="deleteAddList()">
+                                &times;
+                    </span>
+                </div>
+                <button type="submit" class="plus"></button>
             </form>
             <div id="rooms-list" class="rooms-list">
 
                 <% rooms.forEach (room => { %>
-                    <div class="room">
-                        <!--                                <div class="room-image" style="background: #FFC0CB">-->
-                        <!--                                    <p class="letter">C1</p>-->
-                        <!--                                </div>-->
-                        <p class="room-name"> <a href="/<%= room %>"> <%= room %> </a></p>
-                        <p class="last-message">Name: Last message!</p>
-                        <!--                                <p class="time">13:47</p>-->
-                    </div>
+                    <a href="/<%= room %>">
+                        <div class="room">
+                            <!--                                <div class="room-image" style="background: #FFC0CB">-->
+                            <!--                                    <p class="letter">C1</p>-->
+                            <!--                                </div>-->
+                            <p class="room-name"> <a> <%= room %> </a> </p>
+                            <p class="last-message">Name: Last message!</p>
+                            <!--                                <p class="time">13:47</p>-->
+                        </div>
+                    </a>
                 <% }) %>
 
                 <!--                        тут будут комнаты-->

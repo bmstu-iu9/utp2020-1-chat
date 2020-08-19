@@ -1,12 +1,11 @@
 let shown = false;
 const emoji = document.getElementById("emoji-block");
-emoji.style.display = "none";
 const button = document.getElementById("emoji-but");
 
 
 button.addEventListener("click", function () {
     if(!shown){
-        emoji.style.display = "";
+        emoji.style.display = "block";
         shown = true;
     }
     else{

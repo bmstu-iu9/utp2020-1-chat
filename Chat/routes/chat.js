@@ -8,7 +8,9 @@ const {
     User,
     joinUser,
     removeUser,
-    rooms_users
+    rooms_users,
+    userin,
+    userout
 } = require('../models/user');
 const Message = require('../models/messages');
  

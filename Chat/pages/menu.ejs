@@ -146,9 +146,6 @@
     let login = "<%= user.login %>";
     let online_users = [];
     socket.emit("logged in", {user: username, login: login});
-    socket.on("user-disconnected", ()=>{
-        socket.emit("user-disconnected", {user: username, login: login});
-    });
     socket.on("new online", (data)=>{
         online_users = data.online_users;
     });

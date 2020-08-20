@@ -9,13 +9,40 @@ Room.find({}, function (err, docs) {
     }
 });
 
-function joinUser(socketId, userName, roomName) {
+let online_users = [];
+
+function userin(socketId, userName, login) {
     const user = {
         socketID :  socketId,
         username : userName,
-        roomname : roomName
+        login: login
     }
-    rooms_users[roomName].users[socketId] = userName;
+    online_users.push(user);
+}
+
+function userout(socketID) {
+    let index;
+    for (let i = 0; i < online_users.length; i++) {
+        if (online_users[i].socketID == socketID) {
+            index = i;
+            break;
+        }
+    }
+    return online_users.splice(index, 1)[0];
+} 
+
+function joinUser(socketId, userName, roomName, login) {
+    const user = {
+        socketID :  socketId,
+        username : userName,
+        roomname : roomName,
+        login: login
+    }
+    user_and_login = {
+        username: userName,
+        login: login
+    }
+    rooms_users[roomName].users[socketId] = user_and_login;
     return user;
 }
 
@@ -57,5 +84,7 @@ module.exports = {
     User,
     joinUser,
     removeUser,
-    rooms_users
+    rooms_users,
+    userin,
+    userout
 };

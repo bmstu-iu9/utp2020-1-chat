@@ -10,7 +10,8 @@ const {
     removeUser,
     rooms_users,
     userin,
-    userout
+    userout,
+    online_users
 } = require('../models/user');
 const Message = require('../models/messages');
  
@@ -34,7 +35,9 @@ router.get('/', ensureAuthenticated, (req, res)=>{
                 login: docs[i].login
             }
             all_users.push(user);
-            if (i === docs.length-1) res.render("menu.ejs", {rooms: rooms, all_users: all_users, user: req.user});
+            if (i === docs.length-1){
+                res.render("menu.ejs", {rooms: rooms, all_users: all_users, user: req.user, online_users: online_users});
+            }
         }
     });
 });
@@ -64,7 +67,7 @@ router.post('/', (req, res)=>{
             else {
                 rooms_users[req.body.room] = { users: {} };
                 rooms.push(newroom.name);
-                res.render("menu.ejs", {rooms: rooms, all_users: all_users, user: req.user});
+                res.render("menu.ejs", {rooms: rooms, all_users: all_users, user: req.user, online_users: online_users});
             }
         });
     }, 100);

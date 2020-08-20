@@ -12,7 +12,8 @@ const {
     removeUser,
     rooms_users,
     userin,
-    userout
+    userout,
+    online_users
 } = require('./models/user');
 const Room = require('./models/rooms');
 const Message = require('./models/messages');
@@ -43,7 +44,7 @@ app.use('/login', require('./routes/auth'));
 app.use('/registration', require('./routes/registration'));
 app.use('/', require('./routes/chat'));
  
-let online_users = [];
+let onlines = [];
  
 io.on('connection', (socket) => {
  
@@ -53,9 +54,8 @@ io.on('connection', (socket) => {
             login: data.login
         }
         userin(socket.id, data.user, data.login);
-        online_users.push(user);
+        onlines.push(user);
         console.log(user.login + " connected");
-        socket.emit("new online", {online_users: online_users});
     });
  
     socket.on("join room", (data) =>{
@@ -83,7 +83,15 @@ io.on('connection', (socket) => {
     socket.on("disconnect", () => {
         removeUser(socket);
         let user = userout(socket.id);
+        let index;
+        for (let i = 0; i < onlines.length; i++) {
+            if (onlines[i].socketID === socket.id) {
+                index = i;
+                break;
+            }
+        }
         console.log(user.login + " " + user.username +  " disconnected");
+        onlines.splice(index, 1);
     });
 });
  

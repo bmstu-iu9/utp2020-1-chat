@@ -12,7 +12,8 @@ const {
     removeUser,
     rooms_users,
     userin,
-    userout
+    userout,
+    online_users
 } = require('../models/user');
 
 router.get('/', (req, res)=>{

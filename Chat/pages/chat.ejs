@@ -136,17 +136,18 @@
     let userName = "<%= user.name %>";
     let room = "<%= roomname %>";
     let ID = "";
+    let login = "<%= user.login %>";
     var socket = io();
+
 
     document.getElementById("roomName").textContent = "Чат : " +room;
 
-    socket.emit("join room", {username : userName, roomname : room});
+    socket.emit("join room", {username : userName, roomname : room, login: login});
 
     socket.on('send data',(data)=>{
         ID = data.id;
         console.log(" my ID:" + ID);
     })
-
 
     document
         .getElementsByTagName("form")[0]

@@ -6,7 +6,8 @@ const {
     removeUser,
     rooms_users,
     userin,
-    userout
+    userout,
+    online_users
 } = require('../models/user');
 
 module.exports = function(passport) {

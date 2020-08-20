@@ -23,7 +23,7 @@ function userin(socketId, userName, login) {
 function userout(socketID) {
     let index;
     for (let i = 0; i < online_users.length; i++) {
-        if (online_users[i].socketID == socketID) {
+        if (online_users[i].socketID === socketID) {
             index = i;
             break;
         }
@@ -86,5 +86,6 @@ module.exports = {
     removeUser,
     rooms_users,
     userin,
-    userout
+    userout,
+    online_users
 };

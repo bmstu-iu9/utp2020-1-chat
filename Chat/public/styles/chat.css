@@ -311,7 +311,8 @@ p {
 .WriteMessage {
     position: absolute;
     height: 40px;
-    width: 75%;
+    margin-left: 5%;
+    width: 60%;
     border: #77accc solid 2px;
     border-radius: 10px;
     text-indent: 5px;
@@ -331,7 +332,7 @@ p {
     border-radius: 10px;
     background: #ff69b4;
     height: 40px;
-	width: 17%;
+	width: 15%;
 	font-family: "Comfortaa", cursive;
 }
 
@@ -450,23 +451,27 @@ p {
     position: absolute;
     width: 94%;
     height: 50px;
-    margin-top: calc(50px + 80%);
+    margin-top: 730px;
 }
 
 .showEmoji{
     position: absolute;
-    margin-top: calc(50px + 80%);
-    width: 50px;
+    margin-left: 70%;
+    width: 6%;
     display: block;
+    border: #77accc solid 2px;
+    border-radius: 10px;
+    font-size: x-large;
+    background-color: white;
 }
 
 
 .emoji{
     display: none;
     width: 30%;
-    height: 60px;
-    margin-top: calc(50px + 70%);
-    margin-left: 5px;
+    height: 50px;
+    margin-top: 660px;
+    margin-left: 5%;
     border: #77accc solid 2px;
     border-radius: 10px;
     text-indent: 5px;
@@ -491,12 +496,13 @@ p {
 }
 #messages {
     margin-top: 50px;
-    margin-left: 1px;
+    margin-left: 5px;
     position: absolute;
     list-style-type: none;
     overflow: auto;
     width: 94%;
-    height: 70%;
+    height: 600px;
+    border-bottom: #77accc solid 2px;
 }
 .me {
     font-family: sans-serif, "Courier New", Courier, monospace;

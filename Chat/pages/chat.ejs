@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>BULink</title>
     <link rel="stylesheet" type="text/css" href="/static/styles/chat.css">
-    <link rel="icon" sizes="any" href="/static/media/chat/lightblue-logo.png">
+    <link rel="icon" sizes="any" href="/static/media/chat/Media/white-logo.png">
     <script src="/static/scripts/pop-up-chat.js"></script>
     <script src="/static/scripts/toolbar.js"></script>
     <script src="/static/scripts/users.js"></script>
@@ -67,14 +67,15 @@
         <!--Блок сообщений-->
         <ul id="messages"></ul>
 
+
         <!--Форма для отправки сообщений-->
         <form class="send-form">
             <input type="text" id="m" class="WriteMessage"/>
-            <input type="submit" id="submitButton" value="Send" onclick="focusmessage()" class="SendMessage"/>
+            <button id="emoji-but" class="showEmoji">😀</button>
+            <input type="submit" id="submitButton"onclick="focusmessage()" class="SendMessage">
         </form>
 
         <!--Блок эмодзи(начало)-->
-        <button id="emoji-but" class="showEmoji">😀</button>
         <div class="emoji" id="emoji-block">
                 <button id="😀" value="😀">😀</button>
                 <button id="😃" value="😃">😃</button>
@@ -135,17 +136,11 @@
     let userName = "<%= user.name %>";
     let room = "<%= roomname %>";
     let ID = "";
-    let login = "<%= user.login %>";
-    let online_users = [];
     var socket = io();
-    
-    socket.on("new online", (data)=>{
-        online_users = data.online_users;
-    });
 
     document.getElementById("roomName").textContent = "Чат : " +room;
 
-    socket.emit("join room", {username : userName, roomname : room, login: login});
+    socket.emit("join room", {username : userName, roomname : room});
 
     socket.on('send data',(data)=>{
         ID = data.id;
@@ -168,7 +163,7 @@
         });
     socket.on("chat message", (data) => {
         console.log(data.data.user + ": " + data.id);
-        displayMessage(data);
+        if(data.data.value != "") displayMessage(data);
     });
 
     function displayMessage(data) {

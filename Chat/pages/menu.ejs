@@ -65,12 +65,12 @@
                 <% all_users.forEach (this_user => { %>
                     <div class="user">
                         <p class="name"> <%= this_user.name %> </p>
-                        <% if (user.login === this_user.login){ %>
-                            <p>onlineeeeeeeeeeeee</p>
-                        <% }else{ %>
+                        <% if (user.login === this_user.login) { %>
+                            <div class="online"></div>
+                        <% } else { %>
                             <% for (let i = 0; i < online_users.length; i++){ %>
                                 <% if (this_user.login === online_users[i].login){ %>
-                                    <p>onlineeeeeeeeeeeee</p>
+                                    <div class="offline"></div>
                                     <% break %>
                                 <% } %>
                             <% } %>

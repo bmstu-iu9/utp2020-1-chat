@@ -31,16 +31,18 @@ function userout(socketID) {
     return online_users.splice(index, 1)[0];
 } 
 
-function joinUser(socketId, userName, roomName, login) {
+function joinUser(socketId, userName, roomName, login, gender) {
     const user = {
         socketID :  socketId,
         username : userName,
         roomname : roomName,
-        login: login
+        login: login,
+        gender: gender
     }
     user_and_login = {
         username: userName,
-        login: login
+        login: login,
+        gender: gender
     }
     rooms_users[roomName].users[socketId] = user_and_login;
     return user;
@@ -76,6 +78,10 @@ const UserSchema  = new mongoose.Schema({
     password: {
         type: String
     },
+    gender: {
+        type: String,
+        default: "Мужской"
+    }
 });
 const User = mongoose.model('User', UserSchema);
 

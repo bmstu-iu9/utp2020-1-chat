@@ -39,7 +39,8 @@ router.post('/', (req, res) =>{
             const newUser = new User({
                 name : name,
                 login : login,
-                password : bcryptjs.hashSync(password, salt)
+                password : bcryptjs.hashSync(password, salt),
+                gender: gender
             });
             newUser.save(function(err){
                 if (err) {

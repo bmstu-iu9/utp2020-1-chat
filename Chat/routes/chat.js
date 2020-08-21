@@ -32,7 +32,8 @@ router.get('/', ensureAuthenticated, (req, res)=>{
         for (let i = 0;i < docs.length; i++){
             let user = {
                 name: docs[i].name,
-                login: docs[i].login
+                login: docs[i].login,
+                gender: docs[i].gender
             }
             all_users.push(user);
             if (i === docs.length-1){
@@ -49,7 +50,8 @@ async function saveRoom_and_getMainpage(req, res){
         for (let i = 0;i < docs.length; i++){
             let user = {
                 name: docs[i].name,
-                login: docs[i].login
+                login: docs[i].login,
+                gender: docs[i].gender
             }
             users.push(user);
         }
@@ -93,7 +95,7 @@ async function getRoom(req, res){
     });
     Room.findOne({name : req.params.chat}).exec((err,room)=> {
         if (room) {
-            res.render("chat.ejs", {roomname: req.params.chat, user: req.user, roomusers: rooms_users, data_messages: messages});
+            res.render("chat.ejs", {roomname: req.params.chat, user: req.user, roomusers: rooms_users[req.params.chat], data_messages: messages});
             console.log("users in " + req.params.chat + ": ");
             console.log(rooms_users[req.params.chat]);
         } else {

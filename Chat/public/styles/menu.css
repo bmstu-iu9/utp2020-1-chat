@@ -306,8 +306,8 @@ a, a:active, a:hover, a:visited {
 
 .online {
     position: absolute;
-    left: 95%;
-    top: 20px;
+    margin-left: 95%;
+    margin-top: 20px;
     height: 10px;
     width: 10px;
     border-radius: 50%;
@@ -316,8 +316,8 @@ a, a:active, a:hover, a:visited {
 
 .offline {
     position: absolute;
-    left: 95%;
-    top: 20px;
+    margin-left: 95%;
+    margin-top: 20px;
     height: 10px;
     width: 10px;
     border-radius: 50%;

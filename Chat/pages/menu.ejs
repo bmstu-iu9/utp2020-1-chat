@@ -62,12 +62,19 @@
             </div>
             <div id="users-list" class="users-list">
 
-                <% all_users.forEach (user => { %>
+                <% all_users.forEach (this_user => { %>
                     <div class="user">
-                        <!--                                <div class="avatar">-->
-                        <!--                                    <img class="image" src="/static/media/avatars/male/1.png">-->
-                        <!--                                </div>-->
-                        <p class="name"> <%= user.name %> </p>
+                        <p class="name"> <%= this_user.name %> </p>
+                        <% if (user.login === this_user.login){ %>
+                            <p>onlineeeeeeeeeeeee</p>
+                        <% }else{ %>
+                            <% for (let i = 0; i < online_users.length; i++){ %>
+                                <% if (this_user.login === online_users[i].login){ %>
+                                    <p>onlineeeeeeeeeeeee</p>
+                                    <% break %>
+                                <% } %>
+                            <% } %>
+                        <% } %>
                     </div>
                 <% }) %>
 

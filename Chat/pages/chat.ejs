@@ -164,7 +164,7 @@
         });
     socket.on("chat message", (data) => {
         console.log(data.data.user + ": " + data.id);
-        if(data.data.value != "") displayMessage(data);
+        displayMessage(data);
     });
 
     function displayMessage(data) {

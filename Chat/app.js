@@ -76,8 +76,10 @@ io.on('connection', (socket) => {
             roomName: data.room,
             text: data.value,
         });
-        message.save();
-        io.to(data.room).emit("chat message", {data:data, id: socket.id});
+        if (message.text != "") {
+            message.save();
+            io.to(data.room).emit("chat message", {data:data, id: socket.id});
+        }
     });
 
     socket.on("disconnect", () => {

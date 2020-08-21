@@ -42,41 +42,43 @@ router.get('/', ensureAuthenticated, (req, res)=>{
     });
 });
  
-router.post('/', (req, res)=>{
-    let all_users = [];
-
-    User.find({}, function (err, docs) {
+async function saveRoom_and_getMainpage(req, res){
+    let all_users = await User.find({}, function (err, docs) {
         if (err) return console.log(err);
+        let users = []
         for (let i = 0;i < docs.length; i++){
             let user = {
                 name: docs[i].name,
                 login: docs[i].login
             }
-            all_users.push(user);
+            users.push(user);
+        }
+        return users;
+    });
+    const newroom = new Room({
+        name : req.body.room,
+    });
+    newroom.save(function(err){
+        if (err) {
+            console.log(err);
+            res.redirect("back");
+        }
+        else {
+            rooms_users[req.body.room] = { users: {} };
+            rooms.push(newroom.name);
+            res.render("menu.ejs", {rooms: rooms, all_users: all_users, user: req.user, online_users: online_users});
         }
     });
-    setTimeout(function() {
-        const newroom = new Room({
-            name : req.body.room,
-        });
-        newroom.save(function(err){
-            if (err) {
-                console.log(err);
-                res.redirect("back");
-            }
-            else {
-                rooms_users[req.body.room] = { users: {} };
-                rooms.push(newroom.name);
-                res.render("menu.ejs", {rooms: rooms, all_users: all_users, user: req.user, online_users: online_users});
-            }
-        });
-    }, 100);
+}
+ 
+router.post('/', (req, res)=>{
+    saveRoom_and_getMainpage(req,res);
 });
  
-router.get('/:chat', ensureAuthenticated, (req, res)=>{
-    let messages = [];
-    Message.find({roomName: req.params.chat}, function (err, docs) {
+async function getRoom(req, res){
+    let messages = await Message.find({roomName: req.params.chat}, function (err, docs) {
         if (err) return console.log(err);
+        let db_messages = [];
         for (let i = 0;i < docs.length; i++){
             let message = {
                 roomName: docs[i].roomName,
@@ -85,8 +87,9 @@ router.get('/:chat', ensureAuthenticated, (req, res)=>{
                 login: docs[i].login,
                 username: docs[i].username
             }
-            messages.push(message);
+            db_messages.push(message);
         }
+        return db_messages;
     });
     Room.findOne({name : req.params.chat}).exec((err,room)=> {
         if (room) {
@@ -97,6 +100,10 @@ router.get('/:chat', ensureAuthenticated, (req, res)=>{
             res.redirect("back");
         }
     });
+}
+ 
+router.get('/:chat', ensureAuthenticated, (req, res)=>{
+    getRoom(req, res);
 });
  
 router.post('/logout',ensureAuthenticated, (req, res)=>{

@@ -455,8 +455,9 @@ p {
 }
 
 .showEmoji{
+    margin-top: 730px;
     position: absolute;
-    margin-left: 70%;
+    margin-left: 65%;
     width: 6%;
     display: block;
     border: #77accc solid 2px;
@@ -495,7 +496,7 @@ p {
     font-size: medium;
 }
 #messages {
-    margin-top: 50px;
+    margin-top: 60px;
     margin-left: 5px;
     position: absolute;
     list-style-type: none;
@@ -517,16 +518,18 @@ p {
     position: relative;
     right: 4%;
     width: 50%;
-    background-color: #597da3;
-    color: white;
+    background-color: #ff0093;
     border-radius: 10px;
+    color: white;
+    box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.5);
 }
 .myDiv {
+    box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.5);
     animation: appear 0.3s linear 1;
     position: relative;
     left: 50%;
     width: 50%;
-    background-color: cornflowerblue;
+    background-color: #77accc;
     color: white;
     border-radius: 10px;
 }

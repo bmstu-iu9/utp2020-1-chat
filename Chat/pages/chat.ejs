@@ -71,7 +71,25 @@
         </div>
 
         <!--Блок сообщений-->
-        <ul id="messages"></ul>
+        <ul id="messages">
+            <% data_messages.forEach (message=> { %>
+                <li>
+                    <% if(user.login != message.login){%>
+                    <div class="yourDiv">
+                        <p class="you"><%= message.username%></p>
+                        <p class="message"><%= message.text%> </p>
+                        <p class="time"><%= message.date%> </p>
+                    </div>
+                    <%} else{%>
+                    <div class="myDiv">
+                        <p class="me"><%= message.username%></p>
+                        <p class="message"><%= message.text%> </p>
+                        <p class="time"><%= message.date%> </p>
+                    </div>
+                    <%}%>
+                </li>
+            <% }) %>
+        </ul>
 
 
         <!--Форма для отправки сообщений-->

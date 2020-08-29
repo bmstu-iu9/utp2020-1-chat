@@ -534,3 +534,11 @@ p {
     border-radius: 10px;
 }
 
+.emoji-butt{
+    border-style: solid;
+    border-width: 2px;
+    border-color: #ff69b4;
+    border-radius: 5px;
+    background: white;
+}
+

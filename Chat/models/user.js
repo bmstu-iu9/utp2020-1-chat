@@ -81,6 +81,10 @@ const UserSchema  = new mongoose.Schema({
     gender: {
         type: String,
         default: "Мужской"
+    },
+    avatar: {
+        type: String,
+        default: Math.floor(Math.random()*29 + 1) + ".png"
     }
 });
 const User = mongoose.model('User', UserSchema);

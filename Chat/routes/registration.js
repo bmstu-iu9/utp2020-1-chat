@@ -23,24 +23,28 @@ router.get('/', (req, res)=>{
 router.post('/', (req, res) =>{
     const {name, login, password, gender} = req.body;
     console.log('The registration of user with ' + 'Name: ' + name + ' login: ' + login+ ' pass: ' + password + ' gender: ' + gender);
-    if(!name || !login || !password) {
-        return res.render("registration.ejs");
-    }
 
-    if (password.length < 6) {
-        return res.render("registration.ejs");
-    }
     User.findOne({login : login}).exec((err,user)=>{
         console.log(user);
         if(user) {
             return res.render("registration.ejs");
         } else {
             var salt = bcryptjs.genSaltSync(10);
+            var ava;
+            if (gender.toUpperCase().equal("МУЖСКОЙ") || gender.toUpperCase().equal("MALE")){
+                ava = Math.floor(Math.random()*29 + 1) + ".png"
+            }
+            if (gender.toUpperCase().equal("ЖЕНСКИЙ") || gender.toUpperCase().equal("FEMALE")){
+                ava = Math.floor(Math.random()*21 + 1) + ".png"
+            } else {
+                ava = Math.floor(Math.random()*5 + 1) + ".png"
+            }
             const newUser = new User({
                 name : name,
                 login : login,
                 password : bcryptjs.hashSync(password, salt),
-                gender: gender
+                gender: gender,
+                avatar: ava
             });
             newUser.save(function(err){
                 if (err) {

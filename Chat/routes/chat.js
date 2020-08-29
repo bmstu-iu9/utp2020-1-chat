@@ -33,7 +33,8 @@ router.get('/', ensureAuthenticated, (req, res)=>{
             let user = {
                 name: docs[i].name,
                 login: docs[i].login,
-                gender: docs[i].gender
+                gender: docs[i].gender,
+                avatar: docs[i].avatar
             }
             all_users.push(user);
             if (i === docs.length-1){
@@ -51,7 +52,8 @@ async function saveRoom_and_getMainpage(req, res){
             let user = {
                 name: docs[i].name,
                 login: docs[i].login,
-                gender: docs[i].gender
+                gender: docs[i].gender,
+                avatar: docs[i].avatar
             }
             users.push(user);
         }

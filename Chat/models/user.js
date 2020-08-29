@@ -42,7 +42,8 @@ function joinUser(socketId, userName, roomName, login, gender) {
     user_and_login = {
         username: userName,
         login: login,
-        gender: gender
+        gender: gender,
+        avatar: avatar
     }
     rooms_users[roomName].users[socketId] = user_and_login;
     return user;

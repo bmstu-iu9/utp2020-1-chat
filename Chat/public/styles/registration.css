@@ -25,23 +25,30 @@ select {
 }
 
 .login {
-    width: 350px;
+    width: 166px;
     height: 50px;
     margin-top: 20px;
     margin-left: 115px;
 }
 
 .password {
-    width: 350px;
+    width: 166px;
     height: 50px;
-    margin-top: -5px;
+    margin-top: 0px;
     margin-left: 115px;
 }
 
 .name {
-    width: 350px;
+    width: 166px;
     height: 50px;
-    margin-top: -10px;
+    margin-top: 0px;
+    margin-left: 115px;
+}
+
+.gender {
+    width: 166px;
+    height: 50px;
+    margin-top: 0px;
     margin-left: 115px;
 }
 
@@ -69,7 +76,7 @@ select {
 #register {
     width: 92px;
     height: 25px;
-    margin-top: 8px;
+    margin-top: 10px;
     margin-left: 152px;
     background-color: transparent;
     border: 1px solid transparent;
@@ -103,13 +110,13 @@ select {
     height: 218px;
     left: 50%;
     margin-left: -200px;
-    margin-top: 600px;
+    margin-top: 620px;
 }
 
 .error {
     border-style: solid;
     border-color: transparent;
-    background-color: #e7f0f5;
+    background-color: transparent;
     background-repeat: no-repeat;
     background-size: cover;
     border-width: 2px;
@@ -130,7 +137,7 @@ select {
 .border {
     position: absolute;
     width: 400px;
-    height: 400px;
+    height: 420px;
     left: 50%;
     margin-left: -200px;
     margin-top: 185px;
@@ -208,22 +215,26 @@ a:hover:after {
     transform: translateX(0);
 }
 
-.gender {
-    width: 350px;
-    height: 26px;
-    margin-left: 115px;
-}
-
-#gender { 
-    width: 164px;
-    height: 26px;
-    margin-top: -3px;
-    background-color: transparent;
-    border: solid 1px #597da3;
-    border-radius: 20px;
+#gender {
+    width: 160px;
+    height: 20px;
+    font-size: 14px;
+    text-indent: 8px;
+    font-family: "Comfortaa", cursive;
+    color: #B2BECD;
     box-shadow: rgba(113, 113, 113, 0.15) -5px -5px 11px;
                 rgba(0, 0, 0, 0.15) 5px 5px 11px;
     outline: none;
+    margin-top: 0px;
+    margin-left: 0px;
+}
+
+#gender {
+    background-color: transparent;
+    border-color: #597da3;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
 }
 
 .gender-box {

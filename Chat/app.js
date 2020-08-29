@@ -63,7 +63,7 @@ io.on('connection', (socket) => {
         userin(socket.id, data.username, data.login);
         console.log(data.login + " connected");
         console.log('in room');
-        let newUser = joinUser(socket.id, data.username, data.roomname, data.login, data.gender);
+        let newUser = joinUser(socket.id, data.username, data.roomname, data.login, data.gender, data.avatar);
         socket.emit('send data', {id: socket.id, username: newUser.username, roomname: newUser.roomname});
         console.log(newUser);
         socket.join(newUser.roomname);

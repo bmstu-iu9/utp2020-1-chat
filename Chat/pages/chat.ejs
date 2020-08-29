@@ -143,7 +143,7 @@
 
     document.getElementById("roomName").textContent = "Чат : " +room;
 
-    socket.emit("join room", {username : userName, roomname : room, login: login, gender: "<%= user.gender %>"});
+    socket.emit("join room", {username : userName, roomname : room, login: login, gender: "<%= user.gender %>", avatar: "<%= user.avatar %>"});
 
     socket.on('send data',(data)=>{
         ID = data.id;

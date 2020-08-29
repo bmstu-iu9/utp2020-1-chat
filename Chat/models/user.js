@@ -31,7 +31,7 @@ function userout(socketID) {
     return online_users.splice(index, 1)[0];
 } 
 
-function joinUser(socketId, userName, roomName, login, gender) {
+function joinUser(socketId, userName, roomName, login, gender, avatar) {
     const user = {
         socketID :  socketId,
         username : userName,

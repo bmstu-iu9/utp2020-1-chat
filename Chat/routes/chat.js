@@ -96,8 +96,13 @@ async function getRoom(req, res){
         return db_messages;
     });
     Room.findOne({name : req.params.chat}).exec((err,room)=> {
+        let usersinroom = rooms_users[req.params.chat];
+        console.log(".............");
+        //console.log(usersinroom.users);
+
+        console.log(".............");
         if (room) {
-            res.render("chat.ejs", {roomname: req.params.chat, user: req.user, roomusers: rooms_users[req.params.chat], data_messages: messages});
+            res.render("chat.ejs", {roomname: req.params.chat, user: req.user, roomusers: usersinroom, data_messages: messages});
             console.log("users in " + req.params.chat + ": ");
             console.log(rooms_users[req.params.chat]);
         } else {

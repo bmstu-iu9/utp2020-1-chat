@@ -37,7 +37,8 @@ function joinUser(socketId, userName, roomName, login, gender, avatar) {
         username : userName,
         roomname : roomName,
         login: login,
-        gender: gender
+        gender: gender,
+        avatar: avatar
     }
     user_and_login = {
         username: userName,

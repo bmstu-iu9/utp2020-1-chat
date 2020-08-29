@@ -57,6 +57,12 @@
             <span id="delete-users-list" class="delete-list" onclick="deleteUsersList()">&times;</span>
         </div>
         <div id="users-list" class="users-list">
+            <% Object.keys(roomusers.users).forEach (this_user => { %>
+                <div class="user">
+                    <p class="name"> <%= roomusers.users[this_user].username %> </p>
+                    <p class="route"> <%= roomusers.users[this_user].avatar %> </p>
+                </div>
+            <% }) %>
         </div>
     </div>
     <div class="right-part">
@@ -126,6 +132,7 @@
 </div>
 
 </body>
+<script src="/static/scripts/add-users.js"></script>
 <script src="/static/scripts/show-emoji.js"></script>
 <script src="/static/scripts/add-emoji.js"></script>
 <script src="/socket.io/socket.io.js"></script>

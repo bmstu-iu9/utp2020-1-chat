@@ -29,15 +29,17 @@ router.post('/', (req, res) =>{
         if(user) {
             return res.render("registration.ejs");
         } else {
-            var salt = bcryptjs.genSaltSync(10);
-            var ava;
-            if (gender.toUpperCase().equal("МУЖСКОЙ") || gender.toUpperCase().equal("MALE")){
-                ava = Math.floor(Math.random()*29 + 1) + ".png"
-            }
-            if (gender.toUpperCase().equal("ЖЕНСКИЙ") || gender.toUpperCase().equal("FEMALE")){
-                ava = Math.floor(Math.random()*21 + 1) + ".png"
+            let salt = bcryptjs.genSaltSync(10);
+            let ava;
+            if (gender.toLowerCase().localeCompare("женский") === 0
+                || gender.toLowerCase().localeCompare("female") === 0) {
+                ava = "/static/media/avatars/female/" + Math.floor(Math.random()*21 + 1) + ".png"
             } else {
-                ava = Math.floor(Math.random()*5 + 1) + ".png"
+                ava = "/static/media/avatars/other/" + Math.floor(Math.random()*4 + 1) + ".png"
+            }
+            if (gender.toLowerCase().localeCompare("мужской") === 0
+                || gender.toLowerCase().localeCompare("male") === 0) {
+                ava = "/static/media/avatars/male/" + Math.floor(Math.random()*29 + 1) + ".png"
             }
             const newUser = new User({
                 name : name,

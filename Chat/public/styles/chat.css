@@ -7,7 +7,7 @@ html {
 }
 
 body {
-    background: #e7f0f5 url("/static/media/chat/chat-background.png");
+    background: #e7f0f5 url("../media/chat/chat-background.png");
     background-size: cover;
 }
 
@@ -49,7 +49,7 @@ p {
     background-color: transparent;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url("/static/media/chat/white-logo.png");
+    background-image: url("../media/chat/white-logo.png");
 }
 
 .header {
@@ -242,7 +242,7 @@ p {
 .user-finder {
     text-indent: 25px;
     font-family: "Comfortaa", cursive;
-    background-image: url("../../public/media/chat/search.png");
+    background-image: url("../media/chat/search.png");
     background-color: transparent;
     background-repeat: no-repeat;
     background-size: 15px;

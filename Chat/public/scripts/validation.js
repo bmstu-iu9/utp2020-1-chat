@@ -35,3 +35,8 @@ document.getElementById('name').addEventListener('input', function(e) {
 		div.style.display = "none";
 	}
 });
+
+function hide(obj) {
+	obj.parentElement.style.display = 'none';
+	setTimeout(() => { this.parentElement.style.display = 'none'; }, 1000);
+}

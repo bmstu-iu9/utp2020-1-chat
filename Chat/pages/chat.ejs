@@ -15,9 +15,11 @@
         <div class="logo-toolbar">
             <div class="square-logo"></div>
         </div>
-        <div id="header1" class="header">
-            <p align="center" style="color: white">Главная страница</p>
-        </div>
+        <a href="/">
+            <div id="header1" class="header">
+                <p align="center" style="color: white">Главная страница</p>
+            </div>
+        </a>
         <div id="about" class="round-button" onclick="about()">
             <div class="round-logo">
                 <img class="logo" alt="about" src="/static/media/chat/about.png">
@@ -28,13 +30,15 @@
                 <img class="logo" alt="setting" src="/static/media/menu/settings.png">
             </div>
         </div>
-        <div id="leave" class="round-button">
-            <div class="round-logo">
-                <img class="logo" alt="leave" src="/static/media/chat/leave.png">
+        <a href="/">
+            <div id="leave" class="round-button">
+                <div class="round-logo">
+                    <img class="logo" alt="leave" src="/static/media/chat/leave.png">
+                </div>
             </div>
-        </div>
+        </a>
         <form action="/logout" method="POST">
-            <button style="background: transparent; border: transparent">
+            <button style="background: transparent; border: none; outline: none">
                 <div id="logout" class="round-button">
                     <div class="round-logo">
                         <img class="round-logo" alt="logout" src="/static/media/chat/logout.png">

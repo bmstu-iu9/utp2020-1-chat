@@ -17,11 +17,13 @@
             <div class="square-logo"></div>
         </div>
 
-        <div id="header1" class="header">
-            <p align="center" style="user-select: none; color: #ffffff;">
-                Главная страница
-            </p>
-        </div>
+        <a href="/">
+            <div id="header1" class="header">
+                <p align="center" style="user-select: none; color: #ffffff;">
+                    Главная страница
+                </p>
+            </div>
+        </a>
 
         <div id="about" class="round-button" onclick="about()">
             <div class="round-logo">
@@ -36,7 +38,7 @@
         </div>
 
         <form action="/logout" method="POST">
-            <button style="background: transparent">
+            <button style="background: transparent; border: none; outline: none">
                 <div id="logout" class="round-button">
                     <div class="round-logo">
                         <img class="round-logo" alt="logout" src="/static/media/menu/logout.png">

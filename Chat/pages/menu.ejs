@@ -56,12 +56,9 @@
             <div class="finder-square">
                 <input type="text" class="user-finder" id="user-finder" oninput="findUser()"
                        placeholder="Search for users" title="Type user's login"/>
-                <span id="delete-users-list" class="delete-list" onclick="deleteUsersList()">
-                            &times;
-                </span>
+                <span id="delete-users-list" class="delete-list" onclick="deleteUsersList()">&times;</span>
             </div>
             <div id="users-list" class="users-list">
-
                 <% all_users.forEach (this_user => { %>
                     <div class="user">
                         <p class="name"> <%= this_user.name %> </p>
@@ -79,8 +76,6 @@
                         <p class="route"> <%= this_user.avatar %> </p>
                     </div>
                 <% }) %>
-
-                <!--                    тут будут юзеры-->
             </div>
         </div>
         <div class="right-menu">

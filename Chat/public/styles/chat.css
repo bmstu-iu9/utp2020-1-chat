@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
 
 html {
@@ -542,3 +541,54 @@ p {
     background: white;
 }
 
+.users-list {
+    position: absolute;
+    top: 100px;
+    width: 100%;
+    height: 700px;
+    margin-top: -2px;
+    margin-left: -2px;
+    border-style: solid;
+    border-color: #77accc;
+    border-width: 2px;
+}
+
+.users-list {
+    overflow-y: scroll;
+}
+
+.user {
+    width: 100%;
+    height: 50px;
+}
+
+.user:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+.avatar {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    margin-top: 10px;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+}
+
+.image {
+    margin-left: 12%;
+    margin-top: 10%;
+    width: 76%;
+    height: 76%;
+}
+
+.name {
+    position: absolute;
+    width: auto;
+    margin-left: 50px;
+    margin-top: 18px;
+}

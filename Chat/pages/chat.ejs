@@ -33,11 +33,15 @@
                 <img class="logo" alt="leave" src="/static/media/chat/leave.png">
             </div>
         </div>
-        <div id="logout" class="round-button">
-            <div class="round-logo">
-                <img class="round-logo" alt="logout" src="/static/media/chat/logout.png">
-            </div>
-        </div>
+        <form action="/logout" method="POST">
+            <button style="background: transparent; border: transparent">
+                <div id="logout" class="round-button">
+                    <div class="round-logo">
+                        <img class="round-logo" alt="logout" src="/static/media/chat/logout.png">
+                    </div>
+                </div>
+            </button>
+        </form>
         <div id="pop-up" class="round-button" onclick="popUp()">
             <div class="round-logo">
                 <img class="round-logo" alt="pop-up" src="/static/media/chat/open-menu.png">

@@ -8,8 +8,8 @@ const MessageSchema  = new mongoose.Schema({
         type: String
     },
     date: {
-        type: Date,
-        default: new Date(),
+        type: String,
+        default: "" + new Date().getHours() + ":" + new Date().getMinutes(),
     },
     login: {
         type: String

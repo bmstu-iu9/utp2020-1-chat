@@ -304,6 +304,26 @@ a, a:active, a:hover, a:visited {
     margin-top: 18px;
 }
 
+.online {
+    position: absolute;
+    margin-left: 95%;
+    margin-top: 20px;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: yellowgreen;
+}
+
+.offline {
+    position: absolute;
+    margin-left: 95%;
+    margin-top: 20px;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: darkgray;
+}
+
 .right-menu { 
     position: absolute;
     width: 70%;

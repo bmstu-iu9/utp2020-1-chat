@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
       <title>BUlink</title>
         <link rel="stylesheet" type="text/css" href="/static/styles/registration.css">
-        <link rel="icon" sizes="any" href="/static/media/registration/white-logo.png">
+        <link rel="icon" sizes="any" href="/static/media/registration/lightblue-logo.png">
     </head>
     <body>
         <form action="/registration" method="POST">
@@ -30,33 +30,42 @@
                         <input type="text" name="name" id="name" class="input" maxlength="16"
                             autocomplete="off" placeholder="Enter name" required/>
                     </div>
-                    <p class="gender-box" style="font-size: medium">Пол</p>
                     <div class="gender">
-                        <input class="text" name="gender" id="gender" class="input"
+                        <p class="input-text" style="font-size: medium">Пол</p>
+                        <input type="text" name="gender" id="gender" maxlength="16"
                              autocomplete="off" placeholder="Enter gender" required/>
                     </div>
                     <button type="submit" id="register">
                         <a><span>Register</span></a>
-                    </button>          
+                    </button>
                 </div>
             </div>
-            <div class="error">
-                <div class="error-log-closed">
-                    <p id="error-login" class="error-text" style="display: none; font-size: small">
+            <div id="error-box" class="error">
+                <div id="error-login" class="alert">
+                    <span class="closebutton" onclick="this.parentElement.style.display = 'none';">
+                        &times;
+                    </span>
+                    <p style="font-size: small">
                         <b>Логин</b> может содержать только символы латинского алфавита,
                         цифры 0-9 и специальные знаки "_", "-", и иметь длину от 3 до 16 символов.
                     </p>
                 </div>
-                <div class="error-pas-closed">
-                    <p id="error-password" class="error-text" style="display: none; font-size: small">
+                <div id="error-password" class="alert">
+                    <span class="closebutton" onclick="this.parentElement.style.display = 'none';">
+                        &times;
+                    </span>
+                    <p style="font-size: small">
                         <b>Пароль</b> может содержать только символы латинского алфавита,
                         цифры 0-9 и специальные знаки "!", "$", "%", "&", "*", ".", "-", "_", "+", "=", и иметь длину от 8 до 16 символов. В пароле <b>обязательно</b> должны
                         присутствовать хотя бы одна заглавная и одна прописная латинские буквы, а также
                         хотя бы одна цифра.
                     </p>
                 </div>
-                <div class="error-na-closed">
-                    <p id="error-name" class="error-text" style="display: none; font-size: small">
+                <div id="error-name" class="alert">
+                    <span class="closebutton" onclick="this.parentElement.style.display = 'none';">
+                        &times;
+                    </span>
+                    <p style="font-size: small">
                         <b>Имя</b> может содержать только символы латинского алфавита и
                         иметь длину от 3 до 16.
                     </p>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>BULink</title>
     <link rel="stylesheet" type="text/css" href="/static/styles/chat.css">
-    <link rel="icon" sizes="any" href="/static/media/chat/Media/white-logo.png">
+    <link rel="icon" sizes="any" href="/static/media/chat/white-logo.png">
     <script src="/static/scripts/pop-up-chat.js"></script>
     <script src="/static/scripts/toolbar.js"></script>
     <script src="/static/scripts/users.js"></script>
@@ -15,33 +15,38 @@
         <div class="logo-toolbar">
             <div class="square-logo"></div>
         </div>
-        <div id="header1" class="header">
-            <p align="center" style="color: white">Главная страница</p>
-        </div>
+        <a href="/">
+            <div id="header1" class="header">
+                <p align="center" style="color: white">Главная страница</p>
+            </div>
+        </a>
         <div id="about" class="round-button" onclick="about()">
             <div class="round-logo">
-                <img class="logo" alt="about" src="/static/media/chat/Media/about.png">
+                <img class="logo" alt="about" src="/static/media/chat/about.png">
             </div>
         </div>
         <div id="settings" class="round-button" onclick="settings()">
             <div class="round-logo">
-                <img class="logo" alt="setting" src="/static/media/chat/Media/settings.png">
+                <img class="logo" alt="setting" src="/static/media/menu/settings.png">
             </div>
         </div>
-        <div id="leave" class="round-button">
-            <div class="round-logo">
-                <img class="logo" alt="leave" src="/static/media/chat/Media/leave.png">
+        <a href="/">
+            <div id="leave" class="round-button">
+                <div class="round-logo">
+                    <img class="logo" alt="leave" src="/static/media/chat/leave.png">
+                </div>
             </div>
-        </div>
+        </a>
+
         <div id="logout" class="round-button">
             <div class="round-logo">
-                <img class="round-logo" alt="logout" src="/static/media/chat/Media/logout.png">
+                <img class="round-logo" alt="logout" src="/static/media/chat/logout.png">
             </div>
         </div>
 
         <div id="pop-up" class="round-button" onclick="popUp()">
             <div class="round-logo">
-                <img class="round-logo" alt="pop-up" src="/static/media/chat/Media/open-menu.png">
+                <img class="round-logo" alt="pop-up" src="/static/media/chat/open-menu.png">
             </div>
         </div>
     </div>
@@ -57,6 +62,12 @@
             <span id="delete-users-list" class="delete-list" onclick="deleteUsersList()">&times;</span>
         </div>
         <div id="users-list" class="users-list">
+            <% Object.keys(roomusers.users).forEach (this_user => { %>
+                <div class="user">
+                    <p class="name"> <%= roomusers.users[this_user].username %> </p>
+                    <p class="route"> <%= roomusers.users[this_user].avatar %> </p>
+                </div>
+            <% }) %>
         </div>
     </div>
     <div class="right-part">
@@ -64,12 +75,42 @@
             <p align="center" style="color: white" id="roomName">Название чата</p>
         </div>
 
-        <ul id="messages"></ul>
+        <!--Блок сообщений-->
+        <ul id="messages">
+            <% data_messages.forEach (message=> { %>
+                <li>
+                    <% if(user.login !== message.login){%>
+                    <div class="yourDiv">
+                        <p class="you"><%= message.username%></p>
+                        <p class="message"><%= message.text%> </p>
+                        <p class="time"><%= message.date%> </p>
+                    </div>
+                    <%} else{%>
+                    <div class="myDiv">
+                        <p class="me"><%= message.username%></p>
+                        <p class="message"><%= message.text%> </p>
+                        <p class="time"><%= message.date%> </p>
+                    </div>
+                    <%}%>
+                </li>
+            <% }) %>
+        </ul>
 
+
+        <!--Форма для отправки сообщений-->
         <form class="send-form">
             <input type="text" id="m" class="WriteMessage"/>
-            <input type="submit" id="submitButton" value="Send" onclick="focusmessage()" class="SendMessage"/>
+            <input type="submit" id="submitButton"onclick="focusmessage()" class="SendMessage">
         </form>
+
+        <button id="emoji-but" class="showEmoji">😀</button>
+
+        <!--Блок эмодзи(начало)-->
+        <div class="emoji" id="emoji-block">
+        </div>
+
+
+    </div>
 
     </div>
 </div>
@@ -99,6 +140,9 @@
 </div>
 
 </body>
+<script src="/static/scripts/add-users.js"></script>
+<script src="/static/scripts/show-emoji.js"></script>
+<script src="/static/scripts/add-emoji.js"></script>
 <script src="/socket.io/socket.io.js"></script>
 <script>
     focusmessage = function getFocus() {
@@ -108,17 +152,18 @@
     let userName = "<%= user.name %>";
     let room = "<%= roomname %>";
     let ID = "";
+    let login = "<%= user.login %>";
     var socket = io();
+
 
     document.getElementById("roomName").textContent = "Чат : " +room;
 
-    socket.emit("join room", {username : userName, roomname : room});
+    socket.emit("join room", {username : userName, roomname : room, login: login, gender: "<%= user.gender %>", avatar: "<%= user.avatar %>"});
 
     socket.on('send data',(data)=>{
         ID = data.id;
         console.log(" my ID:" + ID);
     })
-
 
     document
         .getElementsByTagName("form")[0]

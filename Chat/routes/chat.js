@@ -8,7 +8,10 @@ const {
     User,
     joinUser,
     removeUser,
-    rooms_users
+    rooms_users,
+    userin,
+    userout,
+    online_users
 } = require('../models/user');
 const Message = require('../models/messages');
  
@@ -29,51 +32,57 @@ router.get('/', ensureAuthenticated, (req, res)=>{
         for (let i = 0;i < docs.length; i++){
             let user = {
                 name: docs[i].name,
-                login: docs[i].login
+                login: docs[i].login,
+                gender: docs[i].gender,
+                avatar: docs[i].avatar
             }
             all_users.push(user);
-            if (i === docs.length-1) res.render("menu.ejs", {rooms: rooms, all_users: all_users, user: req.user});
+            if (i === docs.length-1){
+                res.render("menu.ejs", {rooms: rooms, all_users: all_users, user: req.user, online_users: online_users});
+            }
         }
     });
 });
  
-router.post('/', (req, res)=>{
-    let all_users = [];
-
-    User.find({}, function (err, docs) {
+async function saveRoom_and_getMainpage(req, res){
+    let all_users = await User.find({}, function (err, docs) {
         if (err) return console.log(err);
+        let users = []
         for (let i = 0;i < docs.length; i++){
             let user = {
                 name: docs[i].name,
-                login: docs[i].login
+                login: docs[i].login,
+                gender: docs[i].gender,
+                avatar: docs[i].avatar
             }
-            all_users.push(user);
+            users.push(user);
+        }
+        return users;
+    });
+    const newroom = new Room({
+        name : req.body.room,
+    });
+    newroom.save(function(err){
+        if (err) {
+            console.log(err);
+            res.redirect("back");
+        }
+        else {
+            rooms_users[req.body.room] = { users: {} };
+            rooms.push(newroom.name);
+            res.render("menu.ejs", {rooms: rooms, all_users: all_users, user: req.user, online_users: online_users});
         }
     });
-    setTimeout(function() {
-        const newroom = new Room({
-            name : req.body.room,
-        });
-        newroom.save(function(err){
-            if (err) {
-                console.log(err);
-                res.redirect("back");
-            }
-            else {
-                rooms_users[req.body.room] = { users: {} };
-                rooms.push(newroom.name);
-                console.log(rooms.length);
-                console.log(all_users.length);
-                res.render("menu.ejs", {rooms: rooms, all_users: all_users, user: req.user});
-            }
-        });
-    }, 100);
+}
+ 
+router.post('/', (req, res)=>{
+    saveRoom_and_getMainpage(req,res);
 });
  
-router.get('/:chat', ensureAuthenticated, (req, res)=>{
-    let messages = [];
-    Message.find({roomName: req.params.chat}, function (err, docs) {
+async function getRoom(req, res){
+    let messages = await Message.find({roomName: req.params.chat}, function (err, docs) {
         if (err) return console.log(err);
+        let db_messages = [];
         for (let i = 0;i < docs.length; i++){
             let message = {
                 roomName: docs[i].roomName,
@@ -82,23 +91,30 @@ router.get('/:chat', ensureAuthenticated, (req, res)=>{
                 login: docs[i].login,
                 username: docs[i].username
             }
-            messages.push(message);
+            db_messages.push(message);
+            console.log(message.date);
         }
+        return db_messages;
     });
     Room.findOne({name : req.params.chat}).exec((err,room)=> {
+        let usersinroom = rooms_users[req.params.chat];
         if (room) {
-            res.render("chat.ejs", {roomname: req.params.chat, user: req.user, roomusers: rooms_users, data_messages: messages});
+            res.render("chat.ejs", {roomname: req.params.chat, user: req.user, roomusers: usersinroom, data_messages: messages});
             console.log("users in " + req.params.chat + ": ");
             console.log(rooms_users[req.params.chat]);
         } else {
             res.redirect("back");
         }
     });
+}
+ 
+router.get('/:chat', ensureAuthenticated, (req, res)=>{
+    getRoom(req, res);
 });
  
-router.get('/logout',ensureAuthenticated, (req, res)=>{
+router.post('/logout',ensureAuthenticated, (req, res)=>{
     req.logout();
-    res.redirect('/');
+    res.redirect('/login');
 });
  
 module.exports = router;

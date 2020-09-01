@@ -10,7 +10,10 @@ const {
     User,
     joinUser,
     removeUser,
-    rooms_users
+    rooms_users,
+    userin,
+    userout,
+    online_users
 } = require('../models/user');
 
 router.get('/', (req, res)=>{
@@ -20,23 +23,30 @@ router.get('/', (req, res)=>{
 router.post('/', (req, res) =>{
     const {name, login, password, gender} = req.body;
     console.log('The registration of user with ' + 'Name: ' + name + ' login: ' + login+ ' pass: ' + password + ' gender: ' + gender);
-    if(!name || !login || !password) {
-        return res.render("registration.ejs");
-    }
 
-    if (password.length < 6) {
-        return res.render("registration.ejs");
-    }
     User.findOne({login : login}).exec((err,user)=>{
         console.log(user);
         if(user) {
             return res.render("registration.ejs");
         } else {
-            var salt = bcryptjs.genSaltSync(10);
+            let salt = bcryptjs.genSaltSync(10);
+            let ava;
+            if (gender.toLowerCase().localeCompare("женский") === 0
+                || gender.toLowerCase().localeCompare("female") === 0) {
+                ava = "/static/media/avatars/female/" + Math.floor(Math.random()*21 + 1) + ".png"
+            } else {
+                ava = "/static/media/avatars/other/" + Math.floor(Math.random()*4 + 1) + ".png"
+            }
+            if (gender.toLowerCase().localeCompare("мужской") === 0
+                || gender.toLowerCase().localeCompare("male") === 0) {
+                ava = "/static/media/avatars/male/" + Math.floor(Math.random()*29 + 1) + ".png"
+            }
             const newUser = new User({
                 name : name,
                 login : login,
-                password : bcryptjs.hashSync(password, salt)
+                password : bcryptjs.hashSync(password, salt),
+                gender: gender,
+                avatar: ava
             });
             newUser.save(function(err){
                 if (err) {
@@ -45,8 +55,8 @@ router.post('/', (req, res) =>{
                 }
                 else {
                     passport.authenticate('local',{
-                        successRedirect : '/menu',
-                        failureRedirect : '/'
+                        successRedirect : '/',
+                        failureRedirect : '/login'
                     })(req,res);
                 }
             });

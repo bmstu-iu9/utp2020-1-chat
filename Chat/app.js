@@ -10,7 +10,10 @@ const {
     User,
     joinUser,
     removeUser,
-    rooms_users
+    rooms_users,
+    userin,
+    userout,
+    online_users
 } = require('./models/user');
 const Room = require('./models/rooms');
 const Message = require('./models/messages');
@@ -36,12 +39,12 @@ app.use(session({
  
 app.use(passport.initialize());
 app.use(passport.session());
- 
-app.use('/', require('./routes/auth'));
-app.use('/menu', require('./routes/chat'));
+
+app.use('/login', require('./routes/auth'));
 app.use('/registration', require('./routes/registration'));
+app.use('/', require('./routes/chat'));
  
-let online_users = [];
+let onlines = [];
  
 io.on('connection', (socket) => {
  
@@ -50,15 +53,17 @@ io.on('connection', (socket) => {
             name: data.user,
             login: data.login
         }
-        online_users.push(user);
+        userin(socket.id, data.user, data.login);
+        onlines.push(user);
         console.log(user.login + " connected");
-        socket.emit("new online", {online_users: online_users});
     });
  
     socket.on("join room", (data) =>{
         //console.log('User connected');
+        userin(socket.id, data.username, data.login);
+        console.log(data.login + " connected");
         console.log('in room');
-        let newUser = joinUser(socket.id, data.username, data.roomname);
+        let newUser = joinUser(socket.id, data.username, data.roomname, data.login, data.gender, data.avatar);
         socket.emit('send data', {id: socket.id, username: newUser.username, roomname: newUser.roomname});
         console.log(newUser);
         socket.join(newUser.roomname);
@@ -71,26 +76,24 @@ io.on('connection', (socket) => {
             roomName: data.room,
             text: data.value,
         });
-        message.save();
-        io.to(data.room).emit("chat message", {data:data, id: socket.id});
+        if (message.text != "") {
+            message.save();
+            io.to(data.room).emit("chat message", {data:data, id: socket.id});
+        }
     });
 
     socket.on("disconnect", () => {
         removeUser(socket);
-        socket.emit("user-disconnected");
-    });
-
-    socket.on("user-disconnected", (data) => {
-        let login = data.login;
+        let user = userout(socket.id);
         let index;
-        for (let i = 0; i < online_users.length; i++) {
-            if (online_users[i].login === login) {
+        for (let i = 0; i < onlines.length; i++) {
+            if (onlines[i].socketID === socket.id) {
                 index = i;
                 break;
             }
         }
-        online_users.splice(index, 1);
-        console.log(login + " disconnected");
+        console.log(user.login + " " + user.username +  " disconnected");
+        onlines.splice(index, 1);
     });
 });
  

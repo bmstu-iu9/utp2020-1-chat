@@ -399,7 +399,7 @@ p {
 .bottom-strip {
     position: absolute;
     width: 100%;
-    height: 75%;
+    height: 77%;
     top: 25%;
     left: 0;
     background: white;
@@ -458,13 +458,13 @@ p {
     position: absolute;
     margin-left: 65%;
     width: 6%;
+	height: 40px;
     display: block;
     border: #77accc solid 2px;
     border-radius: 10px;
     font-size: x-large;
     background-color: white;
 }
-
 
 .emoji{
     display: none;
@@ -494,13 +494,13 @@ p {
     display: inline;
     font-size: medium;
 }
+
 #messages {
     margin-top: 60px;
-    margin-left: 5px;
     position: absolute;
     list-style-type: none;
     overflow: auto;
-    width: 94%;
+    width: 96.1%;
     height: 600px;
     border-bottom: #77accc solid 2px;
 }
@@ -508,10 +508,12 @@ p {
     font-family: sans-serif, "Courier New", Courier, monospace;
     text-align: right;
 }
+
 .you {
     font-family: sans-serif, "Courier New", Courier, monospace;
     text-align: left;
 }
+
 .yourDiv {
     animation: appear 0.3s linear 1;
     position: relative;
@@ -522,6 +524,7 @@ p {
     color: white;
     box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.5);
 }
+
 .myDiv {
     box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.5);
     animation: appear 0.3s linear 1;
